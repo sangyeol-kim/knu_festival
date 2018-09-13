@@ -15,5 +15,22 @@
   <div class="image-section"><img src="<%= @lost.image %>"></div>
 </p>
 
+
+
 <%= link_to 'Edit', edit_lost_path(@lost) %> |
 <%= link_to 'Back', losts_path %>
+<hr />
+<form action='/comments' method='POST'>
+  
+  <input type='hidden' name='authenticity_token' value=<%= @token %></input>
+  <input type='hidden' name='lost_id' value=<%= @lost.id %>></input>
+  <strong>Comment:</strong>
+  <input type='text', name='input_content'></input>
+  <input type='submit'></input>
+</form>
+
+<% @lost.comments.each do |comment| %>
+    <p>
+      <%= comment.content %> | x
+    </p>
+<% end %>

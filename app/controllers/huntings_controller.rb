@@ -20,6 +20,12 @@ class HuntingsController < ApplicationController
   # GET /huntings/1/edit
   def edit
   end
+  
+  def edit_conf
+    if @hunting.pw = pw
+      redirect_to edit_hunting_path(@hunting)
+    end
+  end
 
   # POST /huntings
   # POST /huntings.json
@@ -69,6 +75,6 @@ class HuntingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hunting_params
-      params.require(:hunting).permit(:title, :content)
+      params.require(:hunting).permit(:title, :content, :writer)
     end
 end

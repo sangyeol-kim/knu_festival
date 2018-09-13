@@ -56,11 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg', :group => :production
 
 gem 'carrierwave' #이미지 업로드
-
 gem 'bootstrap', '~> 4.1.3' #부트스트랩
-
 gem 'jquery-rails' #jQuery
-
+gem 'devise'
 gem 'figaro' #코드보안
-
 gem 'pusher' #푸셔
+gem 'rails_db'
