@@ -11,20 +11,12 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @pubs.each do |pub| %>
-      <tr>
-        <td><%= pub.title %></td>
-        <td><%= pub.content %></td>
-        <td class="image-section"><img src="<%= pub.image %>"></td>
-        <td><%= link_to 'Show', pub %></td>
-        <td><%= link_to 'Edit', edit_pub_path(pub) %></td>
-        <td><%= link_to 'Destroy', pub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<%= render 'pubs/card', :@pubs => @pubs %>
+
 </table>
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Pub', new_pub_path %>
+<% end %>

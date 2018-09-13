@@ -1,3 +1,21 @@
 // Place all the styles related to the foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.food-title{
+    text-align: center;
+    margin: 15px auto;
+}
+.food-item{
+    padding: 6px !important;
+    height: 70px !important;
+}
+
+.food-icon {
+    width: 20px;
+    height: 13px;
+    display: inline;
+    margin: 5px 10px;
+}
+.btn {
+    
+}
