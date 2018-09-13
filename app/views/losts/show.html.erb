@@ -19,17 +19,17 @@
       <p id="notice"><%= notice %></p>
       <p>
         <strong>제 목 </strong>
-        <%= @lost.title %>
+        <div class="title-show"><%= @lost.title %></div>
       </p>
   
       <p>
         <strong>내 용 </strong>
-        <%= @lost.content %>
+        <div class="content-show"><%= @lost.content %></div>
       </p>
       
       <p>
         <strong>사 진 </strong>
-        <div class="image-section"><img src="<%= @lost.image %>"></div>
+        <div class="image-show"><img src="<%= @lost.image %>"></div>
       </p>
     </div>
   </div>
