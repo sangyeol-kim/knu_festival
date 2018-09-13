@@ -21,10 +21,10 @@
     <script>
       function msg_generate(data) {
       $('#test').append(`
-      <div class="test" id="message${data.id}" style="display: none;position:absolute;">
+      <div class="x" id="y${data.id}" style="display: none;position:absolute;">
         <div>${data.body}</div>    
       </div>`);
-      var item = $(`#message${data.id}`);
+      var item = $(`#   ${data.id}`);
       item.css('top',Math.round(Math.random()*700)+300);
       item.css('left',Math.round(Math.random()*500));
       item.fadeIn();
