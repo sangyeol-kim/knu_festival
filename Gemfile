@@ -64,3 +64,5 @@ gem 'jquery-rails' #jQuery
 gem 'figaro' #코드보안
 
 gem 'pusher' #푸셔
+
+gem 'rails_db'

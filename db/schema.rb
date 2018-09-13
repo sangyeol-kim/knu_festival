@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180913115834) do
   create_table "huntings", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.string "writer"
+    t.text "pw"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
