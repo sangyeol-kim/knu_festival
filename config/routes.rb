@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'secret/index'
-
+  root 'home#index'
+  
   devise_for :users
   #플러스 친구 라우팅
   get '/keyboard' => 'kakao#keyboard'
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :foods
   resources :huntings
   resources :losts
-  root 'home#index'
   
   get '/huntings/edit_conf' => 'huntings#edit_conf'
   
