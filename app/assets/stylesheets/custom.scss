@@ -3,6 +3,7 @@
 // header 밑으로 패딩
 body{
     padding-top: 80px;
+    width:100%;
 }
 //header text
 #logo{
@@ -14,4 +15,12 @@ body{
         color: #FFFFFF;
         text-decoration: none;
     } 
+}
+.nav-link{
+    color: white;
+    
+    padding: 0px !important;
+}
+.navbar-brand{
+    
 }
