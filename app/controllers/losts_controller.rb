@@ -10,11 +10,15 @@ class LostsController < ApplicationController
   # GET /losts/1
   # GET /losts/1.json
   def show
+    @token = form_authenticity_token
+    
   end
 
   # GET /losts/new
   def new
     @lost = Lost.new
+    @token = form_authenticity_token
+  
   end
 
   # GET /losts/1/edit
