@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hunting.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @hunting.content %>
+</p>
+
+<%= link_to 'Edit', edit_hunting_path(@hunting) %> |
+<%= link_to 'Back', huntings_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fleamarkets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fleamarkets.each do |fleamarket| %>
+      <tr>
+        <td><%= fleamarket.title %></td>
+        <td><%= fleamarket.content %></td>
+        <td class="image-section"><img src="<%= fleamarket.image %>"></td>
+        <td><%= link_to 'Show', fleamarket %></td>
+        <td><%= link_to 'Edit', edit_fleamarket_path(fleamarket) %></td>
+        <td><%= link_to 'Destroy', fleamarket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fleamarket', new_fleamarket_path %>

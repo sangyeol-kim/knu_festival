@@ -1,0 +1,31 @@
+<%= form_with(model: pub, local: true) do |form| %>
+  <% if pub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pub.errors.count, "error") %> prohibited this pub from being saved:</h2>
+
+      <ul>
+      <% pub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :pub_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :pub_content %>
+  </div>
+  
+  <div class='field'>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

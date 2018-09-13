@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Huntings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @huntings.each do |hunting| %>
+      <tr>
+        <td><%= hunting.title %></td>
+        <td><%= hunting.content %></td>
+        <td><%= link_to 'Show', hunting %></td>
+        <td><%= link_to 'Edit', edit_hunting_path(hunting) %></td>
+        <td><%= link_to 'Destroy', hunting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hunting', new_hunting_path %>

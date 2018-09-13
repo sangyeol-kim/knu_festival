@@ -1,0 +1,2 @@
+class Hunting < ApplicationRecord
+end

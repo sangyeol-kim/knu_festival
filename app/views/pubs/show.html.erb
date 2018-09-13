@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pub.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @pub.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <div class="image-section"><img src="<%= @pub.image %>"></div>
+</p>
+
+<%= link_to 'Edit', edit_pub_path(@pub) %> |
+<%= link_to 'Back', pubs_path %>

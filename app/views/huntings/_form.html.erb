@@ -1,0 +1,27 @@
+<%= form_with(model: hunting, local: true) do |form| %>
+  <% if hunting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hunting.errors.count, "error") %> prohibited this hunting from being saved:</h2>
+
+      <ul>
+      <% hunting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :hunting_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :hunting_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

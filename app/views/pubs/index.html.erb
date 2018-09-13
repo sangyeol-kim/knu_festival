@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pubs.each do |pub| %>
+      <tr>
+        <td><%= pub.title %></td>
+        <td><%= pub.content %></td>
+        <td class="image-section"><img src="<%= pub.image %>"></td>
+        <td><%= link_to 'Show', pub %></td>
+        <td><%= link_to 'Edit', edit_pub_path(pub) %></td>
+        <td><%= link_to 'Destroy', pub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pub', new_pub_path %>

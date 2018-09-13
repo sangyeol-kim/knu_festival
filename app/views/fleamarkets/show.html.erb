@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fleamarket.title %>
+</p>
+
+<p>
+  <strong>:</strong>
+  <%= @fleamarket.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <div class="image-section"><img src="<%= @fleamarket.image %>"></div>
+</p>
+
+<%= link_to 'Edit', edit_fleamarket_path(@fleamarket) %> |
+<%= link_to 'Back', fleamarkets_path %>

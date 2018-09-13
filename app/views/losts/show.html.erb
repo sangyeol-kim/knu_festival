@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @lost.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @lost.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <div class="image-section"><img src="<%= @lost.image %>"></div>
+</p>
+
+<%= link_to 'Edit', edit_lost_path(@lost) %> |
+<%= link_to 'Back', losts_path %>
