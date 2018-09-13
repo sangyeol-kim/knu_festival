@@ -62,4 +62,3 @@ gem 'devise'
 gem 'figaro' #코드보안
 gem 'pusher' #푸셔
 gem 'rails_db'
-
