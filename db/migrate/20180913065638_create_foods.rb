@@ -4,7 +4,8 @@ class CreateFoods < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :content
       t.string :image
-
+      t.integer :iconid
+      
       t.timestamps
     end
   end

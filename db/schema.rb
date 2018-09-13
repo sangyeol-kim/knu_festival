@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180913160311) do
     t.string "title"
     t.text "content"
     t.string "image"
+    t.integer "iconid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
