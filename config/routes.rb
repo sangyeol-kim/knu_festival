@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  #플러스 친구 라우팅
+  get '/keyboard' => 'kakao#keyboard'
+  post '/message' => 'kakao#message'
+  
   resources :foods
   resources :huntings
   resources :losts
