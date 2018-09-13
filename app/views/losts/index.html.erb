@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Content</th>
-      <th>Image</th>
+      <!--<th>Content</th>-->
+      <!--<th>Image</th>-->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,11 +16,11 @@
     <% @losts.each do |lost| %>
       <tr>
         <td><%= lost.title %></td>
-        <td><%= lost.content %></td>
-        <td class="image-section"><img src="<%= lost.image %>"></td>
+        <!--<td><!%= lost.content %></td>-->
+        <!--<td class="image-section"><img src="<!%= lost.image %>"></td>-->
         <td><%= link_to 'Show', lost %></td>
         <td><%= link_to 'Edit', edit_lost_path(lost) %></td>
-        <td><%= link_to 'Destroy', lost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
