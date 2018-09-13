@@ -2,10 +2,10 @@
   <div class="food-title">
     <h2>푸드 트럭</h2>
   </div>
-  <div class="mx-auto">
+  <!--<div class="mx-auto">-->
     <% @foods.each do |food| %>
-      <button type="button" class="btn btn-primary food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
-        <%= image_tag 'ttruck01.png', class:"food-icon"%><p><%= food.title %></p>
+      <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
+        <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><p><%= food.title %></p>
       </button>
       
       <!--이하 보이지 않는 모달-->
@@ -29,7 +29,8 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <!--</div>-->
   <br>
+  <br/>
   <%= link_to 'New Food', new_food_path %>
 </div>

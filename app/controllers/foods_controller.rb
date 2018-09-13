@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = Food.all
+    # @boxcolor = ["dark","warning"]
   end
 
   # GET /foods/1
@@ -25,10 +26,12 @@ class FoodsController < ApplicationController
   # POST /foods.json
   def create
     @food = Food.new(food_params)
+    @food.iconid = (1..3).to_a.sample
+    
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
+        format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new }
@@ -69,6 +72,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:title, :content, :image)
+      params.require(:food).permit(:title, :content, :image, :iconid)
     end
 end

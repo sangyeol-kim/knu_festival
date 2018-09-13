@@ -6,15 +6,16 @@
     margin: 15px auto;
 }
 .food-item{
-    width: 100%;
-    margin:5px 0;
+    padding: 6px !important;
+    height: 70px !important;
 }
-.food-item > p {
-    text-align: left !important;
-    margin: 0;
-    display: inline;
-}
+
 .food-icon {
-    width: 10px;
+    width: 20px;
+    height: 13px;
     display: inline;
+    margin: 5px 10px;
+}
+.btn {
+    
 }
