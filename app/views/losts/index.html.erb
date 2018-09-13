@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Losts</h1>
+<div id="losttitle">분실물 찾기</div>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= lost.title %></td>
         <td><%= lost.content %></td>
         <td class="image-section"><img src="<%= lost.image %>"></td>
-        <td><%= link_to 'Show', lost %></td>
-        <td><%= link_to 'Edit', edit_lost_path(lost) %></td>
-        <td><%= link_to 'Destroy', lost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '보기', lost %></td>
+        <td><%= link_to '수정', edit_lost_path(lost) %></td>
+        <td><%= link_to '삭제', lost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Lost', new_lost_path %>
+<%= link_to '글작성', new_lost_path %>
