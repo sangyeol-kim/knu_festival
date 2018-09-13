@@ -5,7 +5,7 @@
   <!--<div class="mx-auto">-->
     <% @foods.each do |food| %>
       <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
-        <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><p><%= food.title %></p>
+        <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
       </button>
       
       <!--이하 보이지 않는 모달-->

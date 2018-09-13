@@ -17,5 +17,12 @@
     margin: 5px 10px;
 }
 .btn {
-    
+    max-width:20em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+body{
+    background-color: green;
 }
