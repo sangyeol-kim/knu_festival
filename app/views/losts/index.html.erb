@@ -14,6 +14,7 @@
 
   <tbody>
     <% @losts.each do |lost| %>
+    <%= render 'losts/card', :lost => lost %>
       <tr>
         <td><%= lost.title %></td>
         <td><%= lost.content %></td>
@@ -29,3 +30,4 @@
 <br>
 
 <%= link_to 'New Lost', new_lost_path %>
+
