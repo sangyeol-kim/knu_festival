@@ -1,7 +1,11 @@
 // Place all the styles related to the foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.food_truck{
+.food-title{
     text-align: center;
-    padding-top: 15px;
+    margin: 15px auto;
+}
+.food-item{
+    width: 100%;
+    margin:5px 0;
 }
