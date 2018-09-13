@@ -32,5 +32,7 @@
   <!--</div>-->
   <br>
   <br/>
-  <%= link_to 'New Food', new_food_path %>
+  <%# if user_signed_in? %>
+    <%= link_to 'New Food', new_food_path %>
+  <%# end %>
 </div>
