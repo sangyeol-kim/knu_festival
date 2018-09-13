@@ -1,12 +1,9 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.festival_logo{
-    display: block;
-    text-align: center;
-    min-height: 500px;
-    color: white;
-    background-color: black;
-    
-    margin-top: 100px;
+
+@font-face { font-family: 'GIMJE-L'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GIMJE-L.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.line_up{
+    font-family: 'GIMJE-L';
 }
