@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'secret/index'
-
   devise_for :users
   #플러스 친구 라우팅
   get '/keyboard' => 'kakao#keyboard'
