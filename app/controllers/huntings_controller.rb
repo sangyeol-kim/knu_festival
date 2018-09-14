@@ -1,5 +1,5 @@
 class HuntingsController < ApplicationController
-  before_action :set_hunting, only: [:show, :edit, :update, :destroy]
+  before_action :set_hunting, only: [:show, :edit, :update, :destroy, :edit_conf]
 
   # GET /huntings
   # GET /huntings.json
@@ -22,8 +22,10 @@ class HuntingsController < ApplicationController
   end
   
   def edit_conf
-    if @hunting.pw = pw
+    if @hunting.pw == params[:pw]
       redirect_to edit_hunting_path(@hunting)
+    else
+      redirect_to huntings_path
     end
   end
 
@@ -34,7 +36,7 @@ class HuntingsController < ApplicationController
 
     respond_to do |format|
       if @hunting.save
-        format.html { redirect_to @hunting, notice: 'Hunting was successfully created.' }
+        format.html { redirect_to huntings_path, notice: 'Hunting was successfully created.' }
         format.json { render :show, status: :created, location: @hunting }
       else
         format.html { render :new }
@@ -60,10 +62,14 @@ class HuntingsController < ApplicationController
   # DELETE /huntings/1
   # DELETE /huntings/1.json
   def destroy
-    @hunting.destroy
-    respond_to do |format|
-      format.html { redirect_to huntings_url, notice: 'Hunting was successfully destroyed.' }
-      format.json { head :no_content }
+    if @hunting.pw == params[:pw]
+      @hunting.destroy
+      respond_to do |format|
+        format.html { redirect_to huntings_url, notice: 'Hunting was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to huntings_path
     end
   end
 
@@ -75,6 +81,6 @@ class HuntingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hunting_params
-      params.require(:hunting).permit(:title, :content, :writer)
+      params.require(:hunting).permit(:title, :content, :writer, :pw)
     end
 end

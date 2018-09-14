@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :제목 %>
     <%= form.text_field :title, id: :hunting_title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :내용 %>
     <%= form.text_area :content, id: :hunting_content %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :비밀번호 %>
+    <%= form.text_field :pw, id: :hunting_pw %>
   </div>
 
   <div class="actions">

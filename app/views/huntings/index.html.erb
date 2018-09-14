@@ -1,6 +1,7 @@
-  <div id="test"></div>
 
-<% @huntings.each do |hunting| %>
+<%= link_to '글작성', new_hunting_path, class:"btn btn-primary" %>
+
+<% @huntings.reverse.each do |hunting| %>
 <div class="card">
     <div class="card-header">
       <%= hunting.title %>
@@ -23,10 +24,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action = '/huntings/edit_conf/<%= hunting.id %>'>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">비밀번호:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <input type="text" class="form-control" id="recipient-name" name = "pw">
             </div>
         </div>
         <div class="modal-footer">
@@ -43,54 +44,25 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+          <h5 class="modal-title" id="exampleModalLabel">삭제</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action = '/huntings/destroy/<%= hunting.id %>' >
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Recipient:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label">비밀번호:</label>
+              <input type="text" class="form-control" id="recipient-name" name = "pw">
             </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
+          <button type="submit" class="btn btn-primary">확인</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 <% end %>
-
-<script>
-      function msg_generate(data) {
-      $('#test').append(`
-      <div class="test" id="message${data.id}" style="display: none;position:absolute;">
-        <div>${data.body}</div>    
-      </div>`);
-      var item = $(`#message${data.id}`);
-      item.css('top',Math.round(Math.random()*700)+300);
-      item.css('left',Math.round(Math.random()*500));
-      item.fadeIn();
-      
-      setTimeout(function() {
-        item.fadeOut();
-      }, 4000);
-
-    }
-
-      var channel = pusher.subscribe('dashboard');
-      channel.bind('create', function(data) {
-        var msg = data.body;
-        console.log(data);
-        msg_generate(data);
-      });
-</script>
