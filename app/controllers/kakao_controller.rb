@@ -106,10 +106,13 @@ class KakaoController < ApplicationController
               }
             }    
         else
+            message_pusher = Message.new
+            message_pusher.body = @input
+            message_pusher.save
+            
             message = Hunting.new
             message.title = "플친에서 작성 된 글입니다."
             message.content = @input
-            message.pw = "123456"
             message.save
             
             # Hunting.content = params[@input]
