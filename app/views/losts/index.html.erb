@@ -23,7 +23,7 @@
     <% @losts.each do |lost| %>
       <tr>
             <td class="image-section", align: center>
-              <img src="<%= lost.image %>">
+              <img src="<%= lost.image %>" onerror="this.src='<%= image_tag "lostnfound_bear.png" %>'">
             </td>
         <td class="title-index"><%= lost.title %></td>
         <td><%= link_to '클리이이익', lost %>
