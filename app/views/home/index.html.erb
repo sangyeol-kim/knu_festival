@@ -1,8 +1,6 @@
 <!--머동머동제-->
 <div class="logo_section">
   <%= image_tag "main_logo.png", :class => 'knu-img' %>
-  <p class="logo-font" id="font-top">강원대학교</p>
-  <p class="logo-font">BAAAAAAM!!</p>
 </div>
     <!-- pusher -->
 
@@ -10,14 +8,17 @@
 <!--라인업-->
 <div class="line_up_div">
   <p class="line_up">LINE - UP</p>
-  <%= image_tag "bear_lineup.png" , :class => 'lineup-img' %>
+  <%= image_tag "bear_lineup_02.png" , :class => 'lineup-img' %>
 </div>
+
+
+<%= image_tag "cd_case_02.png" , :class => 'lineup-img01' %>
 
 <!--축제일정-->
 <div class="time_table">
+  
   <div class="schedule-01">
     <p class="txt">DAY 01</p>
-    <!--border로 영역 표시한 부분 sche-area-->
     <div class="sche-area"></div>
   </div>
   
@@ -26,10 +27,10 @@
     <div class="sche-area"></div>
   </div>
   
-  <div class="scedule-03">
-    <p class="txt">DAY 03</p>
-    <div class="sche-area"></div>
-  </div>
+  <!--<div class="scedule-03">-->
+  <!--  <p class="txt">DAY 03</p>-->
+  <!--  <div class="sche-area"></div>-->
+  <!--</div>-->
 </div>
 
 
@@ -66,10 +67,37 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
   $(function(){
 $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        var num = $(this).scrollTop();  // 스크롤값
-       if( num > 1284 ){  // 스크롤을 36이상 했을 때
+       if( num > 1110 ){  // 스크롤을 36이상 했을 때
+          $(".lineup-img01").css("position","fixed");
+       } else if(num < 1100 || num == 1000){
+         $(".lineup-img01").css("position" , "fixed")
+       }
+  });
+});
+</script>
+
+<script>
+  $(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 1383 || num == 1383){  // 스크롤을 36이상 했을 때
           $(".schedule-01").css("position","fixed");
-       } else if (num < 1284 || num == 1284){
-           $(".schedule-01").css("position","static");
+       }else if( num < 1383 ){
+         $(".schedule-01").css("display","none")
+       }
+  });
+});
+</script>
+
+
+<script>
+  $(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 2100 || num == 2100){  // 스크롤을 36이상 했을 때
+          $(".schedule-02").css("position","fixed");
+       }else if( num < 1400 ){
+         $(".schedule-02").css("position","static")
        }
   });
 });
