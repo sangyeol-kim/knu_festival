@@ -1,6 +1,11 @@
-<h1>Editing Lost</h1>
+<h1 style="text-align: center; margin-top: 100px; margin-bottom: 40px; font-size: 32px; font-weight: bold; font-family: 'BMJUA';">분실물을 찾아주세요!</h1>
 
-<%= render 'form', lost: @lost %>
+    <%= render 'form', lost: @lost %>
+    
+    <div id="losttitle">글작성</div>
 
-<%= link_to 'Show', @lost %> |
-<%= link_to 'Back', losts_path %>
+<div class="form-section">
+    <%= render 'form', lost: @lost %>
+    
+    <%= link_to 'Back', losts_path %>
+</div>
