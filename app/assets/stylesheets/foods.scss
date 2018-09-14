@@ -1,9 +1,12 @@
 // Place all the styles related to the foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 .food-title{
     text-align: center;
     margin: 15px auto;
+    font-family: 'BMDOHYEON';
 }
 .food-item{
     padding: 6px !important;
@@ -24,5 +27,5 @@
   -webkit-box-orient: vertical;
 }
 body{
-    background-color: green;
+    background-color: #FFD653 !important;
 }
