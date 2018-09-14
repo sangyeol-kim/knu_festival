@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'YanoljaYacheR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YanoljaYacheR.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 .food-title{
     text-align: center;
@@ -20,7 +21,7 @@
     width: 20px;
     height: 13px;
     display: inline;
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 .btn{
     max-width:20em;
@@ -32,6 +33,3 @@
   border-radius: 0.8rem !important;
 }
 
-body{
-    background-color: #FFD653 !important;
-}
