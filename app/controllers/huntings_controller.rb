@@ -20,14 +20,6 @@ class HuntingsController < ApplicationController
   # GET /huntings/1/edit
   def edit
   end
-  
-  def edit_conf
-    if @hunting.pw == params[:pw]
-      redirect_to edit_hunting_path(@hunting)
-    else
-      redirect_to huntings_path
-    end
-  end
 
   # POST /huntings
   # POST /huntings.json
@@ -62,15 +54,11 @@ class HuntingsController < ApplicationController
   # DELETE /huntings/1
   # DELETE /huntings/1.json
   def destroy
-    if @hunting.pw == params[:pw]
       @hunting.destroy
       respond_to do |format|
         format.html { redirect_to huntings_url, notice: 'Hunting was successfully destroyed.' }
         format.json { head :no_content }
       end
-    else
-      redirect_to huntings_path
-    end
   end
 
   private
@@ -81,6 +69,6 @@ class HuntingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hunting_params
-      params.require(:hunting).permit(:title, :content, :writer, :pw)
+      params.require(:hunting).permit(:title, :content, :writer)
     end
 end

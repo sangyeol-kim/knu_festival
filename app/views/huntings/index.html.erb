@@ -1,16 +1,23 @@
 
 <div id='btn_new'>
-<%= link_to '글작성', new_hunting_path, class:"btn btn-primary" %>
+
+<%= link_to '글작성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new" %>
 </div>
 
-<% @huntings.reverse.each do |hunting| %>
-<div class="card">
-    <div class="card-header">
-      <%= hunting.title %>
-    </div>
-      <div class="card-body">
-        <h5 class="card-title"><%= hunting.content %></h5>
-        <p class="card-text"><%= hunting.writer %></p>
+<div class="container">
+  <div class="row">
+    <% @huntings.reverse.each do |hunting| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">
+            <%= hunting.title %>
+          </div>
+          <div class="card-body">
+          <h5 class="card-title"><%= hunting.content %></h5>
+            <p class="card-text"><%= hunting.writer %></p>
+          </div>
+        </div>
       </div>
+    <% end %>
+  </div>
 </div>
-<% end %>

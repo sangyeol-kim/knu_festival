@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :제목 %>
-    <%= form.text_field :title, id: :hunting_title %>
+  <div class="form-group" style="margin-top: 10px">
+    <%= form.label :제목 , style:"margin-left: 15px;"%>
+    <div id="title">
+    <%= form.text_field :title, id: :hunting_title, class:"form-control", placeholder:"제목을 입력해주세요." %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :내용 %>
-    <%= form.text_area :content, id: :hunting_content %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :비밀번호 %>
-    <%= form.text_field :pw, id: :hunting_pw %>
+  <div class="field" >
+    <%= form.label :내용, style:"margin-left: 15px;" %>
+    <div id="content">
+    <%= form.text_area :content, id: :hunting_content, class:"form-control", placeholder:"내용을 입력해주세요." %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <div style="text-align: right; margin-top: 10px;">
+    <%= form.submit "작성", class:"btn btn-secondary", style:"margin-right: 15px;"%>
+    </div>
   </div>
 <% end %>
