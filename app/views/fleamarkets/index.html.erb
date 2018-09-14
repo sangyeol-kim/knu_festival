@@ -13,7 +13,12 @@
   </thead>
 </table>
 
-  <%= render 'fleamarkets/card', :@fleamarkets => @fleamarkets %>
+
+<% @fleamarkets.each do |x| %>
+  <% if x.number == '1' %>
+    <%= render 'fleamarkets/card', :x => x %>
+  <% end %>
+<% end %>
 
 <br>
 
