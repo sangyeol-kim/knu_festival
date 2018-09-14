@@ -24,8 +24,8 @@
 
 // 라인 업 div
 .line_up_div{
-    margin-bottom: 600px;
     display: block;
+    min-height: 700px;
 }
 
 
@@ -41,8 +41,15 @@
     background: rgb(23, 170, 250);
     height: 100vh;
 }
-.mamamu-jpg{
-    
+.lineup-img{
+     width: 80%;
+     height: 500px;
+     margin: 20px 0 20px 0;
+     display: inline-block;
+     margin-left: 10%;
+     top: 0px;
+     z-index: -4;
+     
 }
 
 
@@ -67,19 +74,25 @@
 
 .schedule-01{
     background: #ff7146;
-    min-height: 500px;
+    min-height: 700px;
     text-align: center;
+    
+    top: 0px;
+    display: block;
+    width: 100%;
+    
+    z-index: -3;
 }
 
 .schedule-02{
     background: #468cff;
-    min-height: 500px;
+    min-height: 700px;
     text-align: center;
 }
 
 .scedule-03{
     background: #28a745;
-    min-height: 500px;
+    min-height: 700px;
     text-align: center;
 }
 
