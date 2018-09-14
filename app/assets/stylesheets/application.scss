@@ -21,11 +21,17 @@
   top: 0;
   width: 100%;
 }
-.top-menu {
+
+#top-menu > div > a {
     margin-left: 10px;
     color: white;
     text-decoration: none;
 }
+
+#top-menu > div > a:hover {
+    color: white;
+}
+
 .image-section img{
     max-width : 100%;
     max-height : 100%;
@@ -43,6 +49,17 @@
 .navbar-brand{
     margin: auto !important;
 }
+
 .btn-custom{
     width:100%;
+}
+
+body {
+    text-align: center;
+}
+
+.top_menu {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
 }
