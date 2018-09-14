@@ -2,11 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .container-text {
+.container-text {
+margin-top: 60px;
+}
 
-// margin-top: 60px;
+.image-lnf img{
+    max-height: 180%;
+    max-width: 180%;
+}
 
-// }
+.table tr {
+    border-width: 100px;
+}
+
+.title-index {
+    font-size: 300%;
+}
 
 .title-show {
     font-size: 500%;
@@ -17,12 +28,20 @@
 }
 
 
-.image-section {
-    height: 150px;
-    width: 150px;
+.image-section img{
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    margin-right: 50px;
+    padding: 10%;
+    border-right: 10%;
+    border-bottom: 10%;
+    border-top: -10%;
+    border-left: -10%;
 }
 
-.image-show {
+//Show
+.image-show img{
     max-height: 80%;
     max-width: 80%;
 }
