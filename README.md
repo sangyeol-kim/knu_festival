@@ -1,5 +1,5 @@
 <div align="middle">
-<img src="./app/assets/images/plus_link.jpg" height="300px"/>
+<img src="https://github.com/chap95/2018_knu_festival/blob/master/app/assets/images/plus_link.jpg" height="300px"/>
 </div>
 
 
