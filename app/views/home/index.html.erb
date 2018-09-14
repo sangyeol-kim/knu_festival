@@ -10,7 +10,7 @@
 <!--라인업-->
 <div class="line_up_div">
   <p class="line_up">LINE - UP</p>
-  <%= image_tag "mamamu.jpeg" , :class => 'mamamu-jpg' %>
+  <%= image_tag "bear_lineup.png" , :class => 'lineup-img' %>
 </div>
 
 <!--축제일정-->
@@ -35,3 +35,43 @@
 
 
 <!--축제지도-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--스크립트 부분-->
+<script>
+  $(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 747 ){  // 스크롤을 36이상 했을 때
+          $(".lineup-img").css("position","fixed");
+       } else if (num < 747 || num == 747){
+           $(".lineup-img").css("position","static");
+       }
+  });
+});
+</script>
+
+<script>
+  $(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 1284 ){  // 스크롤을 36이상 했을 때
+          $(".schedule-01").css("position","fixed");
+       } else if (num < 747 || num == 747){
+           $(".meni").css("position","static");
+       }
+  });
+});
+</script>
+
