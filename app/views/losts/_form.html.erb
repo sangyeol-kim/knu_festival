@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :lost_title %>
+  <div class="field title-section">
+    <p>제목</p>
+    <%= form.text_field :title , style: "width: 100%" %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :lost_content %>
+  <div class="field content-section">
+    <p>내용</p>
+    <%= form.text_area :content, id: :lost_content , style: "width: 100%" %>
   </div>
 
   <div class="field">

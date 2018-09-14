@@ -40,6 +40,7 @@
 .menu-list{
     padding-top: 10px; 
     padding-bottom: 10px;
+    text-align: center;
 }
 
 //header text
@@ -52,9 +53,13 @@
 .navbar-brand{
     margin: auto !important;
 }
+
 .btn-custom{
     width:100%;
 }
-body {
-    text-align: center;
+
+.top-menu {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
 }
