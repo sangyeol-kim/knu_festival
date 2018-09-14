@@ -1,23 +1,65 @@
+<%= image_tag "hunting.png" , :class => 'hunting_img' %>
 
-<div id='btn_new'>
+<h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">헌&emsp;&nbsp;팅</h1>
 
-<%= link_to '글작성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new" %>
+<div>
+  <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">운명을 믿으시는 당신, 인연을 만나세요!</p>
+  <p style="font-size: 12px; font-family: 'BMJUA';">*타인에게 불쾌감을 줄 수 있는 게시글은 자제해주시기 바랍니다.*</p>
 </div>
 
+<div id='btn_new'>
+<%= link_to '글 작 성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;" %>
+</div>
+
+<div id="test"> </div>    <!-- 비동기 글생성 -->
+
+<!-- db글 불러오기 -->
 <div class="container">
-  <div class="row">
+  <div class="card-columns">
     <% @huntings.reverse.each do |hunting| %>
-      <div class="col-sm-4">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" style="font-weight: bold;">
             <%= hunting.title %>
           </div>
           <div class="card-body">
           <h5 class="card-title"><%= hunting.content %></h5>
-            <p class="card-text"><%= hunting.writer %></p>
+            <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= hunting.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
           </div>
-        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+<script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+<script>
+var pusher = new Pusher('<%= ENV["pusher_key"] %>', {
+    cluster: 'ap1',
+    encrypted: true
+  });
+  
+  function msg_generate(data) {
+      $('#test').append(`
+      <div class="container" id="message${data.id}">
+        <div class="card-columns">
+              <div class="card">
+                <div class="card-header" style="font-weight: bold;">
+                  플친에서 작성 된 글입니다.
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">${data.body}</h5>
+                  
+                </div>
+            </div>
+        </div>
+      </div>`);
+      var item = $(`#message${data.id}`);
+      item.fadeIn();
+    }
+
+  var channel = pusher.subscribe('dashboard');
+  channel.bind('create', function(data) {
+    msg_generate(data);
+  });
+
+</script>

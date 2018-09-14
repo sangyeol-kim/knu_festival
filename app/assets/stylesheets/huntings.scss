@@ -9,10 +9,12 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-family: 'BMJUA';
 }
 .card{
   text-align: center;
   margin-top: 3%;
+  font-family: 'BMJUA';
 }
 #title {
     margin-left: 10px;
@@ -21,4 +23,27 @@
 #content {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+
+@font-face { 
+    font-family: 'BMJUA'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face { font-family: 'Arita-buri-SemiBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.hunting_img {
+    width: 70px;
+    margin-top: 30px;
 }
