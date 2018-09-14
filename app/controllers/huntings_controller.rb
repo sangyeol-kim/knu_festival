@@ -1,5 +1,5 @@
 class HuntingsController < ApplicationController
-  before_action :set_hunting, only: [:show, :edit, :update, :destroy]
+  before_action :set_hunting, only: [:show, :edit, :update, :destroy, :edit_conf]
 
   # GET /huntings
   # GET /huntings.json
@@ -20,12 +20,6 @@ class HuntingsController < ApplicationController
   # GET /huntings/1/edit
   def edit
   end
-  
-  def edit_conf
-    if @hunting.pw = pw
-      redirect_to edit_hunting_path(@hunting)
-    end
-  end
 
   # POST /huntings
   # POST /huntings.json
@@ -34,7 +28,7 @@ class HuntingsController < ApplicationController
 
     respond_to do |format|
       if @hunting.save
-        format.html { redirect_to @hunting, notice: 'Hunting was successfully created.' }
+        format.html { redirect_to huntings_path, notice: 'Hunting was successfully created.' }
         format.json { render :show, status: :created, location: @hunting }
       else
         format.html { render :new }
@@ -60,11 +54,11 @@ class HuntingsController < ApplicationController
   # DELETE /huntings/1
   # DELETE /huntings/1.json
   def destroy
-    @hunting.destroy
-    respond_to do |format|
-      format.html { redirect_to huntings_url, notice: 'Hunting was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      @hunting.destroy
+      respond_to do |format|
+        format.html { redirect_to huntings_url, notice: 'Hunting was successfully destroyed.' }
+        format.json { head :no_content }
+      end
   end
 
   private

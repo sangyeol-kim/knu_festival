@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :huntings
   resources :losts
   
-  get '/huntings/edit_conf' => 'huntings#edit_conf'
+  get '/huntings/edit_conf/:id' => 'huntings#edit_conf'
+  get '/huntings/destroy/:id' => 'huntings#destroy'
   
   resources :fleamarkets
   resources :pubs

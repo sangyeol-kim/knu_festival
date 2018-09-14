@@ -15,12 +15,30 @@
  */
  
  @import "bootstrap";
- 
- .image-section img{
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#top-menu > div > a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#top-menu > div > a:hover {
+    color: white;
+}
+
+.image-section img{
     max-width : 100%;
     max-height : 100%;
 }
-
+.menu-list{
+    padding: 0;
+}
 //header text
 
 .nav-link{
@@ -31,6 +49,17 @@
 .navbar-brand{
     margin: auto !important;
 }
+
 .btn-custom{
     width:100%;
+}
+
+body {
+    text-align: center;
+}
+
+.top_menu {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
 }
