@@ -1,12 +1,24 @@
-<div class="container" style="padding-bottom: 1000px;">
+<style>
+  body{
+    background-color: #FFD653 !important;
+}
+
+</style> 
+
+<div class="container">
   <div class="food-title">
     <h2>푸드 트럭</h2>
   </div>
-  <!--<div class="mx-auto">-->
+  <div style="text-align: center;">
     <% @foods.each do |food| %>
+      
       <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
+      <div style="margin-top:5px;">
         <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+        <p class="food-ps"><%= food.ps %></p>
+      </div>
       </button>
+     
       
       <!--이하 보이지 않는 모달-->
       <div class="modal fade" id="food-modal-<%=food.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -29,7 +41,7 @@
         </div>
       </div>
     <% end %>
-  <!--</div>-->
+  </div>
   <br>
   <br/>
   <%# if user_signed_in? %>
