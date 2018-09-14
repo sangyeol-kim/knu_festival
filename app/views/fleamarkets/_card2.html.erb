@@ -1,10 +1,8 @@
-<% @pubs.each do |x| %>
-
 <div class="container">
 	<div class="row">
 	    <div class="col-md-4">
 		<!--Card-->
-            <div class="card">
+            <div class="card" style="margin-bottom: 2%;">
                 <!--Card image-->
                 <img class="img-fluid" src="<%=x.image%>" alt="Card image cap">
             
@@ -14,11 +12,10 @@
                     <h4 class="card-title" style="text-align: center; border-bottom: 1px solid black;"><%= x.title %></h4>
                     <!--Text-->
                     <p class="card-text" style="text-align: center;"><%= x.content %></p>
-                    <button type="button" style="display: table; margin: 0 auto;" class="btn btn-light btn-xs" data-toggle="modal" data-target="#flipFlop">
+                    <button style="display: table; margin: 0 auto;" type="button" class="btn btn-light btn-xs" data-toggle="modal" data-target="#flipFlop">
                         정보 보기
                     </button>
-
-<!-- The modal -->
+            <!-- The modal -->
                 <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -38,10 +35,8 @@
                 </div>
                 </div>
                 </div>
-            </div>
+            </div> 
         <!--/.Card-->
         </div>
 	</div>
 </div>
-
-<% end %>

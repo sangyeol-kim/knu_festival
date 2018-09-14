@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   get '/huntings/edit_conf/:id' => 'huntings#edit_conf'
   get '/huntings/destroy/:id' => 'huntings#destroy'
   
-  resources :fleamarkets
-  resources :pubs
+  resources :fleamarkets do
+    member do
+      get :index2
+      get :index3
+    end
+  end
  
   
   get 'secret/index' => 'secret#index'

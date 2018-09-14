@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pubs</h1>
+<h1>Fleamarkets</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Text</th>
+      <th></th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
-<%= render 'pubs/card', :@pubs => @pubs %>
-
 </table>
+
+  <%= render 'fleamarkets/card2', :@fleamarkets => @fleamarkets %>
 
 <br>
 
 <% if user_signed_in? %>
-<%= link_to 'New Pub', new_pub_path %>
+  <%= link_to 'New Fleamarket', new_fleamarket_path %>
 <% end %>
