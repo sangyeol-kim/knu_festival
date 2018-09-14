@@ -1,15 +1,18 @@
-<%= image_tag "hunting.png" , :class => 'hunting_img' %>
+<div class="top">
+  <%= image_tag "hunting.png" , :class => 'hunting_img' %>
+  
+  <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">만&emsp;&nbsp;남</h1>
 
-<h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">헌&emsp;&nbsp;팅</h1>
-
-<div>
-  <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">운명을 믿으시는 당신, 인연을 만나세요!</p>
-  <p style="font-size: 12px; font-family: 'BMJUA';">*타인에게 불쾌감을 줄 수 있는 게시글은 자제해주시기 바랍니다.*</p>
+  <div>
+    <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">운명을 믿으시는 당신, 인연을 만나세요!</p>
+    <p style="font-size: 12px; font-family: 'BMJUA';">*타인에게 불쾌감을 줄 수 있는 게시글은 자제해주시기 바랍니다.*</p>
+  </div>
+  
+  <div id='btn_new'>
+  <%= link_to '글 작 성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;" %>
+  </div>
 </div>
 
-<div id='btn_new'>
-<%= link_to '글 작 성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;" %>
-</div>
 
 <div id="test"> </div>    <!-- 비동기 글생성 -->
 
