@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.img{
+    display: block;
+    margin-left: 22%;
+    width: 180px;
+    height: 180px;
+ 
+}
 #losttitle{
     font-size: 25px;
     text-align: center !important;
@@ -28,4 +34,31 @@
 .hunting_img {
     width: 70px;
     margin-top: 30px;
+}
+.icon{
+    color: black;
+    text-align: right;
+    margin-right: 10px;
+}
+#font_01{
+    font-size:25px;
+    text-align: left;
+}
+#font_02{
+    font-size:15px;
+    text-align: left;
+}
+#font_03{
+    font-size:8px;
+    text-align: left;
+}
+#btn_new {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'BMJUA';
+}
+#time{
+   font-family: 'Arita-buri-SemiBold';
+   font-size: 10px; 
 }

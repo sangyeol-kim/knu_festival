@@ -1,4 +1,6 @@
-<%= image_tag "https://raw.githubusercontent.com/sangyeol-kim/knu_festival/master/app/assets/images/lost.png" , :class => 'hunting_img' %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<%= image_tag "lost.png" , :class => 'hunting_img' %>
 
 <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">분&emsp;실&emsp;문</h1>
 
@@ -8,24 +10,27 @@
 </div>
 
 <div id='btn_new'>
-<%= link_to '글 작 성', new_lost_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;" %>
+<%= link_to '글 작 성', new_lost_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;"%>
 </div>
 
 <div class="container">
-  <div class="card-columns">
+  <div class="card-deck">
     <% @losts.reverse.each do |lost| %>
-        <div class="card">
-          <div class="card-header" style="font-weight: bold;">
-            <%= lost.title %>
-          </div>
-          <div class="card-body">
-          <h5 class="card-title"><%= lost.content %></h5>
-            <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
-            <td><%= link_to '보기', lost %></td>
-            <td><%= link_to '수정', edit_lost_path(lost) %></td>
-            <td><%= link_to '삭제', lost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </div>
+      <div class="card">
+         <%= image_tag "#{lost.image}" , :class => 'img' %>
+        <div class="card-body">
+          <h5 class="card-title" id="font_01"><%= lost.title %></h5>
+          <p class="card-text" id="font_02"><%= lost.content %></p>
+          <p class="card-text" id="font_03"><small class="text-muted"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></small></p>
+        </div>
+        <div class="icon">
+          <td><%= link_to '', lost, class: "fa fa-search-plus" %></td>
+          <td><%= link_to '', edit_lost_path(lost), class: "fa fa-edit" %></td>
+          <td><%= link_to '', lost, method: :delete, class: "fa fa-trash-o", data: { confirm: '정말삭제하시겠습니까?' } %></td>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+

@@ -32,7 +32,7 @@ class LostsController < ApplicationController
 
     respond_to do |format|
       if @lost.save
-        format.html { redirect_to @lost, notice: 'Lost was successfully created.' }
+        format.html { redirect_to losts_url, notice: 'Lost was successfully created.' }
         format.json { render :show, status: :created, location: @lost }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class LostsController < ApplicationController
   def update
     respond_to do |format|
       if @lost.update(lost_params)
-        format.html { redirect_to @lost, notice: 'Lost was successfully updated.' }
+        format.html { redirect_to losts_url, notice: 'Lost was successfully updated.' }
         format.json { render :show, status: :ok, location: @lost }
       else
         format.html { render :edit }
