@@ -64,3 +64,6 @@ gem 'jquery-rails' #jQuery
 gem 'devise'
 gem 'figaro' #코드보안
 gem 'pusher' #푸셔
+
+# AWS
+gem 'fog', '~> 1.41.0'
