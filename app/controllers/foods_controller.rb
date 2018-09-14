@@ -7,6 +7,14 @@ class FoodsController < ApplicationController
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
   end
+  
+  def index2
+    @foods = Food.all
+  end
+
+  def index3
+    @foods = Food.all
+  end
 
   # GET /foods/1
   # GET /foods/1.json

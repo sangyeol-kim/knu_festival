@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'
   
-  resources :foods
+  resources :foods do
+    collection do
+      get :index2
+      get :index3
+    end
+  end
   resources :huntings
   resources :losts
   
@@ -16,12 +21,12 @@ Rails.application.routes.draw do
   get '/huntings/destroy/:id' => 'huntings#destroy'
   
   resources :fleamarkets do
-    member do
+    collection do
       get :index2
       get :index3
     end
   end
-  
+
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

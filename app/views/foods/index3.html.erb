@@ -1,0 +1,21 @@
+<style>
+  body{
+    background-color: #FFD653 !important;
+}
+
+</style> 
+
+<div class="container">
+
+  <div class="food-title">
+    <h2>푸드 트럭</h2>
+  </div>
+  <div style="text-align: center;">
+  
+    <%= render 'foods/card3', :@foods => @foods %>
+  
+    <%# if user_signed_in? %>
+      <%= link_to 'New Food', new_food_path %>
+    <%# end %>
+  </div>
+</div>
