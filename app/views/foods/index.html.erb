@@ -1,4 +1,11 @@
-<div class="container" style="padding-bottom: 1000px;">
+<style>
+  body{
+    background-color: #FFD653 !important;
+}
+
+</style> 
+
+<div class="container">
   <div class="food-title">
     <h2>푸드 트럭</h2>
   </div>
@@ -6,6 +13,7 @@
     <% @foods.each do |food| %>
       <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
         <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+        <br/><p style="margin-left:38px; font-size: 15px; color:#80808096; font-family: 'YanoljaYacheR'"><%= food.ps %></p>
       </button>
       
       <!--이하 보이지 않는 모달-->
