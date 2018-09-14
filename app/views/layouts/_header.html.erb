@@ -1,20 +1,31 @@
-<header>
-  <nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to image_tag('main_font.png', width: '150'), root_path, class: "navbar-brand" %>
-    <%#= link_to "Festival", root_path, id: "logo", class: "navbar-brand" %>
-    <%#= image_tag "main_font.png", width: '150', class: "navbar-brand" %>
-  </div>
+<div class="container bg-dark">
+  <%= link_to image_tag('main_font.png', width: '150'), root_path, class: "navbar-brand" %>
+</div>
 
-  <div class="container">
-    <%= link_to '플리마켓', fleamarkets_path, class: 'nav-link' %>
-    <%= link_to '주점', pubs_path, class: 'nav-link' %>
-    <%= link_to '분실물', losts_path, class: 'nav-link' %>
-    <%= link_to '헌팅', huntings_path, class: 'nav-link' %>
-    <%= link_to '푸드트럭', foods_path, class: 'nav-link' %>
+<div class="bg-dark" id="top-menu">
+  <div class="container menu-list" style="padding-top: 15px; padding-bottom: 15px;">
+    <%= link_to '플리마켓', fleamarkets_path, style: "color: white" %>
+    <%= link_to '주점', pubs_path, class: "top-menu" %>
+    <%= link_to '분실물', losts_path, class: "top-menu" %>
+    <%= link_to '헌팅', huntings_path, class: "top-menu" %>
+    <%= link_to '푸드트럭', foods_path, class: "top-menu" %>
     <% if user_signed_in? %>
-      <%= link_to '로그아웃', destroy_user_session_path, class: 'nav-link', method: :delete %>
+      <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "top-menu" %>
     <% end %>
   </div>
-  </nav>
-</header> 
+</div>
+
+<script>
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("top-menu");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+      if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+      } else {
+      navbar.classList.remove("sticky");
+      }
+  }
+</script>
