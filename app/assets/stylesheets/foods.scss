@@ -14,17 +14,7 @@
     padding: 6px !important;
     height: 70px !important;
     width: 350px;
-    
-}
-
-.food-icon{
-    width: 20px;
-    height: 13px;
-    display: inline;
-    margin: 5px 10px;
-}
-.btn{
-    max-width:20em;
+      max-width:20em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -33,3 +23,9 @@
   border-radius: 0.8rem !important;
 }
 
+.food-icon{
+    width: 20px;
+    height: 13px;
+    display: inline;
+    margin: 5px 10px;
+}
