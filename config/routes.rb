@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   resources :huntings
   resources :losts
   root 'home#index'
-  
-  # get '/lostnfound', to: 'losts#index'
-  
+
   resources :fleamarkets
   resources :pubs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

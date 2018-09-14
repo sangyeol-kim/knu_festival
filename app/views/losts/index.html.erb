@@ -1,13 +1,13 @@
 <h2>찾아라아아아아아아아>이미지넣기</h2>
 <div class="image-lnf">
-  <%= image_tag "lostnfound_2.png" %>
+  <%= image_tag "lostnfound_1.png" %>
 </div>
 
 <p id="notice"><%= notice %></p>
 
 <br>
 <div class="writing">
-<%= link_to '글 쓰 기', new_lost_path %>
+<%= link_to '분실물 글쓰기', new_lost_path %>
 </div>
 
 <table>
@@ -21,13 +21,14 @@
 
   <tbody>
     <% @losts.each do |lost| %>
-      <tr>
-            <td class="image-section", align: center>
-              <img src="<%= lost.image %>" onerror="this.src='<%= image_tag "lostnfound_bear.png" %>'">
-            </td>
-        <td class="title-index"><%= lost.title %></td>
-        <td><%= link_to '클리이이익', lost %>
-      </tr>
+        <tr class="grid-container">
+              <td class="image-section", align: center>
+                <!--<img src="<!%= lost.image %>" onerror="this.src='<!%= image_tag "lostnfound_bear.png" %>'">-->
+                <img src="<%= lost.image %>">
+              </td>
+          <td class="title-index"><%= lost.title %></td>
+          <td><%= link_to '텍스트로만 링크투', lost %>
+        </tr>
     <% end %>
   </tbody>
 </table>

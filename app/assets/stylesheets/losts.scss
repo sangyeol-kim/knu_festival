@@ -2,21 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container-text {
-margin-top: 60px;
+//table
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }
 
+//
+.writing {
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: gray;
+    opacity: 0.5;
+    text-align: center;
+    text-decoration: underline overline wavy blue;
+
+}
+
+//table-body-grid(list)
+.grid-container {
+  display: grid;
+  grid-template-columns: 280px auto;
+  grid-gap: 10px;
+  background-color: #28528c;
+  padding: 10px;
+}
+.grid-container>tr {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px;
+}
+
+//table-content
 .image-lnf img{
     max-height: 180%;
     max-width: 180%;
 }
 
-.table tr {
-    border-width: 100px;
-}
-
 .title-index {
     font-size: 300%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    margin-left: 50px;
+    color: white;
 }
 
 .title-show {
@@ -32,16 +64,17 @@ margin-top: 60px;
     height: 250px;
     width: 250px;
     margin: 10px;
-    margin-right: 50px;
-    padding: 10%;
+    padding: 3%;
     border-right: 10%;
     border-bottom: 10%;
-    border-top: -10%;
-    border-left: -10%;
 }
 
 //Show
 .image-show img{
     max-height: 80%;
     max-width: 80%;
+}
+
+.container-text {
+    margin-top: 60px;
 }
