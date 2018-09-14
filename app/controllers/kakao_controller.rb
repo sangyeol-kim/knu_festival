@@ -106,7 +106,15 @@ class KakaoController < ApplicationController
               }
             }    
         else
-            Message.create(body: @input)
+            message = Hunting.new
+            message.title = "플친에서 작성 된 글입니다."
+            message.content = @input
+            message.pw = "123456"
+            message.save
+            
+            # Hunting.content = params[@input]
+            # Hunting.save
+            
             @msg = {
                 message: {
                     text: "글이 정상적으로 등록되었습니다."
