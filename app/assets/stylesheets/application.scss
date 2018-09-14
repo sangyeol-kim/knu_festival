@@ -15,10 +15,23 @@
  */
  
  @import "bootstrap";
- 
- .image-section img{
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.top-menu {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+.image-section img{
     max-width : 100%;
     max-height : 100%;
+}
+.menu-list{
+    padding: 0;
 }
 //header text
 
