@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get '/huntings/destroy/:id' => 'huntings#destroy'
   
   resources :fleamarkets
-  resources :pubs
  
   
   get 'secret/index' => 'secret#index'
