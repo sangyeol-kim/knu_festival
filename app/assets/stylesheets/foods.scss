@@ -8,24 +8,30 @@
     margin: 15px auto;
     font-family: 'BMDOHYEON';
 }
+
 .food-item{
     padding: 6px !important;
     height: 70px !important;
+    width: 350px;
+    
 }
 
-.food-icon {
+.food-icon{
     width: 20px;
     height: 13px;
     display: inline;
     margin: 5px 10px;
 }
-.btn {
+.btn{
     max-width:20em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  text-align: left !important;
+  border-radius: 0.8rem !important;
 }
+
 body{
     background-color: #FFD653 !important;
 }

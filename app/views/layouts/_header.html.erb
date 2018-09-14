@@ -1,11 +1,11 @@
 <header>
-  <nav class="navbar navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-dark bg-dark">
   <div class="container">
-    <%= link_to "Festival", root_path, id: "logo", class: "navbar-brand" %>
-    <!--<p style="margin:0 50px"></p>-->
+    <%= link_to image_tag('main_font.png', width: '150'), root_path, class: "navbar-brand" %>
+    <%#= link_to "Festival", root_path, id: "logo", class: "navbar-brand" %>
+    <%#= image_tag "main_font.png", width: '150', class: "navbar-brand" %>
   </div>
-  </nav>
-  <nav class="navbar navbar-dark bg-dark fixed-top">
+
   <div class="container">
     <%= link_to '플리마켓', fleamarkets_path, class: 'nav-link' %>
     <%= link_to '주점', pubs_path, class: 'nav-link' %>
