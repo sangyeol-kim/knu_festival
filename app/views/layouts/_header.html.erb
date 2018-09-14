@@ -1,16 +1,10 @@
-<div class="bg-dark">
-  <%= link_to image_tag('main_font.png', width: '150'), root_path, class: "navbar-brand" %>
+<div class="bg-dark navbar-brand">
+  <%= link_to image_tag('main_font.png', width: '150'), root_path%>
 </div>
 
 <div class="bg-dark" id="top-menu">
-<<<<<<< HEAD
   <div class="container menu-list">
     <%= link_to '플리마켓', fleamarkets_path, class: "top-menu" %>
-=======
-  <div class="container menu-list" style="padding-top: 15px; padding-bottom: 15px; text-align: center;">
-    <%= link_to '플리마켓', fleamarkets_path, style: "color: white" %>
->>>>>>> 2790f1fef426fced24f9ca51be303d8dfdf710e1
-    <%= link_to '주점', pubs_path, class: "top-menu" %>
     <%= link_to '분실물', losts_path, class: "top-menu" %>
     <%= link_to '헌팅', huntings_path, class: "top-menu" %>
     <%= link_to '푸드트럭', foods_path, class: "top-menu" %>
