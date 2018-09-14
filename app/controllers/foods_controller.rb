@@ -26,7 +26,7 @@ class FoodsController < ApplicationController
   # POST /foods.json
   def create
     @food = Food.new(food_params)
-    @food.iconid = (1..3).to_a.sample
+    @food.iconid = (1..5).to_a.sample
     
 
     respond_to do |format|
