@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+<header>
+  <div class="bg-dark navbar-brand">
+    <%= link_to image_tag('main_font.png', width: '150'), root_path%>
+  </div>
+  
+  <div class="bg-dark" id="top-menu">
+    <div class="container menu-list">
+      <%= link_to '플리마켓', fleamarkets_path, class: "top-menu" %>
+      <%= link_to '분실물', losts_path, class: "top-menu" %>
+      <%= link_to '헌팅', huntings_path, class: "top-menu" %>
+      <%= link_to '푸드트럭', foods_path, class: "top-menu" %>
+      <% if user_signed_in? %>
+        <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "top-menu" %>
+      <% end %>
+    </div>
+=======
 <div class="bg-dark navbar-brand">
   <%= link_to image_tag('main_font.png', width: '150'), root_path%>
 </div>
@@ -35,8 +52,9 @@
     <% if user_signed_in? %>
       <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "top-menu" %>
     <% end %>
+>>>>>>> bca73571fff390297a24c738e6a7d836eb6b5a21
   </div>
-</div>
+</header>
 
 <script>
   window.onscroll = function() {myFunction()};
