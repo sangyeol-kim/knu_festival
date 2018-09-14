@@ -17,17 +17,17 @@ class KakaoController < ApplicationController
         
         @input = params[:content]
         
-        if @input == "머동 사이트로 가기"
+        if @input == "머동 사이트로 이동"
             @msg = {
             message: {
-                text: "머동머동",
+                text: "머동제 사이트로 이동",
                 photo: {
                   url: "https://postfiles.pstatic.net/MjAxODA5MTFfMjM3/MDAxNTM2NjYxOTQ4Njc4.q2mz6tNAcSvSfd8mZkG2ze7HfX1qs75lK5BbLFkO0iog.arV7nzgGjBcy75JzDYz0iTKpAuKWotnnZ0qvyzqFwPQg.JPEG.hsj0531/%EB%A8%B8%EB%8F%99.jpg?type=w580",
                   width: 640,
-                  height: 480
+                  height: 800
                 },
                 message_button: {
-                  label: "머동머동으로",
+                  label: "머동 사이트로 이동",
                   url: "https://festival-site-parkgu.c9users.io/"
                 }
               },
@@ -49,8 +49,12 @@ class KakaoController < ApplicationController
         elsif @input == "축제 라인업 보기"
             @msg = {
                 message: {
-                    text: "라인업 보여주기"
-                },
+                text: "축제 라인업",
+                photo: {
+                  url: "https://postfiles.pstatic.net/MjAxODA5MTRfNCAg/MDAxNTM2OTMyNTg1MDMx.knw2A8k6Q2l4ldsb2fmH_rNocV477FBnLiu_i4OcrwEg.GmIf0RGI3QyC4RZiry01xyM6Kv4FW2QqsMwh4pcGS-Yg.PNG.hsj0531/asdf.png?type=w580",
+                  width: 800,
+                  height: 1500
+                }},
                 keyboard: {
                 type: "buttons",
                 buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
@@ -106,7 +110,18 @@ class KakaoController < ApplicationController
               }
             }    
         else
-            Message.create(body: @input)
+            message_pusher = Message.new
+            message_pusher.body = @input
+            message_pusher.save
+            
+            message = Hunting.new
+            message.title = "플친에서 작성 된 글입니다."
+            message.content = @input
+            message.save
+            
+            # Hunting.content = params[@input]
+            # Hunting.save
+            
             @msg = {
                 message: {
                     text: "글이 정상적으로 등록되었습니다."
