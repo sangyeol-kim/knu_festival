@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
 
   root 'home#index'
   
@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   get '/huntings/edit_conf/:id' => 'huntings#edit_conf'
   get '/huntings/destroy/:id' => 'huntings#destroy'
   
-  resources :fleamarkets
- 
+  resources :fleamarkets do
+    member do
+      get :index2
+      get :index3
+    end
+  end
   
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -11,6 +11,8 @@
 
 
 // 라인 업 폰트
+
+// 라인 업 폰트
 .line_up{
     font-family: 'TmonMonsori';
     font-size: 25px;
@@ -107,6 +109,88 @@
 .scedule-03{
     background: #28a745;
     min-height: 700px;
+    text-align: center;
+}
+
+.txt{
+    color: white;
+    font-family: 'Swagger';
+    font-size: 50px;
+}
+
+.sche-area{
+    border: 4px white solid;
+    height: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'TmonMonsori';
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #d3d62970;
+    margin-bottom: 0px;
+    
+    text-align: center;
+    
+}
+
+// 라인 업 div
+.line_up_div{
+    margin-bottom: 600px;
+    display: block;
+}
+
+
+.knu-img{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.logo_section{
+    text-align: center;
+    background: rgb(23, 170, 250);
+    height: 100vh;
+}
+.mamamu-jpg{
+    
+}
+
+
+// 축제 일정
+
+
+
+// 강원대학교 대동제
+.logo-font{
+    color: white;
+     font-family: 'HangeulNuri-Bold';
+    font-style: italic;
+    font-weight: bold;
+    
+    font-size: 40px;
+    
+}
+
+#font-top{
+    margin-top: 50px;
+}
+
+.schedule-01{
+    background: #ff7146;
+    min-height: 500px;
+    text-align: center;
+}
+
+.schedule-02{
+    background: #468cff;
+    min-height: 500px;
+    text-align: center;
+}
+
+.scedule-03{
+    background: #28a745;
+    min-height: 500px;
     text-align: center;
 }
 
