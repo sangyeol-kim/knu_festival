@@ -33,8 +33,8 @@ Rails.application.routes.draw do
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post '/comments' => 'comments#create'
+  post 'comments' => 'comments#create'
   
-  delete '/comments/:id' => 'comments#destroy'
+  delete 'comments/:id' => 'comments#destroy'
 
 end
