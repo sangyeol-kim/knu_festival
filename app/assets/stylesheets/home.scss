@@ -15,7 +15,7 @@
     font-family: 'TmonMonsori';
     font-size: 25px;
     font-weight: bold;
-    background-color: #d3d62970;
+    background-color: white;
     margin-bottom: 0px;
     
     text-align: center;
@@ -40,6 +40,8 @@
     text-align: center;
     background: #d0e7ff;
     height: 100vh;
+    
+    z-index: -2;
 }
 .lineup-img{
      width: 80%;
@@ -85,7 +87,7 @@
 
 .schedule-01{
     background: #ff7146;
-    min-height: 700px;
+    min-height: 500px;
     text-align: center;
     
     top: 30px;
@@ -97,7 +99,7 @@
 
 .schedule-02{
     background: #468cff;
-    min-height: 700px;
+    min-height: 500px;
     text-align: center;
     
     z-index: -2;
@@ -106,7 +108,7 @@
 
 .scedule-03{
     background: #28a745;
-    min-height: 700px;
+    min-height: 500px;
     text-align: center;
 }
 
@@ -121,4 +123,38 @@
     height: 80%;
     margin-left: 20px;
     margin-right: 20px;
+    color: white;
+    min-height: 400px;
+    vertical-align: middle;
+}
+
+
+// 지도부분 
+
+.map-section{
+    background: white;
+}
+.map-knu{
+    display: contain;
+    width: 100%;
+}
+
+// 구름 구름
+.clouds-img{
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    height: 667px;
+    
+    // z-index: -1;
+}
+
+// 지도
+
+.map-txt{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    background: gray;
+    font-family: 'HangeulNuri-Bold';
 }
