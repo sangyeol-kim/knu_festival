@@ -66,6 +66,4 @@ gem 'figaro' #코드보안
 gem 'pusher' #푸셔
 
 # AWS
-#gem 'fog', '~> 1.41.0'
-
-#gem 'mini_racer', platforms: :ruby
+gem 'fog', '~> 1.41.0'
