@@ -14,7 +14,7 @@
   
 
 <% @foods.each do |x| %>
-  <% if x.to_i.number == '1' %>
+  <% if x.number == '1' %>
     <%= render 'foods/card', :x => x %>
   <% end %>
 <% end %>
