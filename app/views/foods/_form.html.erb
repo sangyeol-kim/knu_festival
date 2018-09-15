@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+  
+    <div class="field">
+      <%= form.label :number %>
+      <%= form.text_field :number, id: :food_number %>
+    </div>
 
   <div class="field">
     <%= form.label :title %>
@@ -19,11 +24,6 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :food_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ps %>
-    <%= form.text_field :ps, id: :food_ps %>
   </div>
 
   <div class="actions">

@@ -7,6 +7,14 @@ class FoodsController < ApplicationController
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
   end
+  
+  def index2
+    @foods = Food.all
+  end
+
+  def index3
+    @foods = Food.all
+  end
 
   # GET /foods/1
   # GET /foods/1.json
@@ -72,6 +80,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:title, :content, :image, :iconid, :ps)
+      params.require(:food).permit(:title, :content, :image, :iconid, :number)
     end
 end

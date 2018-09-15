@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180913160311) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "lost_id"
+    t.string "lost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lost_id"], name: "index_comments_on_lost_id"

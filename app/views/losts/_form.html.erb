@@ -11,21 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field title-section">
-    <p>제목</p>
-    <%= form.text_field :title , style: "width: 100%" %>
+   <div class="form-group" style="margin-top: 10px">
+    <div id="title">
+    <%= form.text_field :title, id: :hunting_title, class:"form-control", placeholder:"제목을입력하세요." %>
+    </div>
   </div>
 
-  <div class="field content-section">
-    <p>내용</p>
-    <%= form.text_area :content, id: :lost_content , style: "width: 100%" %>
+  <div class="field" >
+    <div id="content">
+    <%= form.text_area :content, id: :hunting_content, class:"form-control", placeholder:"내용을입력하세요." %>
+    </div>
   </div>
-
+  
   <div class="field">
     <%= form.file_field :image %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <div style="text-align: right; margin-top: 10px;">
+    <%= form.submit "작성", class:"btn btn-secondary", style:"margin-right: 15px;"%>
+    </div>
   </div>
 <% end %>

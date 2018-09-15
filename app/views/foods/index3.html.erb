@@ -12,13 +12,11 @@
   </div>
   <div style="text-align: center;">
   
-
 <% @foods.each do |x| %>
-  <% if x.number == '1' %>
+  <% if x.number == '3' %>
     <%= render 'foods/card', :x => x %>
   <% end %>
-<% end %>
-  
+<% end %>  
     <%# if user_signed_in? %>
       <%= link_to 'New Food', new_food_path %>
     <%# end %>
