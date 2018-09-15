@@ -1,11 +1,3 @@
-<!--푸드트럭(함인섭) 인덱스-->
-<style>
-  body{
-    background-color: #FFD653 !important;
-}
-
-</style> 
-
 <div class="top">
   <%= image_tag "https://raw.githubusercontent.com/sangyeol-kim/knu_festival/35b988406543936177a1b3bdc898a187f1e15b03/app/assets/images/fleamarket_logo.png?token=AkDMWJQGm-yijSlIsnt2ywguSkTHNBkEks5bplUnwA%3D%3D" , :class => 'fleamarket_logo_img' %>
 
@@ -17,15 +9,19 @@
 </div>
 </div>
 
+<div class="container">
 
-  
-<% @foods.each do |x| %>
-  <% if x.number == '2' %>
-    <%= render 'foods/card', :x => x %>
-  <% end %>
-<% end %>  
-    <%# if user_signed_in? %>
+  <div class="food-title">
+    <h2>푸드 트럭</h2>
+  </div>
+  <div style="text-align: center;">
+    <% @foods.each do |x| %>
+      <% if x.number == '2' %>
+        <%= render 'foods/card', :x => x %>
+      <% end %>
+    <% end %>  
+    <% if user_signed_in? %>
       <%= link_to 'New Food', new_food_path %>
-    <%# end %>
+    <% end %>
   </div>
 </div>

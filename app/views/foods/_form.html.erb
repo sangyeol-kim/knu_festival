@@ -25,6 +25,15 @@
     <%= form.label :content %>
     <%= form.text_area :content, id: :food_content %>
   </div>
+  
+  <div class="field">
+    <%= form.label :modal %>
+    <%= form.text_field :modal, id: :food_modal %>
+  </div>
+  
+  <div class='field'>
+    <%= form.file_field :image %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
