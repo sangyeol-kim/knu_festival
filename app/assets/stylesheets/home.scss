@@ -97,7 +97,8 @@
     min-height: 700px;
     
     z-index: -3;
-
+    
+    padding-top: 15%;
 }
 
 .schedule-02{
@@ -112,7 +113,7 @@
     top: 0px;
     min-height: 700px;
     
-    
+    padding-top: 15%;
 }
 
 .scedule-03{
@@ -125,6 +126,8 @@
     position: sticky;
     z-index: -1;
     min-height: 700px;
+    
+    padding-top: 15%;
 }
 
 .txt{
@@ -133,14 +136,37 @@
     font-size: 50px;
 }
 
-.sche-area{
+.schedule-border{
     border: 4px white solid;
     height: 80%;
     margin-left: 20px;
     margin-right: 20px;
+    
+    
     color: white;
     min-height: 400px;
     vertical-align: middle;
+    
+    font-family: 'HangeulNuri-Bold';
+    font-size: 30px;
+    padding-top: 20%;
+}
+
+// DAY 03에 항목이 4개여서 폐막식이 잘 안보임
+.schedule-border-03{
+    border: 4px white solid;
+    height: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    
+    color: white;
+    min-height: 400px;
+    vertical-align: middle;
+    
+    font-family: 'HangeulNuri-Bold';
+    font-size: 30px;
+    padding-top: 10%;
 }
 
 
@@ -154,22 +180,20 @@
     width: 100%;
 }
 
-// 구름 구름
-.clouds-img{
-    position: absolute;
-    top: 60px;
-    left: 0px;
-    height: 667px;
-    
-    // z-index: -1;
-}
-
-// 지도
-
 .map-txt{
     text-align: center;
     font-size: 25px;
     color: white;
     background: gray;
     font-family: 'HangeulNuri-Bold';
+}
+
+// 로고 위에 떠 있는 구름
+.clouds-img{
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    height: 667px;
+    
+    // z-index: -1;
 }
