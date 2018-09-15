@@ -44,7 +44,7 @@ class FleamarketsController < ApplicationController
             format.html { redirect_to index2_fleamarkets_path, notice: 'Fleamarket was successfully created.' }
             format.json { render :show, status: :created, location: @fleamarket }
 
-          else @fleamarket.number == '3'
+          else
             format.html { redirect_to index3_fleamarkets_path, notice: 'Fleamarket was successfully created.' }
             format.json { render :show, status: :created, location: @fleamarket }
           end
