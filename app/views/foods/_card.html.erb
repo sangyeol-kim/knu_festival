@@ -1,9 +1,14 @@
+<div style="margin-left: 22px">
 <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=x.id %>">
-<div style="margin-top:5px;">
-  <%= image_tag "ttruck0#{x.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
+
+  <!--카드 이미지 업로드 만들면 여기로 이미지가 들어옴 모달을 따로 만들어야함-->
+  <img class="img-fluid" src="<%=x.image%>">
+  <div style="margin-top: 8px; margin-left: 125px; text-align: left; font-size: 25px; font-family: 'BMJUA';">
+  <%= x.title %>
   <p class="food-ps"><%= x.ps %></p>
-</div>
+  </div>
 </button>
+</div>
 
 
 <!--이하 보이지 않는 모달-->
