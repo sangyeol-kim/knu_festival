@@ -1,36 +1,66 @@
-<p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">제목</p>
-<div>
-<p style="font-family: 'BMJUA'"><%= @lost.title %></p>
-</div>
-
-<p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">내용</p>
-<div>
-<div>
-<p style="font-family: 'BMJUA'"><%= @lost.content%></p>
-</div>
-<% if @lost.image.present? %>
-  <div class="image-section"><img src="<%= @lost.image %>"></div>
-<% else %>
-  <div class="image-section"><%= image_tag "no_image.png" , :class => 'img' %></div>
-<% end %>
-
-<div style="text-align: right; margin-top: 10px;">
-<%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
+<div class="top">
+  <p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">제목</p>
+  <div>
+  <p style="font-family: 'BMJUA'"><%= @lost.title %></p>
+  </div>
+  
+  <p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">내용</p>
+  <div>
+  <div>
+  <p style="font-family: 'BMJUA'"><%= @lost.content%></p>
+  </div>
+  <% if @lost.image.present? %>
+    <div class="image-section"><img src="<%= @lost.image %>"></div>
+  <% else %>
+    <div class="image-section"><%= image_tag "no_image.png" , :class => 'img' %></div>
+  <% end %>
+  
+  <div style="text-align: right; margin-top: 10px;">
+  <%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
+  </div>
 </div>
 <hr />
-
-
+<!--댓글-->
 <form action='/comments' method='POST'>
-  
   <input type='hidden' name='authenticity_token' value=<%= @token %></input>
   <input type='hidden' name='lost_id' value=<%= @lost.id %>></input>
-  <strong>Comment:</strong>
-  <input type='text', name='input_content'></input>
-  <input type='submit'></input>
+
+<div class="row bootstrap snippets">
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Comment
+                </div>
+                <div class="panel-body">
+                    <textarea type='text', name='input_content' class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                    <br>
+                    <div class="button">
+                    <button type='submit' class="btn btn-secondary" style="margin-right: 15px;">Post</button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--comment list-->
+                    <hr>
+                    <div class="container">
+                      <div class="card-columns">
+                        <% @lost.comments.each do |comment| %>
+                            <div class="card">
+                              <div class="card-header" style="font-weight: bold;">
+                                 <%= comment.content %>
+                                 <%= link_to '삭제', "/comments/#{comment.id}", :method => 'delete' %>
+                              <td><%#= link_to '', comment, "comment/#{:id}", method: :delete, class: "fa fa-trash-o", data: { confirm: '정말삭제하시겠습니까?' } %></td>
+
+                              </div>
+                                <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= comment.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 </form>
 
-<% @lost.comments.each do |comment| %>
-    <p>
-      <%= comment.content %> | x
-    </p>
-<% end %>

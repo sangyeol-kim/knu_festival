@@ -1,28 +1,24 @@
-<button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=x.id %>">
+<button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal">
 <div style="margin-top:5px;">
   <%= image_tag "ttruck0#{x.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
   <p class="food-ps"><%= x.ps %></p>
 </div>
 </button>
 
-
-<!--이하 보이지 않는 모달-->
-<div class="modal fade" id="food-modal-<%=x.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"><%= x.title %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= x.content %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+<!-- The modal -->
+<!-- The modal -->
+  <div class="modal fade" id="food-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  <div class="modal-content">
+  <div class="modal-header">
+      <h4 class="text-center" id="modalLabel"><%=x.title%></h4>
   </div>
-</div>
+  <div class="modal-body">
+    <%= x.modal %>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" style="display: table; margin: 0 auto;" data-dismiss="modal">Close</button>
+  </div>
+  </div>
+  </div>
+  </div>
