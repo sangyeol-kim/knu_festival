@@ -1,7 +1,9 @@
 // Place all the styles related to the foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'YanoljaYacheR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YanoljaYacheR.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 .food-title{
     text-align: center;
@@ -13,25 +15,21 @@
     padding: 6px !important;
     height: 70px !important;
     width: 350px;
-    
 }
 
-.food-icon{
-    width: 20px;
-    height: 13px;
-    display: inline;
-    margin: 0 10px;
-}
 .btn{
     max-width:20em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  text-align: left !important;
   border-radius: 0.8rem !important;
 }
 
-body{
-    background-color: #FFD653 !important;
+.food-icon{
+    width: 20px;
+    height: 13px;
+    display: inline;
+    margin: 15px 10px;
+    float: left;
 }

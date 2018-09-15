@@ -15,6 +15,11 @@
  */
  
  @import "bootstrap";
+@font-face { font-family: 'Godo'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff'); } @font-face { font-family: 'Godo'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff'); } .godo * { font-family: 'Godo', sans-serif; }
+
+header{
+    z-index: 3;
+}
 
 .sticky{
   position: fixed;
@@ -23,7 +28,7 @@
 }
 
 #top-menu > div > a {
-    margin-left: 10px;
+    margin: 0 5px;
     color: white;
     text-decoration: none;
 }
@@ -31,14 +36,19 @@
 #top-menu > div > a:hover {
     color: white;
 }
-
+.top-menu{
+    font-family:'Godo';
+}
 .image-section img{
     max-width : 100%;
     max-height : 100%;
 }
 .menu-list{
-    padding: 0;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    text-align: center;
 }
+
 //header text
 
 .nav-link{
@@ -48,6 +58,8 @@
 }
 .navbar-brand{
     margin: auto !important;
+    text-align: center !important; 
+    width: 100%;
 }
 
 .btn-custom{
@@ -55,7 +67,7 @@
 }
 
 
-.top_menu {
+.top-menu {
     margin-left: 10px;
     color: white;
     text-decoration: none;

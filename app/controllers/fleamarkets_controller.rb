@@ -6,6 +6,14 @@ class FleamarketsController < ApplicationController
   def index
     @fleamarkets = Fleamarket.all
   end
+  
+  def index2
+    @fleamarkets = Fleamarket.all
+  end
+  
+  def index3
+    @fleamarkets = Fleamarket.all
+  end
 
   # GET /fleamarkets/1
   # GET /fleamarkets/1.json
@@ -69,6 +77,6 @@ class FleamarketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fleamarket_params
-      params.require(:fleamarket).permit(:title, :content, :image, :modal)
+      params.require(:fleamarket).permit(:title, :content, :image, :modal, :number)
     end
 end

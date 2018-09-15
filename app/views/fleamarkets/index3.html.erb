@@ -13,13 +13,11 @@
   </thead>
 </table>
 
-
 <% @fleamarkets.each do |x| %>
-  <% if x.number == '1' %>
+  <% if x.number == '3' %>
     <%= render 'fleamarkets/card', :x => x %>
   <% end %>
 <% end %>
-
 <br>
 
 <% if user_signed_in? %>

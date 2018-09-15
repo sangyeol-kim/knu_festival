@@ -5,6 +5,7 @@ class CreateFleamarkets < ActiveRecord::Migration[5.1]
       t.text :content
       t.text :modal
       t.string :image
+      t.string :number
 
       t.timestamps
     end

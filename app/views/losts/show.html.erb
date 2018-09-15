@@ -1,25 +1,24 @@
-<p id="notice"><%= notice %></p>
+<p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">제목</p>
+<div>
+<p style="font-family: 'BMJUA'"><%= @lost.title %></p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @lost.title %>
-</p>
+<p style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px">내용</p>
+<div>
+<div>
+<p style="font-family: 'BMJUA'"><%= @lost.content%></p>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @lost.content %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <div class="image-section"><img src="<%= @lost.image %>"></div>
-</p>
+<div class="image-section"><img src="<%= @lost.image %>"></div>
 
 
 
-<%= link_to 'Edit', edit_lost_path(@lost) %> |
-<%= link_to 'Back', losts_path %>
+<div style="text-align: right; margin-top: 10px;">
+<%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
+</div>
 <hr />
+
+
 <form action='/comments' method='POST'>
   
   <input type='hidden' name='authenticity_token' value=<%= @token %></input>
