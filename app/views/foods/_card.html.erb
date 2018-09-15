@@ -1,24 +1,28 @@
+<!--플리마켓 모달카드 변경함 현석이형꺼에서 수정해서 완성-->
+<div style="margin-left: 22px">
 <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal">
-<div style="margin-top:5px;">
-  <%= image_tag "ttruck0#{x.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
-  <p class="food-ps"><%= x.ps %></p>
-</div>
-</button>
 
+  <!--카드 이미지 업로드 만들면 여기로 이미지가 들어옴 모달을 따로 만들어야함-->
+  <img class="img-fluid" src="<%=x.image%>">
+  <div style="margin-top: 8px; margin-left: 125px; text-align: left; font-size: 25px; font-family: 'BMJUA';">
+  <%= x.title %>
+  </div>
+</button>
+</div>
 <!-- The modal -->
-<!-- The modal -->
-  <div class="modal fade" id="food-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="food-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-  <div class="modal-content">
-  <div class="modal-header">
-      <h4 class="text-center" id="modalLabel"><%=x.title%></h4>
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title" id="modalLabel" style="margin-left: 45%"><%= x.title %></h4>
+      </div>
+      <div class="modal-body" style="display: table; margin: 0 auto;">
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" style="display: table; margin: 0 auto;" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
-  <div class="modal-body">
-    <%= x.modal %>
-  </div>
-  <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="display: table; margin: 0 auto;" data-dismiss="modal">Close</button>
-  </div>
-  </div>
-  </div>
-  </div>
+</div>
+
+<!--/.Card-->
