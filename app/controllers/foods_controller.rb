@@ -39,8 +39,16 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
-        format.json { render :show, status: :created, location: @food }
+        if @food.number == '1'
+          format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        elsif @food.number == '2'
+          format.html { redirect_to index2_foods_path, notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        else
+          format.html { redirect_to index3_foods_path, notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        end
       else
         format.html { render :new }
         format.json { render json: @food.errors, status: :unprocessable_entity }
