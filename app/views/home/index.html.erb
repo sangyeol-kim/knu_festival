@@ -55,13 +55,22 @@
         <p>폐막식</p>
     </div>
   </div>
+  
 <div class="map">
   <div class="map-txt">지도</div>
-  
   <div class="map-section">
-      <%= image_tag "KNU_map03.png" , class: "map-knu" %>
-  </div>
+    <%= image_tag "KNU_map03.png" , usemap: "#map1", class: "map-knu" %>
+      <map name="map1"> 
+        <area shape="rect" coords="21,647,173,822" href="<%= foods_path %>" title="60주년 주점">
+        <area shape="rect" coords="388,845,471,923" href="<%= index2_foods_path %>" title="함인섭 푸드트럭">
+        <area shape="rect" coords="275,936,389,1034" href="<%= index2_foods_path %>" title="함인섭 푸드트럭">
+        <area shape="rect" coords="528,19,662,142" href="<%= index2_fleamarkets_path %>" title="미래광장 플리마켓">
+        <area shape="rect" coords="361,1040,484,1152" href="<%= fleamarkets_path %>" title="함인섭 플리마켓">
+        <area shape="rect" coords="1206,694,1331,802" href="<%= index3_fleamarkets_path %>" title="동문 플리마켓">
+      </map>
+    </div>
 </div>
+
 
 
 <!--푸터-->
