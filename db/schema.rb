@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20180913160311) do
     t.integer "iconid"
     t.string "number"
     t.string "ps"
-    t.text "modal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
