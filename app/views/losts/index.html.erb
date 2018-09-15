@@ -20,6 +20,8 @@
         <div class="card">
           <% if lost.image.present? %>
             <%= image_tag "#{lost.image}" , :class => 'img' %>
+          <% else %>
+            <%= image_tag "no_image.png" , :class => 'img' %>
           <% end %>
           <div class="card-body">
             <h5 class="card-title" id="font_01"><%= lost.title %></h5>

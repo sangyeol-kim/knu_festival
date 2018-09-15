@@ -10,6 +10,8 @@
 </div>
 <% if @lost.image.present? %>
   <div class="image-section"><img src="<%= @lost.image %>"></div>
+<% else %>
+  <div class="image-section"><%= image_tag "no_image.png" , :class => 'img' %></div>
 <% end %>
 
 <div style="text-align: right; margin-top: 10px;">
