@@ -1,3 +1,4 @@
+<div class="top">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <%= image_tag "lost.png" , :class => 'hunting_img' %>
@@ -8,14 +9,15 @@
   <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">물건을 잃어버리셨나요? <br> 분실물 게시판을 이용하세요!</p>
   <p style="font-size: 12px; font-family: 'BMJUA';">*타인에게 불쾌감을 줄 수 있는 게시글은 자제해주시기 바랍니다.*</p>
 </div>
+</div>
 
 <div id='btn_new'>
 <%= link_to '글 작 성', new_lost_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;"%>
 </div>
 
 <div class="container">
-  <div class="card_columns">
-    <div class="card-deck">
+  <div class="row">
+    <div class="col-md-4">
       <% @losts.reverse.each do |lost| %>
         <div class="card">
           <% if lost.image.present? %>
@@ -24,8 +26,8 @@
             <%= image_tag "no_image.png" , :class => 'img' %>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title" id="font_01"><%= lost.title %></h5>
-            <p class="card-text" id="font_02"><%= lost.content %></p>
+            <h5 class="card-title" style="text-align: left; border-bottom: 3px solid black;" id="font_01"><%= lost.title %></h5>
+            <p class="card-text" style="text-align: left;" id="font_02"><%= lost.content %></p>
             <p class="card-text" id="font_03"><small class="text-muted"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></small></p>
             <p class="card-text" id="font_02">댓글 수: <%= lost.comments.count %> </p>
           </div>
@@ -39,5 +41,4 @@
     </div>
   </div>
 </div>
-
 

@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap";
+
+.top {
+  text-align: center;
+}
+
 .img{
     display: block;
     margin-left: 22%;
@@ -61,4 +67,28 @@
 #time{
    font-family: 'Arita-buri-SemiBold';
    font-size: 10px; 
+}
+
+// 댓글
+
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button{
+    text-align: right;
+}
+.panel-heading{
+    text-align: left;
+    font-size: 20px;
+    font-family: 'BMDOHYEON';
+    margin-bottom: 8px;
+    margin-left: 10px;
 }
