@@ -22,11 +22,5 @@
 
 .byebug_history
 
-#figaro ignore
-/config/application.yml
-
 /Gemfile.lock
 /Gemfile
-
-# Ignore application configuration
-/config/application.yml
