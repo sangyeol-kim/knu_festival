@@ -8,10 +8,9 @@
 <div>
 <p style="font-family: 'BMJUA'"><%= @lost.content%></p>
 </div>
-
-<div class="image-section"><img src="<%= @lost.image %>"></div>
-
-
+<% if @lost.image.present? %>
+  <div class="image-section"><img src="<%= @lost.image %>"></div>
+<% end %>
 
 <div style="text-align: right; margin-top: 10px;">
 <%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
