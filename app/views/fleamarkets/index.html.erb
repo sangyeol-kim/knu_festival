@@ -9,14 +9,12 @@
 </div>
 </div>
 
-<% @fleamarkets.each do |x| %>
-  <% if x.number == '1' %>
-    <%= render 'fleamarkets/card', :x => x %>
+  <% @fleamarkets.each do |x| %>
+    <% if x.number == '1' %>
+      <%= render 'fleamarkets/card', :x => x %>
+    <% end %>
   <% end %>
-<% end %>
-
 <br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Fleamarket', new_fleamarket_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Fleamarket', new_fleamarket_path %>
+  <% end %>
