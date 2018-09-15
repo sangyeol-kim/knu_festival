@@ -21,7 +21,7 @@
     background-color: white;
     margin-bottom: 0px;
     position: sticky;
-    top: 0;
+    top: 101;
     
     text-align: center;
     
@@ -94,7 +94,7 @@
     background: #ff7146;
     min-height: 500px;
     text-align: center;
-    top: 0px;
+    top: 101px;
     width: 100%;
     position: sticky;
     min-height: 700px;
@@ -113,7 +113,7 @@
     position: sticky;
     
     z-index: -2;
-    top: 0px;
+    top: 101px;
     min-height: 700px;
     
     padding-top: 15%;
@@ -124,7 +124,7 @@
     min-height: 500px;
     text-align: center;
     
-    top: 0px;
+    top: 101px;
     width: 100%;
     position: sticky;
     z-index: -1;
@@ -176,7 +176,7 @@
 // 지도부분 
 .map{
     position: sticky;
-    top: 0;
+    top: 101;
     min-height: 700px;
     background: white;
 }
