@@ -91,20 +91,27 @@
     background: #ff7146;
     min-height: 500px;
     text-align: center;
-    
-    top: 30px;
-    display: block;
+    top: 0px;
     width: 100%;
+    position: sticky;
+    min-height: 700px;
     
     z-index: -3;
+
 }
 
 .schedule-02{
     background: #468cff;
     min-height: 500px;
     text-align: center;
+    width: 100%;
+    
+    position: sticky;
     
     z-index: -2;
+    top: 0px;
+    min-height: 700px;
+    
     
 }
 
@@ -112,6 +119,12 @@
     background: #28a745;
     min-height: 500px;
     text-align: center;
+    
+    top: 0px;
+    width: 100%;
+    position: sticky;
+    z-index: -1;
+    min-height: 700px;
 }
 
 .txt{

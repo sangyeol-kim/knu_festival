@@ -30,14 +30,6 @@
           <%= link_to '함인섭광장', index2_foods_path, :class => "dropdown-item" %>
           <%= link_to '미래광장', index3_foods_path, :class => "dropdown-item" %>
       </li>
-    </ul>
-    <%= link_to '플리마켓', fleamarkets_path, style: "color: white" %>
-    <%= link_to '분실물', losts_path, class: "top-menu" %>
-    <%= link_to '헌팅', huntings_path, class: "top-menu" %>
-    <%= link_to '푸드트럭', foods_path, class: "top-menu" %>
-    <% if user_signed_in? %>
-      <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "top-menu" %>
-    <% end %>
   </div>
 </div>
 
