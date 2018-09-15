@@ -1,24 +1,14 @@
-<style>
-  body{
-    background-color: #FFD653 !important;
-}
-
-</style> 
-
 <div class="container">
 
   <div class="food-title">
     <h2>푸드 트럭</h2>
   </div>
   <div style="text-align: center;">
-  
-
-<% @foods.each do |x| %>
-  <% if x.number == '1' %>
-    <%= render 'foods/card', :x => x %>
-  <% end %>
-<% end %>
-  
+    <% @foods.each do |x| %>
+      <% if x.number == '1' %>
+        <%= render 'foods/card', :x => x %>
+      <% end %>
+    <% end %>
     <% if user_signed_in? %>
       <%= link_to 'New Food', new_food_path %>
     <% end %>
