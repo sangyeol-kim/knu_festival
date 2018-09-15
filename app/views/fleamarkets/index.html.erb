@@ -1,27 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="top">
+  <%= image_tag "fleamarket_logo.png" , :class => 'hunting_img' %>
+  
+  <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">함인섭마켓</h1>
 
-<h1>Fleamarkets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-</table>
-
-
-<% @fleamarkets.each do |x| %>
-  <% if x.number == '1' %>
-    <%= render 'fleamarkets/card', :x => x %>
+  <div>
+    <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">운명을 믿는 당신, 인연을 만나세요!</p>
+    <p style="font-size: 12px; font-family: 'BMJUA';">*타인에게 불쾌감을 줄 수 있는 게시글은 자제해주시기 바랍니다.*</p>
+  </div>
+</div>
+  
+  <% @fleamarkets.each do |x| %>
+    <% if x.number == '1' %>
+      <%= render 'fleamarkets/card', :x => x %>
+    <% end %>
   <% end %>
-<% end %>
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Fleamarket', new_fleamarket_path %>
-<% end %>
+  
+  <br>
+  
+  <% if user_signed_in? %>
+    <%= link_to 'New Fleamarket', new_fleamarket_path %>
+  <% end %>
