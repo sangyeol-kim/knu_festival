@@ -18,7 +18,11 @@
     <div class="card-deck">
       <% @losts.reverse.each do |lost| %>
         <div class="card">
-           <%= image_tag "#{lost.image}" , :class => 'img' %>
+          <% if lost.image.present? %>
+            <%= image_tag "#{lost.image}" , :class => 'img' %>
+          <% else %>
+            <%= image_tag "no_image.png" , :class => 'img' %>
+          <% end %>
           <div class="card-body">
             <h5 class="card-title" id="font_01"><%= lost.title %></h5>
             <p class="card-text" id="font_02"><%= lost.content %></p>
