@@ -6,14 +6,23 @@ class FoodsController < ApplicationController
   def index
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
+    
+
   end
   
   def index2
     @foods = Food.all
+
   end
 
   def index3
     @foods = Food.all
+  end
+  
+  def index4
+    @foods = Food.all
+    $iconlist4 = (1..20).to_a.reverse
+
   end
 
   # GET /foods/1
@@ -32,17 +41,28 @@ class FoodsController < ApplicationController
 
   # POST /foods
   # POST /foods.json
+  $iconlist1 = (1..20).to_a.reverse
+  $iconlist2 = (1..20).to_a.reverse
+  $iconlist3 = (1..20).to_a.reverse
+
   def create
     @food = Food.new(food_params)
-    @food.iconid = (1..5).to_a.sample
-    
+    if @food.number == 1
+      @food.iconid = $iconlist1.pop
+    elsif @food.number == 2
+      @food.iconid = $iconlist2.pop
+    elsif @food.number == 3
+      @food.iconid = $iconlist3.pop
+    end
+    @food.randicon = (1..5).to_a.sample
+
 
     respond_to do |format|
       if @food.save
-        if @food.number == '1'
+        if @food.number == 1
           format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
           format.json { render :show, status: :created, location: @food }
-        elsif @food.number == '2'
+        elsif @food.number == 2
           format.html { redirect_to index2_foods_path, notice: 'Food was successfully created.' }
           format.json { render :show, status: :created, location: @food }
         else
@@ -88,6 +108,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:title, :content, :image, :iconid, :number, :modal)
+      params.require(:food).permit(:title, :menu, :image, :number, :ps, :iconid)
     end
 end

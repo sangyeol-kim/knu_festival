@@ -1,29 +1,37 @@
-<!--플리마켓 모달카드 변경함 현석이형꺼에서 수정해서 완성-->
 <div>
-<button type="button" class="btn btn-warning food-item " data-toggle="modal" data-target="#food-modal" style="width: 100%; margin-bottom: 7px">
-
-  <!--카드 이미지 업로드 만들면 여기로 이미지가 들어옴 모달을 따로 만들어야함-->
-  <img class="img-fluid" src="<%=x.image%>" style="width: 50px">
-  <div style="margin-top: 5px; font-size: 15px; font-family: 'BMJUA'; text-align: center;">
-    <%= x.title %>
-  </div>
-</button>
-</div>
-<!-- The modal -->
-<div class="modal fade" id="food-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4 class="modal-title" id="modalLabel" style="margin-left: 45%"><%= x.title %></h4>
-      </div>
-      <div class="modal-body" style="display: table; margin: 0 auto;">
-        <%= x.modal %>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" style="display: table; margin: 0 auto;" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
+    <div style="margin-top:8px;">
+      <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <p class="food-ps">  <%= food.ps %></p>
+    </div>
+  </button>
+ 
+    
+    <!--이하 보이지 않는 모달-->
+  <div class="modal fade" id="food-modal-<%=food.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <%= image_tag "ttruck0#{food.randicon}.png", class:"food-icon"%><h5 class="modal-title" id="exampleModalCenterTitle"><%= food.title %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% if food.number == 1 %>
+            <p style="margin-bottom:10px; color:green;">60주년 기념관</p>
+          <% elsif food.number == 2 %>
+            <p style="margin-bottom:10px; color:green;">함인섭 광장</p>
+          <% elsif food.number == 3 %>
+            <p style="margin-bottom:10px; color:green;">미래 광장</p>
+          <% end %>
+          <%= content_tag(:div, food.menu, style: "white-space: pre-wrap;") %>
+        </div>
+        <div class="modal-footer" style="justify-content: center;">
+          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!--/.Card-->

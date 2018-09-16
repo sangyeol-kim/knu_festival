@@ -11,30 +11,31 @@
     </div>
   <% end %>
   <br/>
-    <div class="field" style="text-align:center;">
+    <div class="field fieldmargin" style="text-align:center;">
+      <strong>아래 선택은 만든 후 삭제 안되니 신중히 선택해라 제발</strong><br/><br/>
       <%= form.label :'육주(1)' %>
-      <%= form.radio_button :number, '1' %>   &nbsp;  
+      <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
       <%= form.label :'함인섭(2)' %>
       <%= form.radio_button :number, '2' %>   &nbsp;
       <%= form.label :'미래광장(3)' %>
       <%= form.radio_button :number, '3' %>
     </div>
-<br/>
+  <br/>
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :'푸드트럭 이름' %>
     <%= form.text_field :title, id: :food_title %>
-  </div>
-<br/>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :food_content %>
   </div>
   <br/>
 
   <div class="field">
-    <%= form.label :modal %>
-    <%= form.text_field :modal, id: :food_modal %>
+    <%= form.label :'푸드트럭 메뉴' %>
+    <%= form.text_area :menu, id: :food_content %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.label :'추가메시지' %>
+    <%= form.text_field :ps, id: :food_modal %>
   </div>
   <br/>
 
