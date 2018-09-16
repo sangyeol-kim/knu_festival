@@ -63,7 +63,7 @@ class KakaoController < ApplicationController
         elsif @input == "헌팅글 올리기"
             @msg = {
                 message: {
-                    text: "글을 써주세요"
+                    text: "운명을 믿는 당신, 바로 글을 남겨주세요!"
                 },
                 keyboard: {
                     type: "text"
