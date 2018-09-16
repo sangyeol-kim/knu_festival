@@ -8,10 +8,7 @@
 </div>
 
 <div class="container">
-
-  <div class="food-title">
-    <h2>푸드 트럭</h2>
-  </div>
+    <%= image_tag "60th_food.png" , :class => "th_food" %>
   <div style="text-align: center;">
     <% @foods.each do |x| %>
       <% if x.number == '1' %>
