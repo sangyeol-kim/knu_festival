@@ -63,17 +63,22 @@ header{
 }
 
 .btn-custom{
-    width:100%;
+    width: 100%;
 }
 
 
 .top-menu {
-    margin-left: 10px;
     color: white;
     text-decoration: none;
 }
 
 .top-nav{
-    position: fixed;
     z-index: 10;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
