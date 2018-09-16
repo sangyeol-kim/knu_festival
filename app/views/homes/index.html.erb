@@ -7,7 +7,7 @@
 
 <!--라인업-->
 <div class="line_up_div">
-  <p class="line_up">LINE - UP</p>
+  <p class="line_up">LINE &nbsp;&nbsp; UP</p>
   <%= image_tag "bear_lineup_03.png" , :class => 'lineup-img' %>
 </div>
 
@@ -52,8 +52,9 @@
   
 <div class="map">
   <div class="map-txt">지도</div>
+  <p class="map-txt2">아이콘을 클릭해서 정보를 얻으세요!</p>
   <div class="map-section">
-    <%= image_tag "KNU_map03.png" , usemap: "#map1", class: "map-knu" %>
+    <%= image_tag "KNU_map04.png" , usemap: "#map1", class: "map-knu" %>
       <map name="map1"> 
         <area shape="rect" coords="21,647,173,822" href="<%= foods_path %>" title="60주년 주점">
         <area shape="rect" coords="388,845,471,923" href="<%= index2_foods_path %>" title="함인섭 푸드트럭">
@@ -68,6 +69,7 @@
 <!--푸터-->
 <div class="developer">
   <p class="developer-title">We make ourselves.</p>
+  <p class="developer-title2">멋쟁이 사자처럼</p>
   <%= image_tag "credit.png", style: "width: 100%;" %>
   <div style="height: 50px;"></div>
 </div>
