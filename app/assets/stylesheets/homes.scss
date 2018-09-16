@@ -228,3 +228,18 @@
     padding-bottom: 5px;
     font-family: 'TmonMonsori'
 }
+
+// 총 방문자수
+.total_view{
+    background: black;
+    color: white;
+    min-height: 50px;
+
+    position: sticky;
+    top: 0px;
+    
+    font-size: 15px;
+    text-align: center;
+    z-index: 2;
+    padding: 10px;
+}
