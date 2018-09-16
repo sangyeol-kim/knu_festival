@@ -10,27 +10,34 @@
       </ul>
     </div>
   <% end %>
-  
-    <div class="field">
-      <%= form.label :number %>
-      <%= form.text_field :number, id: :food_number %>
+  <br/>
+    <div class="field" style="text-align:center;">
+      <%= form.label :'육주(1)' %>
+      <%= form.radio_button :number, '1' %>   &nbsp;  
+      <%= form.label :'함인섭(2)' %>
+      <%= form.radio_button :number, '2' %>   &nbsp;
+      <%= form.label :'미래광장(3)' %>
+      <%= form.radio_button :number, '3' %>
     </div>
-
+<br/>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :food_title %>
   </div>
+<br/>
 
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :food_content %>
   </div>
-  
+  <br/>
+
   <div class="field">
     <%= form.label :modal %>
     <%= form.text_field :modal, id: :food_modal %>
   </div>
-  
+  <br/>
+
   <div class='field'>
     <%= form.file_field :image %>
   </div>
