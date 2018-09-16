@@ -15,4 +15,4 @@ User.create(:email => "admin@likelion.org", :password => "123456", :password_con
 end
 
 # 방문자 수 체크 init
-Home.create(:count_view => "0")
+Home.create(:count_view => "404")
