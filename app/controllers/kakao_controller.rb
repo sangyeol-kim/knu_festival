@@ -6,7 +6,7 @@ class KakaoController < ApplicationController
         
         @keyboard = {
             type: "buttons",
-            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
+            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
         }
         
         render json: @keyboard
@@ -28,12 +28,12 @@ class KakaoController < ApplicationController
                 },
                 message_button: {
                   label: "머동 사이트로 이동",
-                  url: "13.125.176.150"
+                  url: "https://13.125.176.150"
                 }
               },
               keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
               }
             }
         elsif @input == "축제 일정 보기"
@@ -57,7 +57,7 @@ class KakaoController < ApplicationController
                 }},
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
               }
             }
         elsif @input == "헌팅글 올리기"
@@ -106,7 +106,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
               }
             }    
         else
@@ -128,7 +128,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                     type: "buttons",
-                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
+                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
                 }
             }
         end
