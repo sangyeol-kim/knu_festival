@@ -67,6 +67,3 @@ gem 'pusher' #푸셔
 
 # AWS
 gem 'fog', '~> 1.41.0'
-
-# 조회수
-gem 'impressionist'
