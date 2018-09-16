@@ -9,27 +9,34 @@
       <% end %>
       </ul>
     </div>
+    
   <% end %>
+   <div id="field">
+    <label for="inp" class="inp">
+    <%= form.text_field :title, id: :lost_title, :id => "inp", :placeholder => "  " %>
+   <%= form.label :제목, :class => "label" %>
+   <span class="border"></span>
+   </label>
+  </div><br>
+  
+  <div id="field">
+  <label for="inp" class="inp">
+        
+    <%= form.text_area :content, id: :lost_content, :id => "inp", :placeholder => "  ", style: "overflow:hidden; height:170px;"%>
+    <%= form.label :내용, :class => "label" %>
 
-   <div class="form-group" style="margin-top: 10px">
-    <div id="title">
-    <%= form.text_field :title, id: :hunting_title, class:"form-control", placeholder:"제목을입력하세요." %>
-    </div>
-  </div>
+   </label>
+  </div><br>
 
-  <div class="field" >
-    <div id="content">
-    <%= form.text_area :content, id: :hunting_content, class:"form-control", placeholder:"내용을입력하세요." %>
-    </div>
-  </div>
+   
   
   <div class="field">
     <%= form.file_field :image %>
   </div>
 
   <div class="actions">
-    <div style="text-align: right; margin-top: 10px;">
-    <%= form.submit "작성", class:"btn btn-secondary", style:"margin-right: 15px;"%>
+    <div style="text-align: center; margin-top: 10px;">
+    <%= form.submit "작성", class:"btn btn-secondary" %>
     </div>
   </div>
 <% end %>

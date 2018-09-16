@@ -26,15 +26,15 @@
             <%= image_tag "no_image.png" , :class => 'img' %>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title" style="text-align: left; border-bottom: 3px solid black;" id="font_01"><%= lost.title %></h5>
-            <p class="card-text" style="text-align: left;" id="font_02"><%= lost.content %></p>
-            <p class="card-text" id="font_03"><small class="text-muted"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></small></p>
-            <p class="card-text" id="font_02">댓글 수: <%= lost.comments.count %> </p>
-          </div>
-          <div class="icon" style="padding-left: 10px">
-            <td><%= link_to '자세히', lost %></td>
-            <td><%= link_to '| 수정', edit_lost_path(lost) %></td>
-            <td><%= link_to '| 삭제', lost, method: :delete, data: { confirm: '정말삭제하시겠습니까?' } %></td>
+<h5 class="card-title"><%= lost.content %></h5>
+            <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
+            <td><%= link_to '보기', lost %></td>
+            <td><%= link_to '수정', edit_lost_path(lost) %></td>
+            <td><%= link_to '삭제', lost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>댓글수 
+             <% @losts.first(1).each do |comment| %>
+            <%= lost.comment_ids.count %> 
+            <% end %></td>
           </div>
         </div>
       <% end %>

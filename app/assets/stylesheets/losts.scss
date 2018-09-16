@@ -2,45 +2,86 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "bootstrap";
-
-.top {
-  text-align: center;
+#field {
+  display: grid;
+  font-family: Avenir;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+   box-sizing: border-box;
+   
 }
 
-.img{
-    display: block;
-    margin-left: 22%;
-    width: 180px;
-    height: 180px;
- 
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
 }
-#losttitle{
-    font-size: 25px;
-    text-align: center !important;
-    display: block;
-    margin-top: 20px;
+.inp .label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-size: 16px;
+  color: #e91e63;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #e91e63;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+.inp #inp {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #e91e63;
+  background: none;
+  border-radius: 0;
+  color: #fff;
+  transition: all 0.15s ease;
+}
+.inp #inp:hover {
+  background: rgba(34,50,84,0.03);
+  border-bottom: 2px solid #e91e63;
+}
+.inp #inp:not(:placeholder-shown) + .label {
+  color: #e91e63;
+  transform: translateY(-26px) scale(0.75);
 }
 
-.title-section{
-    text-align: center !important;
-    display: block;
-    border-bottom: 2px solid black;
+.inp #inp:focus {
+  background: none;
+  outline: none;
+  border-bottom: 2px solid #e91e63;
 }
-.content-section{
-    text-align: center!important;
-    display: block;
+.inp #inp:focus + .label {
+  color: #e91e63;
+  transform: translateY(-26px) scale(0.75);
+  
+}
+.inp #inp:focus + .label + .border {
+  transform: scaleX(1);
+  color: #e91e63;
 }
 
-.form-section{
-    margin-top: 100px;
-    border: 2px solid black;
+.field{
+  text-align:center;
 }
 
-.lost_img {
-    width: 150px;
-    margin-top: 30px;
-}
 .icon{
     color: black;
     text-align: right;
