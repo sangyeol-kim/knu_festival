@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20180916052114) do
   end
 
   create_table "homes", force: :cascade do |t|
-    t.integer "count_view", default: 0
+    t.integer "count_view", default: 404
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
