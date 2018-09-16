@@ -10,6 +10,7 @@ class HomesController < ApplicationController
    
     def index
             @visit_count_total = Impression.all.count
+            @visit_count_total_result = @visit_count_total + 404
     #    # 방문자수 체크
     #    # 반드시 rake db:seed 할 것.
     #    @visit_count = Home.find(1)
