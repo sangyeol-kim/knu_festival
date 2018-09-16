@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-  root 'home#index'
+  root 'homes#index'
   
   devise_for :users
   #플러스 친구 라우팅
@@ -27,11 +25,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :fleamarkets
+ 
+  
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post '/comments' => 'comments#create'
+  post 'comments' => 'comments#create'
   
-  delete '/comments/:id' => 'comments#destroy'
+  delete 'comments/:id' => 'comments#destroy'
 
 end

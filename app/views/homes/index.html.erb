@@ -1,0 +1,105 @@
+<!--머동머동제-->
+<div class="logo_section">
+  <%= image_tag "main_logo.png", :class => 'knu-img' %>
+  <%= image_tag "clouds-re.png" , :class => 'clouds-img', style: "width: 100%;" %>
+</div>
+<!-- pusher -->
+
+<!--라인업-->
+<div class="line_up_div">
+  <p class="line_up">LINE - UP</p>
+  <%= image_tag "bear_lineup_03.png" , :class => 'lineup-img' %>
+</div>
+
+<%= image_tag "cd_case_03.png" , :class => 'lineup-img01' %>
+
+<!--축제지도-->
+<div class="schedule-01">
+  <p class="txt">DAY 01</p>
+  <!--border로 영역 표시한 부분 sche-area-->
+  <div class="schedule-border">
+      <p>개막식</p>
+      <br/>
+      <p>동아리 공연</p>
+      <br/>
+      <p>event waa</p>
+  </div>
+</div>
+
+<div class="schedule-02">
+  <p class="txt">DAY 02</p>
+  <div class="schedule-border">
+      <p>Battle Kround</p>
+      <br/>
+      <p>E - sports 대회</p>
+      <br/>
+      <p>연예인 축하공연</p>
+  </div>
+</div>
+
+<div class="scedule-03">
+  <p class="txt">DAY 03</p>
+  <div class="schedule-border-03">
+      <p>Battle Kround</p>
+      <br/>
+      <p>백령가요재</p>
+      <br/>
+      <p>연예인 축하공연</p>
+      <br/>
+      <p>폐막식</p>
+  </div>
+</div>
+  
+<div class="map">
+  <div class="map-txt">지도</div>
+  <div class="map-section">
+    <%= image_tag "KNU_map03.png" , usemap: "#map1", class: "map-knu" %>
+      <map name="map1"> 
+        <area shape="rect" coords="21,647,173,822" href="<%= foods_path %>" title="60주년 주점">
+        <area shape="rect" coords="388,845,471,923" href="<%= index2_foods_path %>" title="함인섭 푸드트럭">
+        <area shape="rect" coords="275,936,389,1034" href="<%= index2_foods_path %>" title="함인섭 푸드트럭">
+        <area shape="rect" coords="528,19,662,142" href="<%= index2_fleamarkets_path %>" title="미래광장 플리마켓">
+        <area shape="rect" coords="361,1040,484,1152" href="<%= fleamarkets_path %>" title="함인섭 플리마켓">
+        <area shape="rect" coords="1206,694,1331,802" href="<%= index3_fleamarkets_path %>" title="동문 플리마켓">
+      </map>
+    </div>
+</div>
+
+<!--푸터-->
+<div class="developer">
+  <p class="developer-title">We make ourselves.</p>
+  <%= image_tag "credit.png", style: "width: 100%;" %>
+  <div style="height: 50px;"></div>
+</div>
+
+<div class="total_view">
+  총 <span style="color: yellow"><%= @visit_count.count_view %>명</span>의 학우분들이 방문해주셨습니다!
+</div>
+
+
+<!--스크립트 부분-->
+<script>
+  $(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 725 ){  // 스크롤을 36이상 했을 때
+          $(".lineup-img").css("position","fixed");
+       } else if (num < 725 || num == 725){
+           $(".lineup-img").css("position","static");
+       }
+  });
+});
+</script>
+
+<script>
+$(function(){
+$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+       var num = $(this).scrollTop();  // 스크롤값
+       if( num > 1105 ){  // 스크롤을 36이상 했을 때
+          $(".lineup-img01").css("position","fixed");
+       } else if(num < 1105 || num == 1105){
+         $(".lineup-img01").css("position" , "fixed")
+       }
+  });
+});
+</script>

@@ -7,6 +7,7 @@ class CreateFoods < ActiveRecord::Migration[5.1]
       t.integer :iconid
       t.string :number
       t.string :ps
+      t.text :modal
       
       t.timestamps
     end

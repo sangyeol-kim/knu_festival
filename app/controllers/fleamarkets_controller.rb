@@ -36,8 +36,18 @@ class FleamarketsController < ApplicationController
 
     respond_to do |format|
       if @fleamarket.save
-        format.html { redirect_to @fleamarket, notice: 'Fleamarket was successfully created.' }
-        format.json { render :show, status: :created, location: @fleamarket }
+          if @fleamarket.number == '1'
+            format.html { redirect_to fleamarkets_path, notice: 'Fleamarket was successfully created.' }
+            format.json { render :show, status: :created, location: @fleamarket }
+
+          elsif @fleamarket.number == '2'
+            format.html { redirect_to index2_fleamarkets_path, notice: 'Fleamarket was successfully created.' }
+            format.json { render :show, status: :created, location: @fleamarket }
+
+          else
+            format.html { redirect_to index3_fleamarkets_path, notice: 'Fleamarket was successfully created.' }
+            format.json { render :show, status: :created, location: @fleamarket }
+          end
       else
         format.html { render :new }
         format.json { render json: @fleamarket.errors, status: :unprocessable_entity }

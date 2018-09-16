@@ -1,3 +1,49 @@
 // Place all the styles related to the fleamarkets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 번호들어갈 이미지 css
+.img-fluid{
+    width: 70px;
+    float: left;
+    margin-left: 5px;
+}
+.fleamarket_logo_img {
+    width: 70px;
+    margin-top: 30px;
+}
+// 현석이형이 만든모달카드 css 끝까지 클래스명 바꾸기 귀찮아서 그대로 가져움 
+.food-title{
+    text-align: center;
+    margin: 15px auto;
+    font-family: 'BMDOHYEON';
+}
+
+.food-item{
+    padding: 6px !important;
+    height: 70px !important;
+    width: 350px;
+}
+
+.btn{
+    max-width:20em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  border-radius: 0.8rem !important;
+}
+
+.food-icon{
+    width: 20px;
+    height: 13px;
+    display: inline;
+    margin: 15px 10px;
+    float: left;
+}
+
+
+.top {
+  text-align: center;
+  margin-top: 30px;
+}

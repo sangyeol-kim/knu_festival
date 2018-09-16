@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180913160311) do
+ActiveRecord::Schema.define(version: 20180916052114) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20180913160311) do
     t.integer "iconid"
     t.string "number"
     t.string "ps"
+    t.text "modal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.integer "count_view", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
