@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-  root 'home#index'
+  root 'homes#index'
   
   devise_for :users
   #플러스 친구 라우팅
