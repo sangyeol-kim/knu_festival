@@ -21,9 +21,11 @@
   <body>
     <div class="d-sm-none">
       <% if current_page? root_path %>
-        <%= render 'layouts/header' %>
+        <div class="sticky">
+          <%= render 'layouts/header' %>
+        </div>
       <% else %>
-        <div class="top-nav">
+        <div class="top-nav sticky">
           <%= render 'layouts/header' %>
         </div>
       <% end %>
@@ -34,9 +36,10 @@
   </body>
   
   <div class="d-none d-sm-block">
-    <div style="text-align: center">
-      <h1>This page is mobile only</h1>
-      <h2> 모바일로 접속해 주세요!! 모바일 전용 페이지 입니다 </h2>
+    <div style="text-align: center; margin-top: 150px;">
+      <h1>mobile only!</h1><br/>
+      <h2> 모바일로 접속해 주세요!!<br/>
+      모바일 전용 페이지 입니다.</h2>
       <%= image_tag "error_bear02.png" %>
     </div>
   </div>
