@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>KnuFestival</title>
-    <% if mobile? %>
+    
     <%= csrf_meta_tags %>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -16,24 +16,28 @@
   </head>
 
   <body>
-    <% if current_page? root_path %>
-      <%= render 'layouts/header' %>
-    <% else %>
-      <div class="top-nav">
+    <div class="d-sm-none">
+      <% if current_page? root_path %>
         <%= render 'layouts/header' %>
-      </div>
-    <% end %>
-    <%= yield %>
-    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <% else %>
+        <div class="top-nav">
+          <%= render 'layouts/header' %>
+        </div>
+      <% end %>
+      <%= yield %>
+      <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </div>
   </body>
-  <% else %>
-  <div style="text-align: center">
-    <h1>This page is mobile only</h1>
-    <h2> 모바일로 접속해 주세요!! 모바일 전용 페이지 입니다 </h2>
-    <%= image_tag "error_bear.png" %>
+  
+  <div class="d-none d-sm-block">
+    <div style="text-align: center">
+      <h1>This page is mobile only</h1>
+      <h2> 모바일로 접속해 주세요!! 모바일 전용 페이지 입니다 </h2>
+      <%= image_tag "error_bear.png" %>
+    </div>
   </div>
   <!--모바일로 접속 했을 때 이미지 나오게 했습니다 이미지 테그 있는거 merge 해주시면 됩니다-->
-  <% end %>
+
 </html>
  
