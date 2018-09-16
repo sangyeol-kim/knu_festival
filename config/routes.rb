@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :index2
       get :index3
+      get :index4
     end
   end
   resources :huntings
