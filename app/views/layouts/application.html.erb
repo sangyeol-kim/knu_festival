@@ -28,7 +28,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
   <% else %>
-  <h1>404 page not found</h1>
+  <div style="text-align: center">
+    <h1>This page is mobile only</h1>
+    <h2> 모바일로 접속해 주세요!! 모바일 전용 페이지 입니다 </h2>
+    <%= image_tag "error_bear.png" %>
+  </div>
+  <!--모바일로 접속 했을 때 이미지 나오게 했습니다 이미지 테그 있는거 merge 해주시면 됩니다-->
   <% end %>
 </html>
  
