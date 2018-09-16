@@ -9,7 +9,50 @@
 <div class="container" style="text-align:center">
   <div style="text-align: center;">
     <% @foods.each do |food| %>
-        <%= render 'foods/card', :food => food %>
+        <div>
+  <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
+    <div style="margin-top:8px;">
+      <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <% if food.number == 1 %>
+            <span style="color:green; font-size:13px">60주년 기념관</span>
+          <% elsif food.number == 2 %>
+            <span style="color:green;  font-size:13px">함인섭 광장</span>
+          <% elsif food.number == 3 %>
+            <span style="color:green; font-size:13px">미래 광장</span>
+          <% end %>
+      <p class="food-ps">  <%= food.ps %></p>
+    </div>
+  </button>
+ 
+    
+    <!--이하 보이지 않는 모달-->
+  <div class="modal fade" id="food-modal-<%=food.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <%= image_tag "ttruck0#{food.randicon}.png", class:"food-icon"%><h5 class="modal-title" id="exampleModalCenterTitle"><%= food.title %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% if food.number == 1 %>
+            <p style="margin-bottom:10px; color:green;">60주년 기념관</p>
+          <% elsif food.number == 2 %>
+            <p style="margin-bottom:10px; color:green;">함인섭 광장</p>
+          <% elsif food.number == 3 %>
+            <p style="margin-bottom:10px; color:green;">미래 광장</p>
+          <% end %>
+          <%= content_tag(:div, food.menu, style: "white-space: pre-wrap;") %>
+        </div>
+        <div class="modal-footer" style="justify-content: center;">
+          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <% end %>
     
     <% if user_signed_in? %>
