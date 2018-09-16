@@ -13,8 +13,7 @@
   <% end %>
    <div id="field">
     <label for="inp" class="inp">
-    <%= form.text_field :title, id: :lost_title, :id => "inp", :placeholder => "  " %>
-   <%= form.label :제목, :class => "label" %>
+    <%= form.text_field :title, id: :lost_title, :id => "inp", :placeholder => "분실물을 입력하세요" %>
    <span class="border"></span>
    </label>
   </div><br>
@@ -22,8 +21,7 @@
   <div id="field">
   <label for="inp" class="inp">
         
-    <%= form.text_area :content, id: :lost_content, :id => "inp", :placeholder => "  ", style: "overflow:hidden; height:170px;"%>
-    <%= form.label :내용, :class => "label" %>
+    <%= form.text_area :content, id: :lost_content, :id => "inp", :placeholder => "분실(습득) 장소를 입력해주세요", style: "overflow:hidden; height:170px;"%>
 
    </label>
   </div><br>

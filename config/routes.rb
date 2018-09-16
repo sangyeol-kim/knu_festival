@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'homes#index'
   
-  devise_for :users
+  devise_for :users, :skip => :registration
   #플러스 친구 라우팅
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'

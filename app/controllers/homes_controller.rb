@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-    impressionist actions: [:index], unique: [:session_hash]
+    impressionist actions: [:index], unique: [:ip_address]
     
     def index
         # 방문자수 체크
