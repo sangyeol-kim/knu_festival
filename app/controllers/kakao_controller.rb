@@ -6,7 +6,7 @@ class KakaoController < ApplicationController
         
         @keyboard = {
             type: "buttons",
-            buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
+            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
         }
         
         render json: @keyboard
@@ -28,12 +28,12 @@ class KakaoController < ApplicationController
                 },
                 message_button: {
                   label: "머동 사이트로 이동",
-                  url: "https://festival-site-parkgu.c9users.io/"
+                  url: "13.125.176.150"
                 }
               },
               keyboard: {
                 type: "buttons",
-                buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
               }
             }
         elsif @input == "축제 일정 보기"
@@ -57,13 +57,13 @@ class KakaoController < ApplicationController
                 }},
                 keyboard: {
                 type: "buttons",
-                buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
               }
             }
-        elsif @input == "글 올리기"
+        elsif @input == "헌팅글 올리기"
             @msg = {
                 message: {
-                    text: "글을 써주세요"
+                    text: "운명을 믿는 당신, 바로 글을 남겨주세요!"
                 },
                 keyboard: {
                     type: "text"
@@ -106,7 +106,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                 type: "buttons",
-                buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
               }
             }    
         else
@@ -128,7 +128,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                     type: "buttons",
-                    buttons: ["글 올리기", "머동 사이트로 이동","축제 일정 보기","축제 라인업 보기"]
+                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기", "헌팅글 올리기"]
                 }
             }
         end
