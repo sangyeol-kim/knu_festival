@@ -84,37 +84,55 @@
   text-align:center;
 }
 
-
-
-#losttitle{
-    font-size: 25px;
-    text-align: center !important;
-    display: block;
-    margin-top: 20px;
+.icon{
+    color: black;
+    text-align: right;
+    margin-right: 10px;
 }
-
-.title-section{
-    text-align: center !important;
-    display: block;
-    border-bottom: 2px solid black;
+#font_01{
+    font-size:25px;
+    text-align: left;
 }
-.content-section{
-    text-align: center!important;
-    display: block;
+#font_02{
+    font-size:15px;
+    text-align: left;
 }
-
-.form-section{
-    margin-top: 100px;
-    border: 2px solid black;
+#font_03{
+    font-size:8px;
+    text-align: left;
 }
-
-.hunting_img {
-    width: 70px;
+#btn_new {
+    text-align: center;
     margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'BMJUA';
+}
+#time{
+   font-family: 'Arita-buri-SemiBold';
+   font-size: 10px; 
 }
 
-input[type="file"] {
-    border-radius: 10px;
-    background-color: #e91e63;
-    color: #312f2f;
+// 댓글
+
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button{
+    text-align: right;
+}
+.panel-heading{
+    text-align: left;
+    font-size: 20px;
+    font-family: 'BMDOHYEON';
+    margin-bottom: 8px;
+    margin-left: 10px;
+>>>>>>> 021124e42e5f30fa7ee639afba45af0b378ce274
 }

@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-
-
-  root 'home#index'
+  root 'homes#index'
   
   devise_for :users
   #플러스 친구 라우팅
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'
   
-  resources :foods
+  resources :foods do
+    collection do
+      get :index2
+      get :index3
+    end
+  end
   resources :huntings
   resources :losts
   
@@ -16,17 +19,20 @@ Rails.application.routes.draw do
   get '/huntings/destroy/:id' => 'huntings#destroy'
   
   resources :fleamarkets do
-    member do
+    collection do
       get :index2
       get :index3
     end
   end
+
+  resources :fleamarkets
+ 
   
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post '/comments' => 'comments#create'
+  post 'comments' => 'comments#create'
   
-  delete '/comments/:id' => 'comments#destroy'
+  delete 'comments/:id' => 'comments#destroy'
 
 end

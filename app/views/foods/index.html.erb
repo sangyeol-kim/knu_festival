@@ -1,50 +1,27 @@
-<style>
-  body{
-    background-color: #FFD653 !important;
-}
+<div class="top">
+  <%= image_tag "https://raw.githubusercontent.com/sangyeol-kim/knu_festival/35b988406543936177a1b3bdc898a187f1e15b03/app/assets/images/fleamarket_logo.png?token=AkDMWJQGm-yijSlIsnt2ywguSkTHNBkEks5bplUnwA%3D%3D" , :class => 'fleamarket_logo_img' %>
 
-</style> 
+<h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">주점푸드</h1>
+
+<div>
+  <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">이용시간 : 09시 ~ 18시</p>
+  <p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>
+</div>
+</div>
 
 <div class="container">
+
   <div class="food-title">
     <h2>푸드 트럭</h2>
   </div>
   <div style="text-align: center;">
-    <% @foods.each do |food| %>
-      
-      <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
-      <div style="margin-top:5px;">
-        <%= image_tag "ttruck0#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
-        <p class="food-ps"><%= food.ps %></p>
-      </div>
-      </button>
-     
-      
-      <!--이하 보이지 않는 모달-->
-      <div class="modal fade" id="food-modal-<%=food.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle"><%= food.title %></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <%= food.content %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <% @foods.each do |x| %>
+      <% if x.number == '1' %>
+        <%= render 'foods/card', :x => x %>
+      <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Food', new_food_path %>
     <% end %>
   </div>
-  <br>
-  <br/>
-  <%# if user_signed_in? %>
-    <%= link_to 'New Food', new_food_path %>
-  <%# end %>
 </div>

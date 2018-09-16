@@ -7,6 +7,7 @@
 @font-face { font-family: 'TmonMonsori'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff'); font-weight: normal; font-style: normal; }
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css); .hanna * { font-family: 'Hanna', fantasy; }
 @font-face { font-family: 'Swagger'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/Swagger.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 
 
@@ -17,8 +18,10 @@
     font-family: 'TmonMonsori';
     font-size: 25px;
     font-weight: bold;
-    background-color: #d3d62970;
+    background-color: white;
     margin-bottom: 0px;
+    position: sticky;
+    top: 0;
     
     text-align: center;
     
@@ -42,6 +45,8 @@
     text-align: center;
     background: #d0e7ff;
     height: 100vh;
+    
+    z-index: -2;
 }
 .lineup-img{
      width: 80%;
@@ -87,111 +92,45 @@
 
 .schedule-01{
     background: #ff7146;
-    min-height: 700px;
+    min-height: 500px;
     text-align: center;
-    
-    top: 30px;
-    display: block;
+    top: 0;
     width: 100%;
+    position: sticky;
+    min-height: 700px;
     
     z-index: -3;
+    
+    padding-top: 15%;
 }
 
 .schedule-02{
     background: #468cff;
-    min-height: 700px;
+    min-height: 500px;
     text-align: center;
+    width: 100%;
+    
+    position: sticky;
     
     z-index: -2;
-    
-}
-
-.scedule-03{
-    background: #28a745;
+    top: 0;
     min-height: 700px;
-    text-align: center;
-}
-
-.txt{
-    color: white;
-    font-family: 'Swagger';
-    font-size: 50px;
-}
-
-.sche-area{
-    border: 4px white solid;
-    height: 80%;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'TmonMonsori';
-    font-size: 25px;
-    font-weight: bold;
-    background-color: #d3d62970;
-    margin-bottom: 0px;
     
-    text-align: center;
-    
-}
-
-// 라인 업 div
-.line_up_div{
-    margin-bottom: 600px;
-    display: block;
-}
-
-
-.knu-img{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-}
-
-.logo_section{
-    text-align: center;
-    background: rgb(23, 170, 250);
-    height: 100vh;
-}
-.mamamu-jpg{
-    
-}
-
-
-// 축제 일정
-
-
-
-// 강원대학교 대동제
-.logo-font{
-    color: white;
-     font-family: 'HangeulNuri-Bold';
-    font-style: italic;
-    font-weight: bold;
-    
-    font-size: 40px;
-    
-}
-
-#font-top{
-    margin-top: 50px;
-}
-
-.schedule-01{
-    background: #ff7146;
-    min-height: 500px;
-    text-align: center;
-}
-
-.schedule-02{
-    background: #468cff;
-    min-height: 500px;
-    text-align: center;
+    padding-top: 15%;
 }
 
 .scedule-03{
     background: #28a745;
     min-height: 500px;
     text-align: center;
+    
+    top: 0;
+    width: 100%;
+    position: sticky;
+    z-index: -1;
+    min-height: 700px;
+    
+    padding-top: 15%;
 }
 
 .txt{
@@ -200,9 +139,107 @@
     font-size: 50px;
 }
 
-.sche-area{
+.schedule-border{
     border: 4px white solid;
     height: 80%;
     margin-left: 20px;
     margin-right: 20px;
+    
+    
+    color: white;
+    min-height: 400px;
+    vertical-align: middle;
+    
+    font-family: 'BMDOHYEON';
+    font-size: 30px;
+    padding-top: 20%;
+}
+
+// DAY 03에 항목이 4개여서 폐막식이 잘 안보임
+.schedule-border-03{
+    border: 4px white solid;
+    height: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    
+    color: white;
+    min-height: 400px;
+    vertical-align: middle;
+    
+    font-family: 'BMDOHYEON';
+    font-size: 30px;
+    padding-top: 10%;
+}
+
+
+// 지도부분 
+.map{
+    position: sticky;
+    top: 0;
+    min-height: 700px;
+    background: white;
+}
+.map-section{
+    background: white;
+    margin-top: 45%;
+}
+
+.map-knu{
+    display: contain;
+    width: 100%;
+}
+
+.map-txt{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    background: gray;
+    font-family: 'HangeulNuri-Bold';
+}
+
+// 로고 위에 떠 있는 구름
+.clouds-img{
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    height: 667px;
+    
+    // z-index: -1;
+}
+
+
+// 개발자 소개 부분
+.developer{
+    background: black;
+    color: white;
+    min-height: 1000px;
+
+    position: sticky;
+    top: 0px;
+    
+    font-size: 30px;
+    text-align: center;
+    z-index: 2;
+}
+
+.developer-title{
+    border-bottom: 2px gray solid;
+    padding-bottom: 5px;
+    font-family: 'TmonMonsori'
+}
+
+// 총 방문자수
+.total_view{
+    background: black;
+    color: white;
+    min-height: 50px;
+
+    position: sticky;
+    top: 0px;
+    
+    font-size: 15px;
+    text-align: center;
+    z-index: 2;
+    padding: 10px;
 }

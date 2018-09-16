@@ -7,6 +7,14 @@ class FoodsController < ApplicationController
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
   end
+  
+  def index2
+    @foods = Food.all
+  end
+
+  def index3
+    @foods = Food.all
+  end
 
   # GET /foods/1
   # GET /foods/1.json
@@ -31,8 +39,16 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
-        format.json { render :show, status: :created, location: @food }
+        if @food.number == '1'
+          format.html { redirect_to '/foods', notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        elsif @food.number == '2'
+          format.html { redirect_to index2_foods_path, notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        else
+          format.html { redirect_to index3_foods_path, notice: 'Food was successfully created.' }
+          format.json { render :show, status: :created, location: @food }
+        end
       else
         format.html { render :new }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -72,6 +88,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:title, :content, :image, :iconid, :number)
+      params.require(:food).permit(:title, :content, :image, :iconid, :number, :modal)
     end
 end

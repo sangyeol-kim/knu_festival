@@ -1,0 +1,10 @@
+#푸셔 키
+pusher_app_id: '594583'
+pusher_key: 'e2a663022622ac2d7fb4'
+pusher_secret: '6d9f7b5ebcfbe14887a9'
+
+db_password: "2i213ndiadssadcqie2131"
+SECRET_KEY_BASE: "01e3fa39f54f55ba2fbaaf7313d9daf69d28ef15445634d03313546592276125e6d93aefbaf7b04e92363da47f520ffe59f027cb9582b84c69021e664e5285b9"
+
+AWS_S3_ID: "AKIAINNQXYFODJ4FFV7A"
+AWS_S3_KEY: "qVD4ktqDVQ3Kj1k1+IO+tzFGvnN7TJ04qG9lrBts"

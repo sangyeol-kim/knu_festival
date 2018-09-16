@@ -3,54 +3,48 @@
 </div>
 
 <div class="bg-dark" id="top-menu">
-  <div class="container menu-list" style="padding-top: 15px; padding-bottom: 15px;">
+  <div class="menu-list" style="padding-bottom: 15px">
     <ul class="navbar-nav mr-auto" style="display: -webkit-inline-box;">
       <li class="nav-item dropdown" style="margin-left: 20px;">
         <a class="nav-link dropdown-toggle top-menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           플리마켓
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">함인섭광장</a>
-          <a class="dropdown-item" href="#">미래광장</a>
-          <a class="dropdown-item" href="#">동문</a>
+          <%= link_to '함인섭광장', fleamarkets_path, :class => "dropdown-item" %>
+          <%= link_to '미래광장', index2_fleamarkets_path, :class => "dropdown-item" %>
+          <%= link_to '동문', index3_fleamarkets_path, :class => "dropdown-item" %>
       </li>
       
       <li class="nav-item" style="margin-left: 20px;">
-        <a class="nav-link disabled top-menu" href="#" style="color: white">분실물</a>
-        <%= link_to '분실문', losts_path %>
+        <%= link_to '분실물', losts_path, :class => "nav-link disabled top-menu", :style => "color:white" %>
       </li>
       <li class="nav-item" style="margin-left: 20px;">
-        <a class="nav-link disabled top-menu" href="#" style="color: white">헌팅</a>
-        <%= link_to '헌팅', huntings_path %>
+        <%= link_to '헌팅', huntings_path, :class => "nav-link disabled top-menu", :style => "color:white" %>
       </li>
       <li class="nav-item dropdown" style="margin-left: 20px;">
         <a class="nav-link dropdown-toggle top-menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           푸드트럭
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">함인섭광장</a>
-          <a class="dropdown-item" href="#">미래광장</a>  
-          <a class="dropdown-item" href="#">주점</a>
+          <%= link_to '60주년주점', foods_path, :class => "dropdown-item" %>
+          <%= link_to '함인섭광장', index2_foods_path, :class => "dropdown-item" %>
+          <%= link_to '미래광장', index3_foods_path, :class => "dropdown-item" %>
       </li>
-    </ul>
-    <% if user_signed_in? %>
-      <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "top-menu" %>
-    <% end %>
   </div>
-</header>
+</div>
+
 
 <script>
-  window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction()};
 
-  var navbar = document.getElementById("top-menu");
-  var sticky = navbar.offsetTop;
-  
-  function myFunction() {
-      if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-      } else {  
-      navbar.classList.remove("sticky");
-      }
-  }
+var navbar = document.getElementById("top-menu");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+   if (window.pageYOffset >= sticky) {
+       navbar.classList.add("sticky")
+   } else {
+   navbar.classList.remove("sticky");
+   }
+}
 </script>
-
