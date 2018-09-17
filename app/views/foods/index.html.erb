@@ -30,7 +30,7 @@
     <% end %>
     
     <% if user_signed_in? %>
-      <%= link_to 'New Food', new_food_path %>
+      <div class="offset-8"><%= link_to '글쓰기', new_food_path, class: "btn btn-primary", style: "margin-top: 20px" %></div>
     <% end %>
   <div style="margin: 100px;"></div>
   </div>

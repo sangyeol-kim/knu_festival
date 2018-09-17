@@ -11,8 +11,7 @@
     </div>
   <% end %>
   <br/>
-    <div class="field fieldmargin" style="text-align:center;">
-      <strong>아래 선택은 만든 후 삭제 안되니 신중히 선택해라 제발</strong><br/><br/>
+    <div class="field" style="text-align:center;">
       <%= form.label :'육주(1)' %>
       <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
       <%= form.label :'함인섭(2)' %>
@@ -21,29 +20,31 @@
       <%= form.radio_button :number, '3' %>
     </div>
   <br/>
-  <div class="field">
-    <%= form.label :'푸드트럭 이름' %>
-    <%= form.text_field :title, id: :food_title, value: food.title %>
+  <div class="field row">
+    <div class="col-4"><%= form.label :'푸드트럭 이름' %></div>
+    <div class="col-8"><%= form.text_field :title, id: :food_title, value: food.title, class: "form-control" %></div>
   </div>
   <br/>
 
-  <div class="field">
-    <%= form.label :'푸드트럭 메뉴' %>
-    <%= form.text_area :menu, id: :food_content %>
+  <div class="field row">
+    <div class="col-4"><%= form.label :'푸드트럭 메뉴' %></div>
+    <div class="col-12"><%= form.text_area :menu, id: :food_content, class: "form-control", rows: "5" %></div>
   </div>
   <br/>
 
-  <div class="field">
-    <%= form.label :'추가메시지' %>
-    <%= form.text_field :ps, id: :food_modal %>
+  <div class="field row">
+    <div class="col-4"><%= form.label :'추가메시지' %></div>
+    <div class="col-8"><%= form.text_field :ps, id: :food_modal, class: "form-control" %></div>
   </div>
   <br/>
 
-  <div class='field'>
-    <%= form.file_field :image %>
+  <div class='field row'>
+    <div class="col-4"><%= form.label :'외관 이미지' %></div>
+    <div class="col-8"><%= form.file_field :image %></div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" align="center" style="margin-top: 30px">
+    <%= form.button "글쓰기", class: "btn btn-primary" %>
+    <%= link_to '돌아가기', foods_path %>
   </div>
 <% end %>

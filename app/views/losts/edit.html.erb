@@ -1,3 +1,7 @@
-<h1 style="text-align: center; margin-top: 100px; margin-bottom: 40px; font-size: 32px; font-weight: bold; font-family: 'BMJUA';">분실물을 찾아주세요!</h1>
+<!-- margin-top: 120px 을 써야합니다-->
+<h1 align="center" style="font-family: 'BMDOHYEON'; margin-top: 120px;"><u><%= link_to "분&emsp;실&emsp;물".html_safe, losts_path, style: "color: black; text-decoration: none" %></u></h1>
+<div class="alert alert-primary" role="alert">
+    분실물 게시글 수정
+</div>
 
 <%= render 'form', lost: @lost %>
