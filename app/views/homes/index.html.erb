@@ -2,9 +2,8 @@
 <div class="logo_section">
   <%= image_tag "main_logo.png", :class => 'knu-img' %>
   <%= image_tag "clouds-re.png" , :class => 'clouds-img', style: "width: 100%;" %>
-  <div class="arrow" style="">
-    <%= image_tag "arrow.png", style:"display: block; width:30px;  left: auto; margin: 270px auto auto auto;"%>
-  </div>
+  <p class="downment">아래로 스크롤 해보라굿!</p>
+  <%= image_tag "arrow.png", style:"display: block; width:70px; margin: 20px auto 40px auto; float:center;"%>
 </div>
 <!-- pusher -->
 
@@ -74,18 +73,4 @@ $(function(){
        }
   });
 });
-  
-$(document).ready(function(){
-  $('.arrow').on('click',function(){
-    $('.arrow').animate([
-  // keyframes
-  { transform: 'translateY(0px)' }, 
-  { transform: 'translateY(-300px)' }
-], { 
-  // timing options
-  duration: 1000,
-  iterations: Infinity
-});
-  })
-})
 </script>
