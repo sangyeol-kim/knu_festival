@@ -29,37 +29,9 @@
     <div class="col-md-6 col-md-offset-2 col-sm-12">
         <div class="comment-wrapper">
             <div class="panel panel-info">
-                <div class="panel-heading">
-                    댓글
-                </div>
-                <div class="panel-body">
-                    <textarea type='text', name='input_content' class="form-control" placeholder="OOO에서 그거 봤어요!!" rows="3"></textarea>
-                    <br>
-                    <div class="button">
-                    <button type='submit' class="btn btn-secondary" style="margin-right: 15px;">댓글달기</button>
-                    </div>
-                    <div class="clearfix"></div>
-                    <!--comment list-->
-                    <hr>
-                    <div class="container">
-                      <div class="card-columns">
-                        <% @lost.comments.each do |comment| %>
-                            <div class="card">
-                              <div class="card-header" style="font-weight: bold">
-                                 <%= comment.content %>
-                                <% link_to '삭제', "/comments/#{comment.id}", :method => 'delete' %>
-                              <td><%#= link_to '', comment, "comment/#{:id}", method: :delete, class: "fa fa-trash-o", data: { confirm: '정말삭제하시겠습니까?' } %></td>
-
-                              </div>
-                                <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= comment.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
-                          </div>
-                        <% end %>
-                      </div>
-                    </div>
-                </div>
+              <%= render partial: "comments/template", locals: {commentable: @lost, new_comment: @comment} %>
             </div>
         </div>
-
     </div>
 </div>
 </form>

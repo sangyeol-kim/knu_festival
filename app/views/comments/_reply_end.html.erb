@@ -1,0 +1,16 @@
+<% comments.each do |comment| %>  
+    <div class="comments-show" style="margin-bottom: 10px;">
+        <div class="comment">
+            <% if user_signed_in? %>
+                <div class="badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
+            <% else %>
+                <div class="badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
+            <% end %>
+            
+            <% if user_signed_in? %>
+                <%= link_to "지우기", comment_path(comment), method: :delete, remote: false, data: { confirm: "정말로 지우시겠습니까?" }, style: "color: red; font-weight: bold" %>
+            <% end %>
+            <%= content_tag(:div, comment.body, style: "white-space: pre-wrap;") %>
+        </div>
+    </div>
+<% end %>

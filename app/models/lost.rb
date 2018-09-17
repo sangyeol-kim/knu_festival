@@ -1,4 +1,4 @@
 class Lost < ApplicationRecord
     mount_uploader :image, ImageUploader
-    has_many :comments
+    acts_as_commentable
 end

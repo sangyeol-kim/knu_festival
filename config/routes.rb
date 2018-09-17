@@ -27,6 +27,9 @@ Rails.application.routes.draw do
       get :index3
     end
   end
+  
+  # 댓글
+  resources :comments, only: [:create, :destroy]
 
   resources :fleamarkets
  

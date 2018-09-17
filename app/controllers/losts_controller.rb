@@ -13,6 +13,8 @@ class LostsController < ApplicationController
   def show
     @token = form_authenticity_token
     
+    @lost         = Lost.find(params[:id])
+    @new_comment  = Comment.build_from(@lost, 1, "")
   end
 
   # GET /losts/new
