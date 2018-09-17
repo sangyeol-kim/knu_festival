@@ -72,7 +72,7 @@ class KakaoController < ApplicationController
         elsif @input == "1일차"
             @msg = {
                 message: {
-                    text: "1일차 일정"
+                    text: "1일차 일정 / 동아리 공연"
                 },
                 keyboard: {
                 type: "buttons",
@@ -82,7 +82,7 @@ class KakaoController < ApplicationController
         elsif @input == "2일차"
             @msg = {
                 message: {
-                    text: "2일차 일정"
+                    text: "2일차 일정 / E 스포츠 결승전 / 축하 공연 : 치즈 , 마마무"
                 },
                 keyboard: {
                 type: "buttons",
@@ -92,7 +92,7 @@ class KakaoController < ApplicationController
         elsif @input == "3일차"
             @msg = {
                 message: {
-                    text: "3일차 일정"
+                    text: "3일차 일정 / 백령가요제 / 불꽃놀이 / 축하공연 : 엘로 , 김보경 , 싸이먼 도미닉"
                 },
                 keyboard: {
                 type: "buttons",
