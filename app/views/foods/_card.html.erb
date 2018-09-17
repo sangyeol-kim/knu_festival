@@ -26,6 +26,7 @@
             <p style="margin-bottom:10px; color:green;">미래 광장</p>
           <% end %>
           <%= content_tag(:div, food.menu, style: "white-space: pre-wrap;") %>
+          <%= image_tag "#{food.image}", style:"width:300px;" %>
         </div>
         <div class="modal-footer" style="justify-content: center;">
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
