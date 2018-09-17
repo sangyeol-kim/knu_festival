@@ -1,0 +1,27 @@
+<%= form_with(model: all_notice, local: true) do |form| %>
+  <% if all_notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(all_notice.errors.count, "error") %> prohibited this all_notice from being saved:</h2>
+
+      <ul>
+      <% all_notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :all_notice_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :all_notice_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
