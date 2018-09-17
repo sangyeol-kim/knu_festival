@@ -3,13 +3,13 @@
     <div class="comment">
       <div class="row" style="padding-left: 40px;">
         <% if user_signed_in? %>
-          <div class="col-8 badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
+          <div class="badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
         <% else %>
-          <div class="col-8 badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
+          <div class="badge badge-pill badge-light"><%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> ]</div>
         <% end %>
         
         <div class="col-4 comment-nav">
-          <a onclick="showHide('comment_<%= comment.id %>')" onfocus="this.blur()">답댓글 <i class="fas fa-level-down-alt"></i></a>
+          <a onclick="showHide('comment_<%= comment.id %>')" onfocus="this.blur()" style="color: white">답댓글 <i class="fas fa-level-down-alt"></i></a>
         </div>
       </div>
       <div style="margin-bottom: 20px;">
