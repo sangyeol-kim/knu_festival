@@ -1,20 +1,21 @@
 <div class="top">
   <%= image_tag "foodTruckLogo.png" , :class => 'fleamarket_logo_img' %>
-  <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">주점푸드</h1>
+  <h2 style="font-family: 'BMDOHYEON';">육주푸드</h2>
   <div>
-    <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">이용시간 : 09시 ~ 18시</p>
-    <p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>
+    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA';">이용시간 : 09시 ~ 18시</p>
+    <!--<p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>-->
   </div>
 </div>
 
-<div class="container">
+<div class="container" style="text-align:center">
     <%= image_tag "60th_food.png" , :class => "th_food" %>
   <div style="text-align: center;">
-    <% @foods.each do |x| %>
-      <% if x.number == '1' %>
-        <%= render 'foods/card', :x => x %>
+    <% @foods.each do |food| %>
+      <% if food.number == 1 %>
+        <%= render 'foods/card', :food => food %>
       <% end %>
     <% end %>
+    
     <% if user_signed_in? %>
       <%= link_to 'New Food', new_food_path %>
     <% end %>

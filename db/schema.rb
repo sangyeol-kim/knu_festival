@@ -26,18 +26,19 @@ ActiveRecord::Schema.define(version: 20180916130000) do
     t.text "modal"
     t.string "image"
     t.string "number"
+    t.integer "iconid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "foods", force: :cascade do |t|
     t.string "title"
-    t.text "content"
+    t.text "menu"
     t.string "image"
-    t.integer "iconid"
-    t.string "number"
+    t.integer "number"
     t.string "ps"
-    t.text "modal"
+    t.integer "iconid"
+    t.integer "randicon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

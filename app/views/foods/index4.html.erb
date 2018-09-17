@@ -1,7 +1,25 @@
-<div>
+<div class="top">
+  <%= image_tag "foodTruckLogo.png" , :class => 'fleamarket_logo_img' %>
+  <h2 style="font-family: 'BMDOHYEON';">모든 푸드트럭</h2>
+  <div>
+    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA';">이용시간 : 09시 ~ 18시</p>
+  </div>
+</div>
+
+<div class="container" style="text-align:center">
+  <div style="text-align: center;">
+    <% @foods.each do |food| %>
+        <div>
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
     <div style="margin-top:8px;">
       <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <% if food.number == 1 %>
+            <span style="color:green; font-size:13px">60주년 기념관</span>
+          <% elsif food.number == 2 %>
+            <span style="color:green;  font-size:13px">함인섭 광장</span>
+          <% elsif food.number == 3 %>
+            <span style="color:green; font-size:13px">미래 광장</span>
+          <% end %>
       <p class="food-ps">  <%= food.ps %></p>
     </div>
   </button>
@@ -33,5 +51,12 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+    <% end %>
+    
+    <% if user_signed_in? %>
+      <%= link_to 'New Food', new_food_path %>
+    <% end %>
   </div>
 </div>

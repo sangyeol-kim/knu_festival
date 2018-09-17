@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #field {
-  display: grid;
-  font-family: Avenir;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  height: 100%;
-   box-sizing: border-box;
+    display: grid;
+    font-family: Avenir;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .inp {
@@ -50,7 +50,7 @@
   border-bottom: 2px solid #e91e63;
   background: none;
   border-radius: 0;
-  color: #fff;
+  color: black;
   transition: all 0.15s ease;
 }
 .inp #inp:hover {

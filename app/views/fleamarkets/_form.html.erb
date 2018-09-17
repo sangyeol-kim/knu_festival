@@ -11,9 +11,14 @@
     </div>
   <% end %>
   
-    <div class="field">
-      <%= form.label :number %>
-      <%= form.text_field :number, id: :fleamarket_number %>
+    <div class="field fieldmargin" style="text-align:center;">
+      <strong>아래 선택은 만든 후 삭제 안되니 신중히 선택해라 제발</strong><br/><br/>
+      <%= form.label :'함인섭(1)' %>
+      <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
+      <%= form.label :'미래(2)' %>
+      <%= form.radio_button :number, '2' %>   &nbsp;
+      <%= form.label :'동문(3)' %>
+      <%= form.radio_button :number, '3' %>
     </div>
 
   <div class="field">
@@ -24,11 +29,6 @@
   <div class="field">
     <%= form.label :content%>
     <%= form.text_field :content, id: :fleamarket_content %>
-  </div>
-   
-  <div class="field">
-    <%= form.label :modal %>
-    <%= form.text_field :modal, id: :fleamarket_modal %>
   </div>
 
   <div class='field'>

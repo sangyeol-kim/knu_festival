@@ -15,10 +15,11 @@
     padding: 6px !important;
     height: 70px !important;
     width: 350px;
+    text-align: left !important;
 }
 
 .btn{
-    max-width:20em;
+  max-width:19em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -27,18 +28,29 @@
 }
 
 .food-icon{
-    width: 20px;
-    height: 13px;
+    width: 50px;
+    // height: 13px;
     display: inline;
-    margin: 15px 10px;
+    // margin: 15px 10px;
     float: left;
+    margin-right:10px;
+    margin-left:10px;
 }
 .fleamarket_logo_img {
     width: 150px;
-    margin-top: 30px;
+    // margin-top: 30px;
 }
 
 .th_food{
     width: 300px;
     margin-bottom: 20px;
+}
+
+.fieldmargin{
+    margin-top: 70px;
+}
+.food-ps{
+    // margin-left: 5px;
+    color:grey;
+    font-size:10px;
 }
