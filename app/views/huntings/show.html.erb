@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<!--padding - top: 100px 을 써야합니다-->
+<h1 style="text-align: center; padding-top: 100px; margin-bottom: 40px; font-size: 32px; font-weight: bold; font-family: 'BMJUA';">술 한잔 하쉴?</h1>
+<%= form_with(model: @hunting, local: true) do |form| %>
+  <div class="form-group" style="margin-top: 10px">
+    <div id="title">
+    <h3 class="form-control"> <%= @hunting.title %></h3>
+    </div>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @hunting.title %>
-</p>
+  <div class="field">
+    <div id="content">
+      <h3 class="form-control"> <%= @hunting.content %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @hunting.content %>
-</p>
+<% end %>
 
-<%= link_to 'Edit', edit_hunting_path(@hunting) %> |
-<%= link_to 'Back', huntings_path %>
