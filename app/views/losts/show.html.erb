@@ -47,7 +47,7 @@
                             <div class="card">
                               <div class="card-header" style="font-weight: bold">
                                  <%= comment.content %>
-                                 <%= link_to '삭제', "/comments/#{comment.id}", :method => 'delete' %>
+                                <% link_to '삭제', "/comments/#{comment.id}", :method => 'delete' %>
                               <td><%#= link_to '', comment, "comment/#{:id}", method: :delete, class: "fa fa-trash-o", data: { confirm: '정말삭제하시겠습니까?' } %></td>
 
                               </div>

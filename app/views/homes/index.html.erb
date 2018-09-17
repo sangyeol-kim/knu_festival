@@ -2,9 +2,8 @@
 <div class="logo_section">
   <%= image_tag "main_logo.png", :class => 'knu-img' %>
   <%= image_tag "clouds-re.png" , :class => 'clouds-img', style: "width: 100%;" %>
-  <div class="arrow" style="">
-    <%= image_tag "arrow.png", style:"display: block; width:30px;  left: auto; margin: 270px auto auto auto;"%>
-  </div>
+  <p class="downment">아래로 스크롤 해보라굿!</p>
+  <%= image_tag "arrow.png", style:"display: block; width:70px; margin: 20px auto 40px auto; float:center;"%>
 </div>
 <!-- pusher -->
 
@@ -18,39 +17,15 @@
 
 <!--축제지도-->
 <div class="schedule-01">
-  <p class="txt">DAY 01</p>
-  <!--border로 영역 표시한 부분 sche-area-->
-  <div class="schedule-border">
-      <p>개막식</p>
-      <br/>
-      <p>동아리 공연</p>
-      <br/>
-      <p>event waa</p>
-  </div>
+  <%= image_tag "day1.png" , :class => "day" %>
 </div>
 
 <div class="schedule-02">
-  <p class="txt">DAY 02</p>
-  <div class="schedule-border">
-      <p>Battle Kround</p>
-      <br/>
-      <p>E - sports 대회</p>
-      <br/>
-      <p>연예인 축하공연</p>
-  </div>
+  <%= image_tag "day2.png" , :class => "day" %>
 </div>
 
-<div class="scedule-03">
-  <p class="txt">DAY 03</p>
-  <div class="schedule-border-03">
-      <p>Battle Kround</p>
-      <br/>
-      <p>백령가요재</p>
-      <br/>
-      <p>연예인 축하공연</p>
-      <br/>
-      <p>폐막식</p>
-  </div>
+<div class="schedule-03">
+  <%= image_tag "day3.png" , :class => "day" %>
 </div>
   
 <div class="map">
@@ -65,7 +40,7 @@
 <div class="developer">
   <p class="developer-title">We make ourselves.</p>
   <p class="developer-title2">멋쟁이 사자처럼</p>
-  <%= image_tag "credit.png", style: "width: 100%;" %>
+  <%= image_tag "new_footer.png", style: "width: 100%;" %>
   <div style="height: 50px;"></div>
 </div>
 
@@ -98,18 +73,4 @@ $(function(){
        }
   });
 });
-  
-$(document).ready(function(){
-  $('.arrow').on('click',function(){
-    $('.arrow').animate([
-  // keyframes
-  { transform: 'translateY(0px)' }, 
-  { transform: 'translateY(-300px)' }
-], { 
-  // timing options
-  duration: 1000,
-  iterations: Infinity
-});
-  })
-})
 </script>
