@@ -1,0 +1,11 @@
+<%= form_for @new_comment do |f| %>  
+  <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+  <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+  <div class="field form-group">
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  
+  <div class="field form-group">
+    <%= submit_tag "댓글 작성", style: "float: right", class: "btn btn-info" %><br/>
+  </div>
+<% end %>

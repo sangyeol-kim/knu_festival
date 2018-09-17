@@ -1,17 +1,12 @@
 <!--padding - top: 100px 을 써야합니다-->
 <h1 style="text-align: center; padding-top: 100px; margin-bottom: 40px; font-size: 32px; font-weight: bold; font-family: 'BMJUA';">술 한잔 하쉴?</h1>
 <%= form_with(model: @hunting, local: true) do |form| %>
-  <div class="form-group" style="margin-top: 10px">
-    <div id="title">
-    <h3 class="form-control"> <%= @hunting.title %></h3>
-    </div>
-  </div>
+  <div class="form-group" style="margin-left: 20px;">
+    <span style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px;"><u>제목　</u></span><%= content_tag(:span, @hunting.title, style: "margin-left: 30px; font-size: 20px;") %>
 
-  <div class="field">
-    <div id="content">
-      <h3 class="form-control"> <%= @hunting.content %></p>
-    </div>
+    <div style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px;"><u>내용　</u></div>
+    <%= content_tag(:div, @hunting.content, style: "white-space: pre-wrap; font-family: 'BMJUA'") %>
   </div>
-
 <% end %>
-
+<hr/>
+<%= render partial: "comments/template", locals: {commentable: @hunting, new_comment: @comment} %>

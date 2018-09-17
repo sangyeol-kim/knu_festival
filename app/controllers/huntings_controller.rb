@@ -11,6 +11,8 @@ class HuntingsController < ApplicationController
   # GET /huntings/1
   # GET /huntings/1.json
   def show
+    @hunting      = Hunting.find(params[:id])
+    @new_comment  = Comment.build_from(@hunting, 1, "")
   end
 
   # GET /huntings/new
