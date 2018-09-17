@@ -9,6 +9,10 @@
   </div>
 </div>
 
+<div style="margin-top: 30px; margin-bottom: 30px;">
+<%= render 'all_notices/render/notice_global' %>
+</div>
+
   <% @fleamarkets.each do |x| %>
     <% if x.number == '1' %>
       <%= render 'fleamarkets/card', :x => x %>
@@ -16,9 +20,7 @@
   <% end %>
 <br>
 
-<%= render 'all_notices/render/notice_global' %>
-<div style="margin-bottom: 30px;"></div>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Fleamarket', new_fleamarket_path %>
+  <div class="offset-8"><%= link_to '글쓰기', new_fleamarket_path, class: "btn btn-primary" %></div>
 <% end %>

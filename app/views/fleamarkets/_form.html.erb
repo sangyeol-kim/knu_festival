@@ -11,8 +11,7 @@
     </div>
   <% end %>
   
-    <div class="field fieldmargin" style="text-align:center;">
-      <strong>아래 선택은 만든 후 삭제 안되니 신중히 선택해라 제발</strong><br/><br/>
+    <div class="field" style="text-align:center;">
       <%= form.label :'함인섭(1)' %>
       <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
       <%= form.label :'미래(2)' %>
@@ -21,21 +20,23 @@
       <%= form.radio_button :number, '3' %>
     </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :fleamarket_title %>
+  <div class="field row">
+    <div class="col-4"><%= form.label :"제목" %></div>
+    <div class="col-8"><%= form.text_field :title, id: :fleamarket_title, class: "form-control" %></div>
   </div>
 
-  <div class="field">
-    <%= form.label :content%>
-    <%= form.text_field :content, id: :fleamarket_content %>
+  <div class="field row">
+    <div class="col-4"><%= form.label :"메뉴 혹은 내용" %></div>
+    <div class="col-12"><%= form.text_area :content, id: :fleamarket_content, class: "form-control", rows: "5" %></div>
   </div>
 
-  <div class='field'>
-    <%= form.file_field :image %>
+  <div class='field row' style="margin-top: 20px">
+    <div class="col-4"><%= form.label :'외관 이미지' %></div>
+    <div class="col-8"><%= form.file_field :image %></div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" align="center" style="margin-top: 30px">
+    <%= form.button "글쓰기", class: "btn btn-primary" %>
+    <%= link_to '돌아가기', foods_path %>
   </div>
 <% end %>
