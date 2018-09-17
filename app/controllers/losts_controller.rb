@@ -58,10 +58,14 @@ class LostsController < ApplicationController
   # DELETE /losts/1
   # DELETE /losts/1.json
   def destroy
-    @lost.destroy
-    respond_to do |format|
-      format.html { redirect_to losts_url, notice: 'Lost was successfully destroyed.' }
-      format.json { head :no_content }
+    if @lost.password == params[:lost_pw]
+      @lost.destroy
+      respond_to do |format|
+        format.html { redirect_to losts_url, notice: 'Lost was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to losts_path
     end
   end
 
@@ -73,6 +77,6 @@ class LostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lost_params
-      params.require(:lost).permit(:title, :content, :image)
+      params.require(:lost).permit(:title, :content, :image ,:password)
     end
 end

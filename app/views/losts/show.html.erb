@@ -12,11 +12,13 @@
   <% if @lost.image.present? %>
     <div class="image-section"><img src="<%= @lost.image %>"></div>
   <% else %>
-    <div class="image-section"><%= image_tag "no_image.png" , :class => 'img' %></div>
+    <div class="image-section"><%= image_tag "no_image.png" , :class => 'img', width: '90%' %></div>
   <% end %>
   
   <div style="text-align: right; margin-top: 10px;">
-  <%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
+    <%= link_to '이전', losts_path, class:"btn btn-secondary"%>
+    |
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-right: 5px;">삭제</button>
   </div>
 </div>
 <hr />
@@ -36,7 +38,7 @@
                     <textarea type='text', name='input_content' class="form-control" placeholder="OOO에서 그거 봤어요!!" rows="3"></textarea>
                     <br>
                     <div class="button">
-                    <button type='submit' class="btn btn-secondary" style="margin-right: 15px;">Post</button>
+                    <button type='submit' class="btn btn-secondary" style="margin-right: 15px;">댓글달기</button>
                     </div>
                     <div class="clearfix"></div>
                     <!--comment list-->
@@ -45,7 +47,7 @@
                       <div class="card-columns">
                         <% @lost.comments.each do |comment| %>
                             <div class="card">
-                              <div class="card-header" style="font-weight: bold;">
+                              <div class="card-header" style="font-weight: bold">
                                  <%= comment.content %>
                                  <%= link_to '삭제', "/comments/#{comment.id}", :method => 'delete' %>
                               <td><%#= link_to '', comment, "comment/#{:id}", method: :delete, class: "fa fa-trash-o", data: { confirm: '정말삭제하시겠습니까?' } %></td>
@@ -63,3 +65,25 @@
     </div>
 </div>
 </form>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">비밀번호를 입력해 주세요</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_for @lost, method: :delete do |f| %>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">비밀번호:</label>
+                    <input type="text" class="form-control" id="recipient-name" name="lost_pw">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">삭제</button>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
