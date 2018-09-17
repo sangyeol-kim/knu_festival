@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180916130000) do
     t.string "title"
     t.text "content"
     t.string "image"
+    t.integer "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
