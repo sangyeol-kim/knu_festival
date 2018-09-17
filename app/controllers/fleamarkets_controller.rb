@@ -10,10 +10,12 @@ class FleamarketsController < ApplicationController
   
   def index2
     @fleamarkets = Fleamarket.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index3
     @fleamarkets = Fleamarket.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
 
   # GET /fleamarkets/1
