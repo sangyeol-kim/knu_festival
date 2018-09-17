@@ -121,14 +121,15 @@
     padding-top: 15%;
 }
 
-.scedule-03{
+.schedule-03{
     background: #28a745;
     min-height: 500px;
     text-align: center;
     
-    top: 0;
+    
     width: 100%;
     position: sticky;
+    top: 0;
     z-index: -1;
     min-height: 700px;
     
@@ -261,4 +262,8 @@
 .developer-title2{
     font-size: 40px;
     font-family: 'InkLipquid';
+}
+
+.day{
+    width: 80%;
 }
