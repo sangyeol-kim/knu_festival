@@ -28,7 +28,7 @@ class KakaoController < ApplicationController
                 },
                 message_button: {
                   label: "머동 사이트로 이동",
-                  url: "https://13.125.176.150"
+                  url: "http://13.125.180.12"
                 }
               },
               keyboard: {
