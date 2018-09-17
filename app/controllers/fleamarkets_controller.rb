@@ -5,6 +5,7 @@ class FleamarketsController < ApplicationController
   # GET /fleamarkets.json
   def index
     @fleamarkets = Fleamarket.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index2

@@ -6,22 +6,24 @@ class FoodsController < ApplicationController
   def index
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
-    
-
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index2
     @foods = Food.all
+    @all_notices = AllNotice.order("created_at DESC").all
 
   end
 
   def index3
     @foods = Food.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index4
     @foods = Food.all
     $iconlist4 = (1..20).to_a.reverse
+    @all_notices = AllNotice.order("created_at DESC").all
 
   end
 

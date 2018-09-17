@@ -2,15 +2,24 @@
   <%= image_tag "foodTruckLogo.png" , :class => 'fleamarket_logo_img' %>
   <h2 style="font-family: 'BMDOHYEON';">육주푸드</h2>
   <div>
-    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA';">이용시간 : 18시 ~ 04시</p>
-    <!--<p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>-->
+    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA'; margin:0;">이용시간 : 09시 ~ 18시</p>
+    <p style="font-size: 12px; font-family: 'BMJUA';">* 술은 현금이나 계좌이체만 가능합니다</p>
   </div>
 </div>
 
 <div class="container" style="text-align:center">
   <%= image_tag "new_60th_food.png" , :class => "th_food" %>
   
-  <div align="center" style="background-color: rgba(0, 0, 0, 0.67);; color:white; border-radius: 5px; padding: 10px;">각 푸드트럭 이름을 클릭해보세요!</div>
+  <div class="row">
+    <div class="col-12" style="background-color: rgba(0, 0, 0, 0.67); color:white; width: 100%; padding: 10px;">
+      각 푸드트럭 이름을 클릭해보세요!
+      <div align="center"><div style="border-bottom: 1px solid white; width: 30%; margin-top: 5px; margin-bottom: 5px"></div></div>
+      <small>푸드트럭 음식 구매 전,<br/>
+      <span style="color: yellow">현금</span> 혹은 <span style="color: yellow">계좌이체 매체</span>를 준비해주세요.</small>
+    </div>
+  </div>
+  <%= render 'all_notices/render/notice_global' %>
+  <div style="margin-bottom: 30px;"></div>
   
   <div style="text-align: center;">
     <% @foods.each do |food| %>
@@ -22,5 +31,6 @@
     <% if user_signed_in? %>
       <%= link_to 'New Food', new_food_path %>
     <% end %>
+  <div style="margin: 100px;"></div>
   </div>
 </div>

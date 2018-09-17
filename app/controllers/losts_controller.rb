@@ -5,6 +5,7 @@ class LostsController < ApplicationController
   # GET /losts.json
   def index
     @losts = Lost.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
 
   # GET /losts/1

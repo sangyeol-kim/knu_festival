@@ -1,0 +1,29 @@
+<% @all_notices.first(1).each do |all_notice| %>
+  <a data-toggle="collapse" href="#notice<%= all_notice.id %>" role="button" aria-expanded="false" aria-controls="notice<%= all_notice.id %>" style="text-decoration: none;">
+    <div class="row" style="padding: 10px; background-color: black; color: white; margin-top: 2px;">
+      <div class="col-2" align="center">
+        <i style="color: yellow" class="fas fa-bullhorn"></i>
+      </div>
+      <div class="col-10" align="left">
+        <%= all_notice.title %>
+      </div>
+    </div>
+  </a>
+  
+  <div class="collapse" id="notice<%= all_notice.id %>">
+    <div class="card card-body">
+      <div class="col-12" align="left">
+        <%= all_notice.content %>
+      </div>
+      <div class="offset-md-6" align="right">
+        <small><%= all_notice.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %></small>
+      </div>
+      <div class="offset-col-6" align="right">
+        <% if user_signed_in? %>
+          <%= link_to '수정', edit_all_notice_path(all_notice) %>
+          <%= link_to '삭제', all_notice, method: :delete, data: { confirm: '진짜 지우게?' } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
