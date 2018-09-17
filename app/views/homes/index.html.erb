@@ -2,6 +2,9 @@
 <div class="logo_section">
   <%= image_tag "main_logo.png", :class => 'knu-img' %>
   <%= image_tag "clouds-re.png" , :class => 'clouds-img', style: "width: 100%;" %>
+  <div class="arrow" style="">
+    <%= image_tag "arrow.png", style:"display: block; width:30px;  left: auto; margin: 270px auto auto auto;"%>
+  </div>
 </div>
 <!-- pusher -->
 
@@ -85,11 +88,8 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        }
   });
 });
-</script>
-
-<script>
 $(function(){
-$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+  $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        var num = $(this).scrollTop();  // 스크롤값
        if( num > 1105 ){  // 스크롤을 36이상 했을 때
           $(".lineup-img01").css("position","fixed");
@@ -98,4 +98,18 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        }
   });
 });
+  
+$(document).ready(function(){
+  $('.arrow').on('click',function(){
+    $('.arrow').animate([
+  // keyframes
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-300px)' }
+], { 
+  // timing options
+  duration: 1000,
+  iterations: Infinity
+});
+  })
+})
 </script>
