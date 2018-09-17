@@ -54,7 +54,7 @@
   <div class="map-txt">지도</div>
   <div class="map-section">
     <%#= image_tag "KNU_map04.png", class: "map-knu" %>
-    <%= image_tag "map_noclick.png", class: "map-knu" %>
+    <%= image_tag "new_index_map.png", class: "map-knu" %>
   </div>
 </div>
 
@@ -98,20 +98,4 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        }
   });
 });
-</script>
-
-<script language="javascript">
-function TEST(e){
-var browser = navigator.appName
-if(browser=="Microsoft Internet Explorer")
-{   //브라우저가 IE일때 돌아간다. 크롬에서 써도 잘 된다.
-alert("현재 좌표는 " + event.x + "/" + event.y)
-}
-else
-{   //그외(파이어폭스)일 때 돌아간다.
-alert("현재 좌표는 " + e.clientX + "/" + e.clientY)
-}
-//이거는 그냥 덤으로 현재 브라우저의 가운데 좌표 표시
-alert("가운데 좌표는" + screen.width/2 + "/" + screen.height/2 )
-}
 </script>
