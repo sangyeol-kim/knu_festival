@@ -12,7 +12,7 @@
         <div>
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
     <div style="margin-top:8px;">
-      <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
       <% if food.number == 1 %>
             <span style="color:green; font-size:13px">60주년 기념관</span>
           <% elsif food.number == 2 %>
