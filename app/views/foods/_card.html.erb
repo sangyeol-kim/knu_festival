@@ -1,7 +1,7 @@
 <div>
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
     <div style="margin-top:8px;">
-      <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px; font-size:22px;"><%= food.title %></strong>
       <% if user_signed_in? %>
         <%= link_to 'edit', "foods/#{food.id}/edit" %>
       <% end %>
