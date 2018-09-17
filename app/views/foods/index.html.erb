@@ -8,7 +8,10 @@
 </div>
 
 <div class="container" style="text-align:center">
-    <%= image_tag "new_60th_food.png" , :class => "th_food" %>
+  <%= image_tag "new_60th_food.png" , :class => "th_food" %>
+  
+  <div align="center" style="background-color: rgba(0, 0, 0, 0.67);; color:white; border-radius: 5px; padding: 10px;">각 푸드트럭 이름을 클릭해보세요!</div>
+  
   <div style="text-align: center;">
     <% @foods.each do |food| %>
       <% if food.number == 1 %>
