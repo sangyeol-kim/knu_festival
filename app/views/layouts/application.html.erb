@@ -16,6 +16,18 @@
     
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="<%= asset_path('favicon_mudong.ico') %>">
+    
+    <!-- 검색엔진 최적화 -->
+    <meta name="title" content="KnuFestival : 머동머동제"/>
+    <meta name="keywords" content="KnuFestival, Knu, Kangwon, Kanugwon National, University, 강원대, 강원대학교, 대동제, 강원대 대동제, 강원도, 대학축제, 멋쟁이 사자처럼, 한림대, 한림대 대동제, 머동제, 멋사">
+    <meta name="description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
+    
+    <meta property="og:title" content="KnuFestival : 머동머동제">
+    <meta property="og:description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
+    <meta property="og:site_name" content="KnuFestival : 머동머동제">
+    
+    <meta name="twitter:title" content="KnuFestival : 머동머동제">
+    <meta name="twitter:description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
   </head>
 
   <body>
@@ -31,7 +43,12 @@
       <% end %>
       <%= yield %>
       <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>
+ 
+
     </div>
   </body>
   
