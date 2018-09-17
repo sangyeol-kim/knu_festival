@@ -37,6 +37,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1/edit
   def edit
+    
   end
 
   # POST /foods
@@ -81,8 +82,8 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
-        format.json { render :show, status: :ok, location: @food }
+        format.html { redirect_to '/foods', notice: 'Food was successfully updated.' }
+        format.json { render :index, status: :ok, location: @food }
       else
         format.html { render :edit }
         format.json { render json: @food.errors, status: :unprocessable_entity }

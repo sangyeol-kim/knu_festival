@@ -1,7 +1,10 @@
 <div>
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
     <div style="margin-top:8px;">
-      <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <% if user_signed_in? %>
+        <%= link_to 'edit', "foods/#{food.id}/edit" %>
+      <% end %>
       <p class="food-ps">  <%= food.ps %></p>
     </div>
   </button>
@@ -26,6 +29,7 @@
             <p style="margin-bottom:10px; color:green;">미래 광장</p>
           <% end %>
           <%= content_tag(:div, food.menu, style: "white-space: pre-wrap;") %>
+          <%= image_tag "#{food.image}", style:"width:300px;" %>
         </div>
         <div class="modal-footer" style="justify-content: center;">
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->

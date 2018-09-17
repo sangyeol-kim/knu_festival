@@ -2,6 +2,9 @@
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=x.id %>">
     <div style="margin-top:8px;">
       <%= image_tag "b#{x.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
+      <% if user_signed_in? %>
+        <%= link_to 'edit', "fleamarkets/#{x.id}/edit" %>
+      <% end %>
     </div>
   </button>
  
