@@ -1,8 +1,10 @@
-<div class="comments-header" style="margin-bottom: 20px; padding-left: 30px;">  
-    <h4><i class="far fa-comments"></i> 댓글 (<%= commentable.comment_threads.count %>)</h4>
+<div style="background-color: rgba(0, 0, 0, 0.24); padding: 10px; border-radius: 5px;">
+    <div class="comments-header" style="margin-bottom: 20px; padding-left: 30px;">  
+        <h4><i class="far fa-comments"></i> 댓글 (<%= commentable.comment_threads.count %>)</h4>
+    </div>
+    
+    <div class="comments-container">  
+        <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+    </div>
+    <%= render partial: "comments/form", locals: {new_comment: new_comment} %>
 </div>
- 
-<div class="comments-container">  
-    <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
-</div>
-<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
