@@ -19,22 +19,25 @@
   <div class="row">
     <div class="col-md-4">
       <% @losts.reverse.each do |lost| %>
+       <%= link_to lost, style: "text-decoration: none; color: black" do %>
         <div class="card">
           <% if lost.image.present? %>
             <%= image_tag "#{lost.image}" , :class => 'img' %>
           <% else %>
-            <%= image_tag "no_image.png" , :class => 'img' %>
+            <div align="center"><%= image_tag "no_image.png" , :class => 'img', style: 'width: 100px' %></div>
           <% end %>
           <div class="card-body">
-<h5 class="card-title"><%= lost.content %></h5>
+            <h5 class="card-title" style="text-align: left"><%= lost.title %></h5>
             <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= lost.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
-            <td><%= link_to '보기', lost %></td>
-            <td>댓글수 
-             <% @losts.first(1).each do |comment| %>
-            <%= lost.comment_ids.count %> 
-            <% end %></td>
+            <div align="right">
+              <i class="far fa-comment-dots"></i>
+              <% @losts.first(1).each do |comment| %>
+                <%= lost.comment_ids.count %> 
+              <% end %>
+            </div>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>
