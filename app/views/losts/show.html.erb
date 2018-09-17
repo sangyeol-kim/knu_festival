@@ -19,6 +19,7 @@
   <%= link_to '이전', losts_path, class:"btn btn-secondary", style:"margin-right: 15px;" %>
   </div>
 </div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">삭제</button>
 <hr />
 <!--댓글-->
 <form action='/comments' method='POST'>
@@ -63,3 +64,25 @@
     </div>
 </div>
 </form>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">비밀번호를 입력해 주세요</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_for @lost, method: :delete do |f| %>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">비밀번호:</label>
+                    <input type="text" class="form-control" id="recipient-name" name="lost_pw">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">삭제</button>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>

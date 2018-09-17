@@ -4,7 +4,7 @@ class CreateLosts < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :content
       t.string :image
-
+      t.string :password
       t.timestamps
     end
   end

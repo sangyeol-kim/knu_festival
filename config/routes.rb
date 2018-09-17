@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'
   
+  get '/losts/destroy/:id' => 'losts#destroy'
   resources :foods do
     collection do
       get :index2

@@ -6,7 +6,7 @@ class KakaoController < ApplicationController
         
         @keyboard = {
             type: "buttons",
-            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
+            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
         }
         
         render json: @keyboard
@@ -33,7 +33,7 @@ class KakaoController < ApplicationController
               },
               keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
               }
             }
         elsif @input == "축제 일정 보기"
@@ -57,13 +57,13 @@ class KakaoController < ApplicationController
                 }},
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
               }
             }
-        elsif @input == "헌팅글 올리기"
+        elsif @input == "술친 구하기"
             @msg = {
                 message: {
-                    text: "운명을 믿는 당신, 바로 글을 남겨주세요!"
+                    text: "술친구를 구하기 위해 글을 써주세요.(홈페이지의 술친괌 메뉴에 글이 업로드 됩니다.)"
                 },
                 keyboard: {
                     type: "text"
@@ -106,7 +106,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
               }
             }    
         else
@@ -128,7 +128,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                     type: "buttons",
-                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
+                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
                 }
             }
         end
