@@ -24,6 +24,9 @@
 <% end %>
 <br>
 
+<%= render 'all_notices/render/notice_global' %>
+<div style="margin-bottom: 30px;"></div>
+
 <% if user_signed_in? %>
   <%= link_to 'New Fleamarket', new_fleamarket_path %>
 <% end %>

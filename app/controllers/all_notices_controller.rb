@@ -1,10 +1,11 @@
 class AllNoticesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_all_notice, only: [:show, :edit, :update, :destroy]
 
   # GET /all_notices
   # GET /all_notices.json
   def index
-    @all_notices = AllNotice.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
 
   # GET /all_notices/1
