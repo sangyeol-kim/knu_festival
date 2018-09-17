@@ -1,6 +1,5 @@
 <div style="margin-top: 120px;"></div>
-<h1 style="margin-bottom: 30px; font-family: 'BMDOHYEON'"><u>공지사항</u></h1>
-
+<h1 align="center" style="margin-bottom: 30px; font-family: 'BMDOHYEON'"><u><%= link_to "공지사항", all_notices_path, style: "color: black; text-decoration: none" %></u></h1>
 <p>
   <strong>제목 :</strong><br/>
   <%= content_tag(:div, @all_notice.title, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>

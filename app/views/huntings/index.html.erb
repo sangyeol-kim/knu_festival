@@ -1,7 +1,7 @@
 <div class="top">
   <%= image_tag "hunting.png" , :class => 'hunting_img' %>
   
-  <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">술친구&nbsp;괌</h1>
+  <h1 align="center" style="font-family: 'BMDOHYEON'; margin-top: 15px;"><u><%= link_to "술친구&nbsp;괌".html_safe, huntings_path, style: "color: black; text-decoration: none" %></u></h1>
 
   <div>
     <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">술 친구를 찾으세요!!</p>
@@ -30,7 +30,7 @@
         <div class="card">
           <div class="card-header" style="font-weight: bold;"> <%= hunting.title %></div>
           <div class="card-body">
-            <h5 class="card-title"><%= hunting.content %></h5>
+            <%= content_tag(:h5, hunting.content, style: "text-align: left") %>
             <div align="right"><i class="far fa-comment-dots"></i> <%= hunting.comment_threads.count %></div>
             <p class="card-text" style="font-size: 10px; text-align: right; font-family: 'Arita-buri-SemiBold'"><%= hunting.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></p>
           </div>
