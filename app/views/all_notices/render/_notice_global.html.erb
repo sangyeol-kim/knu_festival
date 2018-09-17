@@ -4,7 +4,7 @@
       <div class="col-2" align="center">
         <i style="color: yellow" class="fas fa-bullhorn"></i>
       </div>
-      <div class="col-10" align="left">
+      <div class="col-10" align="left" style="white-space: pre-wrap;">
         <%= all_notice.title %>
       </div>
     </div>
@@ -12,9 +12,7 @@
   
   <div class="collapse" id="notice<%= all_notice.id %>">
     <div class="card card-body">
-      <div class="col-12" align="left">
-        <%= all_notice.content %>
-      </div>
+      <%= content_tag(:div, all_notice.content, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
       <div class="offset-md-6" align="right">
         <small><%= all_notice.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %></small>
       </div>
