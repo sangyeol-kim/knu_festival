@@ -7,6 +7,7 @@ class CreateFleamarkets < ActiveRecord::Migration[5.1]
       t.string :image
       t.string :number
       t.integer :iconid
+      
 
       t.timestamps
     end
