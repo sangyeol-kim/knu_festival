@@ -56,13 +56,9 @@
         </div>
       <% end %>
       <%= yield %>
+      <div style="margin-bottom: 50px"></div>
       <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-     <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-  crossorigin="anonymous"></script>
- 
-
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
     </div>
     <div class="developer">
   <p class="developer-title">We make ourselves.</p>
@@ -73,6 +69,9 @@
 
 <div class="total_view">
   총 <span style="color: yellow"><%= $visit_count.count_view %>명</span>의 학우분들이 방문해주셨습니다!<br/>
+  <% if user_signed_in? && current_user.admin? == true %>
+    <span style="color: yellow">★</span> 실제로 <span style="color: yellow; font-weight: bold;"><%= $really_visit_count_total %>명</span>의 학우분들이 방문해주셨습니다! <span style="color: yellow">★</span>
+  <% end %>
 </div>
   </body>
   
