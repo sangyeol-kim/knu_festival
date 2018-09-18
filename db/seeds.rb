@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 어드민 계정
-User.create(:email => "admin@likelion.org", :password => "123456", :password_confirmation => "123456", fdid: 0)
+User.create(:email => "admin@likelion.org", :password => "123456", :password_confirmation => "123456", fdid: 0, areaid: 0)
 # 푸드트럭 계정
 16.times do |x|
     User.create(email: "60truck#{x+1}@kangwon.ac.kr", password: "#{((x+1)*404567)}", password_confirmation: "#{((x+1)*404567)}", fdid: (x+1), areaid: 1)
