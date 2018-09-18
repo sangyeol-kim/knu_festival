@@ -16,16 +16,27 @@
   <!--<p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>-->
 </div>
 </div>
-
-<% @fleamarkets.each do |x| %>
-  <% if x.number == '2' %>
-    <%= render 'fleamarkets/card', :x => x %>
-  <% end %>
-<% end %>
-<br>
-
-<%= render 'all_notices/render/notice_global' %>
+<div class="container" style="text-align:center">
+  <div class="row">
+      <div class="col-12" style="background-color: rgba(0, 0, 0, 0.67); color:white; width: 100%; padding: 10px;">
+        아래 각 플리마켓 이름을 클릭해보세요!
+        <div align="center"><div style="border-bottom: 1px solid white; width: 30%; margin-top: 5px;"></div></div>
+        <small>다양한 핸드메이드 제품과 가성비 최고 동아리마켓까지<br/>
+        <span style="color: yellow">플리마켓별 혜택도 놓치지 마세요!</span><br/> 
+          축제는 17일(월) 부터 20일(목) 까지!</small>
+      </div>
+    </div>
+    <%= render 'all_notices/render/notice_global' %>
 <div style="margin-bottom: 30px;"></div>
+  <% @fleamarkets.each do |x| %>
+    <% if x.number == '2' %>
+      <%= render 'fleamarkets/card', :x => x %>
+    <% end %>
+  <% end %>
+  <br>
+</div>
+
+
 
 <% if user_signed_in? %>
       <% if current_user.fdid == 0 %>

@@ -1,12 +1,14 @@
 <div style="text-align:center;">
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=x.id %>">
-    <div style="margin-top:8px;">
-      <%= image_tag "b#{x.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
+    <div style="margin-top:3px;">
+      <%= image_tag "b#{x.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px; font-size:22px;"><%= x.title %></strong>
       <% if user_signed_in? %>
         <% if ((current_user.fdid == x.iconid) && (current_user.areaid == x.number)) || (current_user.fdid == 0)%>
           <%= link_to 'edit', "fleamarkets/#{x.id}/edit" %>
         <% end %>
       <% end %>
+    <p class="food-ps"><%= x.ps %></p>
+
     </div>
   </button>
  
@@ -30,6 +32,7 @@
             <p style="margin-bottom:10px; color:green;">동문</p>
           <% end %>
           <%= content_tag(:div, x.content, style: "white-space: pre-wrap;") %>
+          <%= image_tag "#{x.image}", style:"width:300px;" %>
         </div>
         <div class="modal-footer" style="justify-content: center;">
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->

@@ -103,6 +103,6 @@ class FleamarketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fleamarket_params
-      params.require(:fleamarket).permit(:title, :content, :image, :modal, :number)
+      params.require(:fleamarket).permit(:title, :content, :image, :modal, :number, :ps)
     end
 end
