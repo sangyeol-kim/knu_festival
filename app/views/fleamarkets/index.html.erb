@@ -8,6 +8,7 @@
     <%= image_tag "new_insub_market.png", :width => '80%' %>
   </div>
 </div>
+
 <div class="container" style="text-align:center">
   <div class="row">
       <div class="col-12" style="background-color: rgba(0, 0, 0, 0.67); color:white; width: 100%; padding: 10px;">
@@ -32,7 +33,7 @@
 
 
 <% if user_signed_in? %>
-      <% if current_user.fdid == 0 %>
+      <% if current_user.id == 1 %>
         <div class="offset-8"><%= link_to '글쓰기', new_fleamarket_path, class: "btn btn-primary", style: "margin-top: 20px" %></div>
       <% end %>
     <% end %>
