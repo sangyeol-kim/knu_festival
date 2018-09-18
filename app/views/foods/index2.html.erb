@@ -4,13 +4,27 @@
 <h2 style="font-family: 'BMDOHYEON';">함인섭푸드</h2>
 
 <div>
-  <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA'; ">이용시간 : 09시 ~ 18시</p>
+  <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA'; "></p>
+  <p style="font-size: 12px; font-family: 'BMJUA';">* 술은 18일(화) 오후 6시부터 카드결제가 가능합니다.</p>
   <!--<p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>-->
 </div>
 </div>
 
 <div class="container"  style="text-align:center">
   <%= image_tag "haminsub_food.png" , :class => "th_food" %>
+  
+  <div class="row">
+    <div class="col-12" style="background-color: rgba(0, 0, 0, 0.67); color:white; width: 100%; padding: 10px;">
+      아래 각 푸드트럭 이름을 클릭해보세요!
+      <div align="center"><div style="border-bottom: 1px solid white; width: 30%; margin-top: 5px; margin-bottom: 5px"></div></div>
+      <small>푸드트럭 종류만 <span style="font-size:20px;">16대</span>가 왔다!<br/>
+      <span style="color: yellow">맛있게 먹으면 0 kcal</span><br/> 
+        축제는 17일(월) 부터 20일(목) 까지!</small>
+    </div>
+  </div>
+  <%= render 'all_notices/render/notice_global' %>
+  <div style="margin-bottom: 30px;"></div>
+  
   <div style="text-align: center;">
     <% @foods.each do |food| %>
       <% if food.number == 2 %>

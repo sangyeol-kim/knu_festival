@@ -6,8 +6,9 @@
 
 </style> 
 <div class="top">
-   <%= image_tag "https://raw.githubusercontent.com/sangyeol-kim/knu_festival/35b988406543936177a1b3bdc898a187f1e15b03/app/assets/images/fleamarket_logo.png?token=AkDMWJQGm-yijSlIsnt2ywguSkTHNBkEks5bplUnwA%3D%3D" , :class => 'fleamarket_logo_img' %>
-
+  <%= image_tag "https://raw.githubusercontent.com/sangyeol-kim/knu_festival/35b988406543936177a1b3bdc898a187f1e15b03/app/assets/images/fleamarket_logo.png?token=AkDMWJQGm-yijSlIsnt2ywguSkTHNBkEks5bplUnwA%3D%3D" , :class => 'fleamarket_logo_img' %><br/>
+  <%= image_tag "new_future_market.png", :width => '80%' %>
+  
 <h1 style="font-family: 'BMDOHYEON'; margin-top: 15px;">미래마켓</h1>
 
 <div>
@@ -22,6 +23,9 @@
   <% end %>
 <% end %>
 <br>
+
+<%= render 'all_notices/render/notice_global' %>
+<div style="margin-bottom: 30px;"></div>
 
 <% if user_signed_in? %>
   <%= link_to 'New Fleamarket', new_fleamarket_path %>

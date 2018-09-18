@@ -9,5 +9,7 @@ class HomesController < ApplicationController
         @visit_count.update_attribute "count_view", abc
         
         @really_visit_count_total = Impression.all.count
+        
+        @all_notices = AllNotice.order("created_at DESC").all
     end
 end

@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<!-- margin-top: 120px 을 써야합니다-->
+<h1 align="center" style="font-family: 'BMDOHYEON'; margin-top: 120px; margin-bottom: 30px;"><u><%= link_to "술 한잔 하쉴?", huntings_path, style: "color: black; text-decoration: none" %></u></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @hunting.title %>
-</p>
+<%= form_with(model: @hunting, local: true) do |form| %>
+  <div class="form-group" style="margin-left: 20px;">
+    <span style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px;"><u>제목　</u></span>
+    <%= content_tag(:span, @hunting.title, style: "margin-left: 30px; font-size: 20px;") %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @hunting.content %>
-</p>
-
-<%= link_to 'Edit', edit_hunting_path(@hunting) %> |
-<%= link_to 'Back', huntings_path %>
+    <div style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px;"><u>내용　</u></div>
+    <%= content_tag(:div, @hunting.content, style: "white-space: pre-wrap; font-family: 'BMJUA'") %>
+  </div>
+<% end %>
+<hr/>
+<%= render partial: "comments/template", locals: {commentable: @hunting, new_comment: @comment} %>

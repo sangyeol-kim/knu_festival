@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application'%>
+    <!-- 댓글에 대댓글 활성 -->
+    <script type="text/javascript">
+      function showHide(id) {
+         var obj = document.getElementById(id);
+         if (obj.style.display == 'none')
+             obj.style.display = 'block';
+         else
+             obj.style.display = 'none';
+      }
+    </script>
+
     <!-- 모바일 기계의 화면사이즈에 창 크기를 맞춤. -->
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0,minimum-scale=1.0, maximum-scale=4.0" />
 
@@ -16,6 +27,21 @@
     
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="<%= asset_path('favicon_mudong.ico') %>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <!-- 검색엔진 최적화 -->
+    <meta name="title" content="KnuFestival : 머동머동제"/>
+    <meta name="keywords" content="KnuFestival, Knu, Kangwon, Kanugwon National, University, 강원대, 강원대학교, 대동제, 강원대 대동제, 강원도, 대학축제, 멋쟁이 사자처럼, 한림대, 한림대 대동제, 머동제, 멋사">
+    <meta name="description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
+    
+    <meta property="og:title" content="KnuFestival : 머동머동제">
+    <meta property="og:description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
+    <meta property="og:site_name" content="KnuFestival : 머동머동제">
+    
+    <meta name="twitter:title" content="KnuFestival : 머동머동제">
+    <meta name="twitter:description" content="2018 강원대 대동제 안내, Feat. 멋쟁이 사자처럼">
   </head>
 
   <body>
@@ -31,7 +57,12 @@
       <% end %>
       <%= yield %>
       <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>
+ 
+
     </div>
   </body>
   

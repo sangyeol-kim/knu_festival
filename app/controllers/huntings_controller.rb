@@ -5,11 +5,14 @@ class HuntingsController < ApplicationController
   # GET /huntings.json
   def index
     @huntings = Hunting.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
 
   # GET /huntings/1
   # GET /huntings/1.json
   def show
+    @hunting      = Hunting.find(params[:id])
+    @new_comment  = Comment.build_from(@hunting, 1, "")
   end
 
   # GET /huntings/new

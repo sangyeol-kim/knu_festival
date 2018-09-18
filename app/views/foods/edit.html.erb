@@ -1,6 +1,6 @@
-<h1>Editing Food</h1>
-
+<div style="margin-top: 120px;"></div>
+<h1 align="center" style="margin-bottom: 30px; font-family: 'BMDOHYEON'"><u><%= link_to "푸드트럭", foods_path, style: "color: black; text-decoration: none" %></u></h1>
+<div class="alert alert-primary" role="alert">
+    푸드트럭 게시글 수정
+</div>
 <%= render 'form', food: @food %>
-
-<%= link_to 'Show', @food %> |
-<%= link_to 'Back', foods_path %>

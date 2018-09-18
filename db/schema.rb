@@ -10,14 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180916130000) do
+ActiveRecord::Schema.define(version: 20180917135537) do
 
-  create_table "comments", force: :cascade do |t|
-    t.string "content"
-    t.integer "lost_id"
+  create_table "all_notices", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lost_id"], name: "index_comments_on_lost_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "commentable_id"
+    t.string "commentable_type"
+    t.string "title"
+    t.text "body"
+    t.string "subject"
+    t.integer "user_id", null: false
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.string "ip_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "fleamarkets", force: :cascade do |t|
@@ -90,6 +106,7 @@ ActiveRecord::Schema.define(version: 20180916130000) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
   end
 
   create_table "messages", force: :cascade do |t|

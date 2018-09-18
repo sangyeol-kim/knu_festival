@@ -2,6 +2,8 @@
 <div class="logo_section">
   <%= image_tag "main_logo.png", :class => 'knu-img' %>
   <%= image_tag "clouds-re.png" , :class => 'clouds-img', style: "width: 100%;" %>
+  <p class="downment">아래로 스크롤 해보라굿!</p>
+  <%= image_tag "arrow.png", style:"display: block; width:70px; margin: 20px auto 40px auto; float:center;"%>
 </div>
 <!-- pusher -->
 
@@ -15,46 +17,22 @@
 
 <!--축제지도-->
 <div class="schedule-01">
-  <p class="txt">DAY 01</p>
-  <!--border로 영역 표시한 부분 sche-area-->
-  <div class="schedule-border">
-      <p>개막식</p>
-      <br/>
-      <p>동아리 공연</p>
-      <br/>
-      <p>event waa</p>
-  </div>
+  <%= image_tag "day1.png" , :class => "day" %>
 </div>
 
 <div class="schedule-02">
-  <p class="txt">DAY 02</p>
-  <div class="schedule-border">
-      <p>Battle Kround</p>
-      <br/>
-      <p>E - sports 대회</p>
-      <br/>
-      <p>연예인 축하공연</p>
-  </div>
+  <%= image_tag "day2.png" , :class => "day" %>
 </div>
 
-<div class="scedule-03">
-  <p class="txt">DAY 03</p>
-  <div class="schedule-border-03">
-      <p>Battle Kround</p>
-      <br/>
-      <p>백령가요재</p>
-      <br/>
-      <p>연예인 축하공연</p>
-      <br/>
-      <p>폐막식</p>
-  </div>
+<div class="schedule-03">
+  <%= image_tag "day3.png" , :class => "day" %>
 </div>
   
 <div class="map">
   <div class="map-txt">지도</div>
   <div class="map-section">
     <%#= image_tag "KNU_map04.png", class: "map-knu" %>
-    <%= image_tag "map_noclick.png", class: "map-knu" %>
+    <%= image_tag "new_index_map.png", class: "map-knu" %>
   </div>
 </div>
 
@@ -62,7 +40,7 @@
 <div class="developer">
   <p class="developer-title">We make ourselves.</p>
   <p class="developer-title2">멋쟁이 사자처럼</p>
-  <%= image_tag "credit.png", style: "width: 100%;" %>
+  <%= image_tag "new_footer.png", style: "width: 100%;" %>
   <div style="height: 50px;"></div>
 </div>
 
@@ -85,11 +63,8 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        }
   });
 });
-</script>
-
-<script>
 $(function(){
-$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+  $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        var num = $(this).scrollTop();  // 스크롤값
        if( num > 1105 ){  // 스크롤을 36이상 했을 때
           $(".lineup-img01").css("position","fixed");
@@ -98,20 +73,4 @@ $(window).scroll(function(){  //스크롤하면 아래 코드 실행
        }
   });
 });
-</script>
-
-<script language="javascript">
-function TEST(e){
-var browser = navigator.appName
-if(browser=="Microsoft Internet Explorer")
-{   //브라우저가 IE일때 돌아간다. 크롬에서 써도 잘 된다.
-alert("현재 좌표는 " + event.x + "/" + event.y)
-}
-else
-{   //그외(파이어폭스)일 때 돌아간다.
-alert("현재 좌표는 " + e.clientX + "/" + e.clientY)
-}
-//이거는 그냥 덤으로 현재 브라우저의 가운데 좌표 표시
-alert("가운데 좌표는" + screen.width/2 + "/" + screen.height/2 )
-}
 </script>

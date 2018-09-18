@@ -6,22 +6,24 @@ class FoodsController < ApplicationController
   def index
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
-    
-
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index2
     @foods = Food.all
+    @all_notices = AllNotice.order("created_at DESC").all
 
   end
 
   def index3
     @foods = Food.all
+    @all_notices = AllNotice.order("created_at DESC").all
   end
   
   def index4
     @foods = Food.all
     $iconlist4 = (1..20).to_a.reverse
+    @all_notices = AllNotice.order("created_at DESC").all
 
   end
 
@@ -37,6 +39,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1/edit
   def edit
+    
   end
 
   # POST /foods
@@ -81,8 +84,8 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
-        format.json { render :show, status: :ok, location: @food }
+        format.html { redirect_to '/foods', notice: 'Food was successfully updated.' }
+        format.json { render :index, status: :ok, location: @food }
       else
         format.html { render :edit }
         format.json { render json: @food.errors, status: :unprocessable_entity }

@@ -2,17 +2,31 @@
   <%= image_tag "foodTruckLogo.png" , :class => 'fleamarket_logo_img' %>
   <h2 style="font-family: 'BMDOHYEON';">모든 푸드트럭</h2>
   <div>
-    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA';">이용시간 : 09시 ~ 18시</p>
+    <p style="font-size: 15px; font-weight: bold; font-family: 'BMJUA';"></p>
+    <p style="font-size: 12px; font-family: 'BMJUA';">* 술은 18일(화) 오후 6시부터 카드결제가 가능합니다.</p>
   </div>
 </div>
 
 <div class="container" style="text-align:center">
+  
+  <div class="row">
+    <div class="col-12" style="background-color: rgba(0, 0, 0, 0.67); color:white; width: 100%; padding: 10px;">
+      아래 각 푸드트럭 이름을 클릭해보세요!
+      <div align="center"><div style="border-bottom: 1px solid white; width: 30%; margin-top: 5px; margin-bottom: 5px"></div></div>
+      <small>푸드트럭 종류만 <span style="font-size:20px;">16대</span>가 왔다!<br/>
+      <span style="color: yellow">맛있게 먹으면 0 kcal</span><br/> 
+        축제는 17일(월) 부터 20일(목) 까지!</small>
+    </div>
+  </div>
+  <%= render 'all_notices/render/notice_global' %>
+  <div style="margin-bottom: 30px;"></div>
+  
   <div style="text-align: center;">
     <% @foods.each do |food| %>
         <div>
   <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-<%=food.id %>">
     <div style="margin-top:8px;">
-      <%= image_tag "b#{food.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
+      <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px;"><%= food.title %></strong>
       <% if food.number == 1 %>
             <span style="color:green; font-size:13px">60주년 기념관</span>
           <% elsif food.number == 2 %>

@@ -70,3 +70,6 @@ gem 'fog', '~> 1.41.0'
 
 # Gem : 조회수
 gem 'impressionist'
+
+# 댓글
+gem 'acts_as_commentable_with_threading'

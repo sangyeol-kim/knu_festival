@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :all_notices
   root 'homes#index'
   
   devise_for :users, :skip => :registration
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'
   
+  get '/losts/destroy/:id' => 'losts#destroy'
   resources :foods do
     collection do
       get :index2
@@ -25,6 +27,9 @@ Rails.application.routes.draw do
       get :index3
     end
   end
+  
+  # 댓글
+  resources :comments, only: [:create, :destroy]
 
   resources :fleamarkets
  

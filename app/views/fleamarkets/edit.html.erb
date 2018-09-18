@@ -1,6 +1,7 @@
-<h1>Editing Fleamarket</h1>
+<div style="margin-top: 120px;"></div>
+<h1 align="center" style="font-family: 'BMDOHYEON'"><u><%= link_to "플리마켓", fleamarkets_path, style: "color: black; text-decoration: none" %></u></h1>
+<div class="alert alert-primary" role="alert">
+    플리마켓 게시글 수정
+</div>
 
 <%= render 'form', fleamarket: @fleamarket %>
-
-<%= link_to 'Show', @fleamarket %> |
-<%= link_to 'Back', fleamarkets_path %>

@@ -6,7 +6,7 @@ class KakaoController < ApplicationController
         
         @keyboard = {
             type: "buttons",
-            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기",]
+            buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
         }
         
         render json: @keyboard
@@ -33,7 +33,7 @@ class KakaoController < ApplicationController
               },
               keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
               }
             }
         elsif @input == "축제 일정 보기"
@@ -57,13 +57,13 @@ class KakaoController < ApplicationController
                 }},
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","헌팅글 올리기",]
               }
             }
-        elsif @input == "술친 구하기"
+        elsif @input == "헌팅글 올리기"
             @msg = {
                 message: {
-                    text: "술 친구를 구하기 글을 써주세요! 글은 술친구함 페이지에 올라갑니다."
+                    text: "운명을 믿는 당신, 바로 글을 남겨주세요!"
                 },
                 keyboard: {
                     type: "text"
@@ -106,7 +106,7 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                 type: "buttons",
-                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기",]
+                buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
               }
             }    
         else
@@ -128,7 +128,27 @@ class KakaoController < ApplicationController
                 },
                 keyboard: {
                     type: "buttons",
-                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기",]
+            }    
+        else
+            message_pusher = Message.new
+            message_pusher.body = @input
+            message_pusher.save
+            
+            message = Hunting.new
+            message.title = "플친에서 작성 된 글입니다."
+            message.content = @input
+            message.save
+            
+            # Hunting.content = params[@input]
+            # Hunting.save
+            
+            @msg = {
+                message: {
+                    text: "글이 정상적으로 등록되었습니다."
+                },
+                keyboard: {
+                    type: "buttons",
+                    buttons: ["머동 사이트로 이동","축제 일정 보기","축제 라인업 보기","술친 구하기"]
                 }
             }
         end
