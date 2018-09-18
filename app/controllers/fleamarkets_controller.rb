@@ -35,18 +35,15 @@ class FleamarketsController < ApplicationController
   # POST /fleamarkets
   # POST /fleamarkets.json
   
-  $iconlist1 = (1..20).to_a.reverse
-  $iconlist2 = (1..20).to_a.reverse
-  $iconlist3 = (1..20).to_a.reverse
-
+ 
   def create
     @fleamarket = Fleamarket.new(fleamarket_params)
     if @fleamarket.number == '1'
-      @fleamarket.iconid = $iconlist1.pop
+      @fleamarket.iconid = 1
     elsif @fleamarket.number == '2'
-      @fleamarket.iconid = $iconlist2.pop
+      @fleamarket.iconid = 2
     elsif @fleamarket.number == '3'
-      @fleamarket.iconid = $iconlist3.pop
+      @fleamarket.iconid = 3
     end
 
 
