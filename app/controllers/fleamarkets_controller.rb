@@ -73,7 +73,7 @@ class FleamarketsController < ApplicationController
   def update
     respond_to do |format|
       if @fleamarket.update(fleamarket_params)
-        format.html { redirect_to @fleamarket, notice: 'Fleamarket was successfully updated.' }
+        format.html { redirect_to '/fleamarkets', notice: 'Fleamarket was successfully updated.' }
         format.json { render :show, status: :ok, location: @fleamarket }
       else
         format.html { render :edit }
