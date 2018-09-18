@@ -69,10 +69,8 @@
 </div>
     <% end %>
     
-    <% if user_signed_in? %>
-      <% if current_user.fdid == 0 %>
-        <div class="offset-8"><%= link_to '글쓰기', new_food_path, class: "btn btn-primary", style: "margin-top: 20px" %></div>
-      <% end %>
+    <% if user_signed_in? && current_user.admin? == true %>
+      <div class="offset-8"><%= link_to '글쓰기', new_food_path, class: "btn btn-primary", style: "margin-top: 20px" %></div>
     <% end %>
   </div>
 </div>

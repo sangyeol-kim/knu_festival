@@ -73,3 +73,6 @@ gem 'impressionist'
 
 # 댓글
 gem 'acts_as_commentable_with_threading'
+
+# 어드민 페이지
+gem 'rails_admin'

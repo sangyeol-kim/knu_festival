@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :all_notices
   root 'homes#index'
   
-  devise_for :users, :skip => :registration
   #플러스 친구 라우팅
   get '/keyboard' => 'kakao#keyboard'
   post '/message' => 'kakao#message'
@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
 
   resources :fleamarkets
- 
   
   get 'secret/index' => 'secret#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -40,5 +39,7 @@ Rails.application.routes.draw do
   post 'comments' => 'comments#create'
   
   delete 'comments/:id' => 'comments#destroy'
-
+  
+  devise_for :users, :skip => :registration
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end

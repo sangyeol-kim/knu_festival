@@ -1,7 +1,7 @@
 <div class="top">
   <%= image_tag "hunting.png" , :class => 'hunting_img' %>
   
-  <h1 align="center" style="font-family: 'BMDOHYEON'; margin-top: 15px;"><u><%= link_to "술친구&nbsp;괌".html_safe, huntings_path, style: "color: black; text-decoration: none" %></u></h1>
+  <h1 align="center" style="font-family: 'BMDOHYEON'; margin-top: 15px;"><%= link_to "술친구&nbsp;괌".html_safe, huntings_path, style: "color: black; text-decoration: none" %></h1>
 
   <div>
     <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">술 친구를 찾으세요!!</p>
@@ -13,8 +13,7 @@
 <div style="margin-bottom: 30px;"></div>
   
 <div id='btn_new'>
-<%= link_to '글 작 성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;"%>
-
+  <%= link_to '글 작 성', new_hunting_path, class:"btn btn-outline-secondary", id:"btn_new_new", style:"width: 400px;"%>
 </div>
 
 
@@ -71,5 +70,4 @@ var pusher = new Pusher('<%= ENV["pusher_key"] %>', {
   channel.bind('create', function(data) {
     msg_generate(data);
   });
-
 </script>

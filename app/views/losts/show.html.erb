@@ -1,5 +1,5 @@
 <div class="top" style="text-align: left !important; padding: 10px;">
-  <h1 align="center" style="font-family: 'BMDOHYEON';"><u><%= link_to "분&emsp;실&emsp;물".html_safe, losts_path, style: "color: black; text-decoration: none" %></u></h1>
+  <h1 align="center" style="font-family: 'BMDOHYEON';"><%= link_to "분&emsp;실&emsp;물".html_safe, losts_path, style: "color: black; text-decoration: none" %></h1>
 
   <div style="font-size: 30px; font-weight: bold; font-family: 'BMJUA'; margin-top: 30px;"><u>제목　</u></div>
   <%= content_tag(:div, @lost.title, style: "white-space: pre-wrap;", class: "col-12", style: "font-family: 'BMJUA'") %>
