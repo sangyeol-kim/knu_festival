@@ -4,7 +4,7 @@
       <%= image_tag "b#{x.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px; font-size:22px;"><%= x.title %></strong>
       <% if user_signed_in? %>
         <% if ((current_user.fdid == x.iconid) && (current_user.areaid == x.number)) || (current_user.fdid == 0)%>
-          <%= link_to 'edit', "fleamarkets/#{x.id}/edit" %>
+          <%= link_to 'edit', "/fleamarkets/#{x.id}/edit" %>
         <% end %>
       <% end %>
     <p class="food-ps"><%= x.ps %></p>
