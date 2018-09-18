@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
  
   def create
     commentable = commentable_type.constantize.find(commentable_id)
-    @comment = Comment.build_from(commentable, 19, body)
-    @comment.user_id = "19"
+    @comment = Comment.build_from(commentable, 1, body)
+    @comment.user_id = "1"
     @comment.ip_address = request.remote_ip
     
     respond_to do |format|
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
   private
  
   def comment_params
-    params[:comment][:user_id] = "19"
+    params[:comment][:user_id] = "1"
     params.require(:comment).permit(:body, :commentable_id, :commentable_type, :comment_id, :user_id, :nickname)
   end
  
