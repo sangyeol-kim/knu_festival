@@ -12,12 +12,35 @@
   <% end %>
   <br/>
     <div class="field" style="text-align:center;">
-      <%= form.label :'육주(1)' %>
-      <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
-      <%= form.label :'함인섭(2)' %>
-      <%= form.radio_button :number, '2' %>   &nbsp;
-      <%= form.label :'미래광장(3)' %>
-      <%= form.radio_button :number, '3' %>
+      <% if food.number == 1 %>
+        <%= form.label :'육주(1)' %>
+        <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
+        <%= form.label :'함인섭(2)' %>
+        <%= form.radio_button :number, '2' %>   &nbsp;
+        <%= form.label :'미래광장(3)' %>
+        <%= form.radio_button :number, '3' %>
+      <% elsif food.number == 2 %>
+        <%= form.label :'육주(1)' %>
+        <%= form.radio_button :number, '1' %>   &nbsp;  
+        <%= form.label :'함인섭(2)' %>
+        <%= form.radio_button :number, '2', checked: true %>   &nbsp;
+        <%= form.label :'미래광장(3)' %>
+        <%= form.radio_button :number, '3' %>
+      <% elsif food.number == 3 %>
+        <%= form.label :'육주(1)' %>
+        <%= form.radio_button :number, '1' %>   &nbsp;  
+        <%= form.label :'함인섭(2)' %>
+        <%= form.radio_button :number, '2'%>   &nbsp;
+        <%= form.label :'미래광장(3)' %>
+        <%= form.radio_button :number, '3', checked: true  %>
+      <% else %>
+        <%= form.label :'육주(1)' %>
+        <%= form.radio_button :number, '1' , checked: true%>   &nbsp;  
+        <%= form.label :'함인섭(2)' %>
+        <%= form.radio_button :number, '2' %>   &nbsp;
+        <%= form.label :'미래광장(3)' %>
+        <%= form.radio_button :number, '3' %>
+      <% end %>
     </div>
   <br/>
   <div class="field row">

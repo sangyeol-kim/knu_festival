@@ -3,7 +3,9 @@
     <div style="margin-top:8px;">
       <%= image_tag "b#{x.iconid}.jpg", class:"food-icon"%><strong style="margin-right:7px;"><%= x.title %></strong>
       <% if user_signed_in? %>
-        <%= link_to 'edit', "fleamarkets/#{x.id}/edit" %>
+        <% if ((current_user.fdid == x.iconid) && (current_user.areaid == x.number)) || (current_user.fdid == 0)%>
+          <%= link_to 'edit', "fleamarkets/#{x.id}/edit" %>
+        <% end %>
       <% end %>
     </div>
   </button>

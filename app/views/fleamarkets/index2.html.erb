@@ -13,7 +13,7 @@
 
 <div>
   <p style="font-size: 22px; font-weight: bold; font-family: 'BMJUA'; margin-top: 20px">이용시간 : 09시 ~ 18시</p>
-  <p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>
+  <!--<p style="font-size: 12px; font-family: 'BMJUA';">*카드번호와 부스번호를 매칭하면 위치를 알 수 있습니다!*</p>-->
 </div>
 </div>
 
@@ -28,5 +28,7 @@
 <div style="margin-bottom: 30px;"></div>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Fleamarket', new_fleamarket_path %>
-<% end %>
+      <% if current_user.fdid == 0 %>
+        <div class="offset-8"><%= link_to '글쓰기', new_fleamarket_path, class: "btn btn-primary", style: "margin-top: 20px" %></div>
+      <% end %>
+    <% end %>
