@@ -28,6 +28,42 @@
       <%= render 'fleamarkets/card', :x => x %>
     <% end %>
   <% end %>
+  
+  <!--이하 곰돌이 칸임 -->
+  <div style="text-align:center;">
+  <button type="button" class="btn btn-warning m-1 food-item" data-toggle="modal" data-target="#food-modal-21">
+    <div style>
+      <%= image_tag "gom.jpg", class:"food-icon"%><strong style="margin-right:7px; font-size:22px;">반달이</strong>
+    <p class="food-ps">투표하고 반달이굿즈 받자곰❤️</p>
+
+    </div>
+  </button>
+ 
+    
+    <!--이하 보이지 않는 모달-->
+  <div class="modal fade" id="food-modal-21" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">반달이</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="margin-bottom:10px; color:green;">미래 광장</p>
+          <%= content_tag(:div, '국립공원관리공단과 함께하는 반달이 밀어주기 프로젝트\n 전국 캐릭터 투표사업에 참여중인 \'반달이\'에게 투표하면 반달이굿즈(부채, 스티커)와 새콤달콤을 드립니다!', style: "white-space: pre-wrap;") %>
+          <%= image_tag "gom_img.jpg", style:"width:300px;" %>
+        </div>
+        <div class="modal-footer" style="justify-content: center;">
+          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <br>
 </div>
 
