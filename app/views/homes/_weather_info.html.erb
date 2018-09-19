@@ -1,0 +1,16 @@
+<div class="col-12" style="background-color: rgba(0, 0, 0, 0.44); color: white; margin-top: 1px; padding: 10px;" align="center">
+  <small>
+  현재 춘천시 날씨는
+  <% @weather_result_status.first(1).each_with_index do |info, index| %>
+    <% if (info == "약한 비") || (info == "때때로 비") || (info == "소나기") || (info == "몇 차례의 소나기와 뇌우") || (info == "소나기나 뇌우") || (info == "비") || (info == "비 내릴 가능성 있음") || (info == "약간의 어는 비와 보슬 비") || (info == "약간의 어는 비와 보슬 비") %>
+      <span style="color: #00ffd2; font-weight: bold;"><%= info %> <%= image_tag "weather/rainy.png", width: "30px" %></span>
+    <% elsif (info == "구름과 해") || (info == "흐림") || (info == "화창하거나 약간 흐림") || (info == "점차 흐려짐") || (info == "구름이 걷히면서 가끔 해가 보임") || (info == "일부 화창") || (info == "구름과 해") %>
+      <span style="color: #dadada; font-weight: bold;"><%= info %> <%= image_tag "weather/cloudy.png", width: "30px" %></span>
+    <% else %>
+      <span style="color: yellow; font-weight: bold;"><%= info %> <%= image_tag "weather/sunny.png", width: "30px" %></span>
+    <% end %>
+  <% end %>
+  입니다.
+  <div align="right" style="margin-top: 10px; color: #3bff2f">기상 정보 <%= link_to "AccuWeather", "https://www.accuweather.com/ko/kr/chuncheon/223554/daily-weather-forecast/223554?day=16", style: "color: white; text-decoration: none;", target: "_blank" %></div>
+  </small>
+</div>

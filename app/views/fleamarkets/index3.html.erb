@@ -22,6 +22,9 @@
       </div>
     </div>
     <%= render 'all_notices/render/notice_global' %>
+    <div class="row">
+      <%= render 'homes/weather_info' %>
+    </div>
 <div style="margin-bottom: 30px;"></div>
 <% @fleamarkets.each do |x| %>
   <% if x.number == '3' %>

@@ -45,9 +45,9 @@
 </div>
 
 <div class="total_view" style="z-index: 10" align="center">
-  총 <span style="color: yellow"><%= @visit_count.count_view %>명</span>의 학우분들이 방문해주셨습니다!<br/>
+  <small>총 <span style="color: yellow"><%= @visit_count.count_view %>명</span>의 학우분들이 방문해주셨습니다!</small><br/>
   <% if user_signed_in? %>
-    <span style="color: yellow">★</span> 실제로 <span style="color: yellow"><%= @really_visit_count_total %>명</span>의 학우분들이 방문해주셨습니다! <span style="color: yellow">★</span>
+    <small><span style="color: yellow">★</span> 실제로 <span style="color: yellow"><%= @really_visit_count_total %>명</span>의 학우분들이 방문해주셨습니다! <span style="color: yellow">★</span></small>
   <% end %>
 </div>
 

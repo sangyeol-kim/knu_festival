@@ -1,3 +1,8 @@
+require 'open-uri'
+require 'rubygems'
+require 'rest_client'
+require 'cgi'
+
 class LostsController < ApplicationController
   before_action :set_lost, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +11,10 @@ class LostsController < ApplicationController
   def index
     @losts = Lost.all
     @all_notices = AllNotice.order("created_at DESC").all
+    
+    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/daily-weather-forecast/223554?day=1"))
+    weather_status = doc.css('#feed-tabs ul li.fday1 .bg .info .cond')
+    @weather_result_status = weather_status.map { |cur| cur.text }
   end
 
   # GET /losts/1
