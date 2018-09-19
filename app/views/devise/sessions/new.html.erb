@@ -1,25 +1,28 @@
-<div style="margin-top: 150px;"></div>
-<h2 align="center"><u>로그인</u></h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :"이메일" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :"암호" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :"계정 기억" %>
+<div class="container">
+  <div style="margin-top: 150px;"></div>
+  <h2 align="center"><u>로그인</u></h2>
+  <div style="margin-top: 30px;"></div>
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field row">
+      <div class="col-3" style="align: center"><%= f.label :"이메일" %></div>
+      <div class="col-8" style="align: center"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form_underbar" %></div>
     </div>
-  <% end -%>
-
-  <div class="actions" align="center" style="margin-top: 30px">
-    <%= f.submit "로그인", class: "btn btn-primary" %>
-  </div>
-<% end %>
+  
+    <div class="field row" style="margin-top: 20px">
+      <div class="col-3" style="align: center"><%= f.label :"암호" %></div>
+      <div class="col-8" style="align: center"><%= f.password_field :password, autocomplete: "current-password", class: "form_underbar" %></div>
+    </div>
+  
+    <% if devise_mapping.rememberable? -%>
+      <div class="field offset-7">
+        <%= f.check_box :remember_me %>
+        <%= f.label :"계정 기억" %>
+      </div>
+    <% end -%>
+  
+    <div class="actions" align="center" style="margin-top: 30px">
+      <%= f.submit "로그인", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

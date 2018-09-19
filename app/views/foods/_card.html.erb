@@ -3,8 +3,8 @@
     <div style="margin-top:3px;">
       <%= image_tag "t#{food.iconid}.png", class:"food-icon"%><strong style="margin-right:7px; font-size:22px;"><%= food.title %></strong>
       <% if user_signed_in? %>
-        <% if ((current_user.fdid == food.iconid) && (current_user.areaid == food.number)) || (current_user.fdid == 0)%>
-          <%= link_to 'edit', "foods/#{food.id}/edit" %>
+        <% if ((current_user.fdid == food.iconid) && (current_user.areaid == food.number)) || (current_user.fdid == 0) || current_user.admin? %>
+          <%= link_to '수정', "foods/#{food.id}/edit" %>
         <% end %>
       <% end %>
       <p class="food-ps"><%= food.ps %></p>
