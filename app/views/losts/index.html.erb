@@ -24,7 +24,7 @@
        <%= link_to lost, style: "text-decoration: none; color: black" do %>
         <div class="card">
           <% if lost.image.present? %>
-            <%= image_tag "#{lost.image}" , :class => 'img' %>
+            <%= image_tag "#{lost.image}" , :class => 'img', style: "width: 100%" %>
           <% else %>
             <div align="center"><%= image_tag "no_image.png" , :class => 'img', style: 'width: 100px' %></div>
           <% end %>
