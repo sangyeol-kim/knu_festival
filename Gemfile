@@ -75,3 +75,6 @@ gem 'acts_as_commentable_with_threading'
 
 # 어드민 페이지
 gem 'rails_admin'
+
+# 공공데이터
+gem 'rest-client'

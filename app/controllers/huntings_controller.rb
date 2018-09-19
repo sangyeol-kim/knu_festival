@@ -6,6 +6,10 @@ class HuntingsController < ApplicationController
   def index
     @huntings = Hunting.all
     @all_notices = AllNotice.order("created_at DESC").all
+    
+    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/daily-weather-forecast/223554?day=1"))
+    weather_status = doc.css('#feed-tabs ul li.fday1 .bg .info .cond')
+    @weather_result_status = weather_status.map { |cur| cur.text }
   end
 
   # GET /huntings/1
