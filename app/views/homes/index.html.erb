@@ -37,7 +37,19 @@
 </div>
 
 <!--푸터-->
+<div class="developer">
+  <p class="developer-title">We make ourselves.</p>
+  <p class="developer-title2">멋쟁이 사자처럼</p>
+  <%= image_tag "new_footer.png", style: "width: 100%;" %>
+  <div style="height: 50px;"></div>
+</div>
 
+<div class="total_view" style="z-index: 10" align="center">
+  총 <span style="color: yellow"><%= @visit_count.count_view %>명</span>의 학우분들이 방문해주셨습니다!<br/>
+  <% if user_signed_in? %>
+    <span style="color: yellow">★</span> 실제로 <span style="color: yellow"><%= @really_visit_count_total %>명</span>의 학우분들이 방문해주셨습니다! <span style="color: yellow">★</span>
+  <% end %>
+</div>
 
 <!--스크립트 부분-->
 <script>
