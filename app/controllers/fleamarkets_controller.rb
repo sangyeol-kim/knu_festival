@@ -8,7 +8,7 @@ class FleamarketsController < ApplicationController
     @all_notices = AllNotice.order("created_at DESC").all
     
     doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('#feed-tabs > ul > li.day.current.first.cl > div.bg.bg-c.c > div.info > span')
+    weather_status = doc.css('.current div.info .cond')
     @weather_result_status = weather_status.map { |cur| cur.text }
   end
   
@@ -17,7 +17,7 @@ class FleamarketsController < ApplicationController
     @all_notices = AllNotice.order("created_at DESC").all
     
     doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('#feed-tabs > ul > li.day.current.first.cl > div.bg.bg-c.c > div.info > span')
+    weather_status = doc.css('.current div.info .cond')
     @weather_result_status = weather_status.map { |cur| cur.text }
   end
   
@@ -26,7 +26,7 @@ class FleamarketsController < ApplicationController
     @all_notices = AllNotice.order("created_at DESC").all
     
     doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('#feed-tabs > ul > li.day.current.first.cl > div.bg.bg-c.c > div.info > span')
+    weather_status = doc.css('.current div.info .cond')
     @weather_result_status = weather_status.map { |cur| cur.text }
   end
 
