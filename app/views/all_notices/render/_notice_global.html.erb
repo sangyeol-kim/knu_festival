@@ -5,14 +5,14 @@
         <i style="color: yellow" class="fas fa-bullhorn"></i>
       </div>
       <div class="col-10" align="left">
-        <%= all_notice.title %>
+        <%= all_notice.title.html_safe %>
       </div>
     </div>
   </a>
   
   <div class="collapse" id="notice<%= all_notice.id %>">
     <div class="card card-body">
-      <%= content_tag(:div, all_notice.content, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
+      <%= content_tag(:div, all_notice.content.html_safe, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
       <div class="offset-md-6" align="right" style="margin-top: 30px">
         <small style="color: #794502;"><%= all_notice.created_at.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %></small>
       </div>

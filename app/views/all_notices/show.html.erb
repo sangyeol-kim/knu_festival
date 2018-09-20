@@ -2,12 +2,12 @@
 <h1 align="center" style="margin-bottom: 30px; font-family: 'BMDOHYEON'"><%= link_to "공지사항", all_notices_path, style: "color: black; text-decoration: none" %></h1>
 <p>
   <strong>제목 :</strong><br/>
-  <%= content_tag(:div, @all_notice.title, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
+  <%= content_tag(:div, @all_notice.title.html_safe, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
 </p>
 
 <p>
   <strong>내용 :</strong><br/>
-  <%= content_tag(:div, @all_notice.content, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
+  <%= content_tag(:div, @all_notice.content.html_safe, style: "white-space: pre-wrap;", class: "col-12", align: "left") %>
 </p>
 
 <div class="offset-10">
