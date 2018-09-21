@@ -1,5 +1,7 @@
 <div style="margin-top: 120px"></div>
 <h2 style="font-family: 'BMDOHYEON'; text-align: center">데이터 분석센터</h2>
+<div align="center" style="font-family: 'BMJUA';"><%= Time.now.in_time_zone("Asia/Seoul").strftime('%Y-%m-%d %H:%M') %> 기준</div>
+
 <%= pie_chart "/charts/new_users" %>
 
 <div class="row" style="width: 100%; padding-left: 20px; margin-top: 50px;">
@@ -8,7 +10,7 @@
     <div class="col-7">에브리타임 : <%= Impression.where("referrer like ?", "%everytime%").count %> 명</div>
     <div class="col-5">네이버 : <%= Impression.where("referrer like ?", "%naver.com%").count %> 명</div>
     <div class="col-7">네이버(후기 블로그글) : <%= Impression.where("referrer like ?", "%blog.naver.com/kbs4674%").count %> 명</div>
-    <div class="col-5">누적방문자 : <%= @visit_count %></div>
-    <div class="col-7">IP 필터링 집계 : <%= Impression.all.count %></div>
+    <div class="col-5">누적방문자 : <%= @visit_count %> 명</div>
+    <div class="col-7">IP 필터링 집계 : <%= Impression.all.count %> 명</div>
     <div class="col-12" style="margin-top: 5px"><small><span style="color: red">*</span> Text 수치는 개략적인 참고로 봐주세요. 정확하지 않습니다.</small></div>
 </div>
