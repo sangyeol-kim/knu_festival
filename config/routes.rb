@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'charts/index'
+
   devise_for :admins
   resources :all_notices
   root 'homes#index'
@@ -39,6 +41,10 @@ Rails.application.routes.draw do
   post 'comments' => 'comments#create'
   
   delete 'comments/:id' => 'comments#destroy'
+  
+  namespace :charts do
+    get "new_users"
+  end
   
   devise_for :users, :skip => :registration
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
