@@ -78,3 +78,6 @@ gem 'rails_admin'
 
 # 공공데이터
 gem 'rest-client'
+
+# 차트 잼
+gem 'chartkick'
