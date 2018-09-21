@@ -13,6 +13,8 @@ module KnuFestival
     
     config.i18n.default_locale = :ko
     config.time_zone = 'Seoul'
+    
+    config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOW-FROM https://youtube.com"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
