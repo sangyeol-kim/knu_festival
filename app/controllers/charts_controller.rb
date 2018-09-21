@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
   def index
-      
+      @visit_count = Home.find(1).count_view
   end
   
   def new_users
