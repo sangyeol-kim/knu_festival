@@ -1,4 +1,6 @@
 class ChartsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
       @visit_count = Home.find(1).count_view
   end
