@@ -39,7 +39,7 @@ production:
   host: localhost
   encoding: utf8
   sslmode: allow
-  database: knu_festival_production
+  database: festival_production
   pool: 5
   username: festival
   password: <%= ENV["DB_PASSWD"] %>
