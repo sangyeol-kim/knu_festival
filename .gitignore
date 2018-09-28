@@ -24,3 +24,5 @@
 
 /Gemfile.lock
 /Gemfile
+
+/config/application.yml
