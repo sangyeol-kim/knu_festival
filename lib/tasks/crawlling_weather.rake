@@ -16,7 +16,7 @@ namespace :crawlling_weather do
     
     # API DB 최신화
     url = 'http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastSpaceData?serviceKey=BbZ0drUpIeC1gvrWFtaIJSyPQxEI7Ldf%2FIL5DMtxwjZa%2BfAEE0%2BWzzzMStb3V%2FoLL%2F6MnTCxEDRFWpX9KHDHIg%3D%3D'
-    headers = { :params => { CGI::escape('numOfRows') => '50', CGI::escape('base_date') => "#{(Time.now+9.hours).strftime('%Y%m%d')}", CGI::escape('base_time') => "#{(Time.now+8.hours).strftime('%H')}00", CGI::escape('nx') => '73', CGI::escape('ny') => '133' } }
+    headers = { :params => { CGI::escape('numOfRows') => '50', CGI::escape('base_date') => "#{(Time.now+9.hours).strftime('%Y%m%d')}", CGI::escape('base_time') => "#{(Time.now+7.hours).strftime('%H')}00", CGI::escape('nx') => '73', CGI::escape('ny') => '133' } }
     @weather = RestClient::Request.execute :method => 'GET', :url => url , :headers => headers
     @weather_to_xml = @weather.body
     @doc = Nokogiri::XML(@weather_to_xml)
@@ -30,14 +30,15 @@ namespace :crawlling_weather do
     
     # DB에 데이터가 쓰이는 코드
     for num in 0..50
-      if ((@weather_to_hash[num][0].text == "T3H"))
+      if (@weather_to_hash[num][0].text == "T3H")
         @weather_result = WeatherDegree.new
         @weather_result.status = "3시간 기온"
         @weather_result.degree = @weather_to_hash[num][1].text
         @weather_result.time = @weather_to_hash[num][2].text
         @weather_result.date = @weather_to_hash[num][3].text
         @weather_result.save
-      elsif (@weather_to_hash[num][0].text == "POP")
+      end
+      if (@weather_to_hash[num][0].text == "POP")
         @weather_result = WeatherRainy.new
         @weather_result.status = "강수확률"
         @weather_result.rainy = @weather_to_hash[num][1].text
