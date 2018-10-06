@@ -6,7 +6,11 @@ namespace :crawlling_weather do
   desc "TODO"
   task crawlling_weather: :environment do
     # 과거에 쓰여진 DB를 전부 제거
-    CrawllingWeather.all.each do |x|
+    WeatherRainy.all.each do |x|
+        x.destroy
+    end
+    
+    WeatherDegree.all.each do |x|
         x.destroy
     end
     
