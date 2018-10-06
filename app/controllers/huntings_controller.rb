@@ -11,8 +11,8 @@ class HuntingsController < ApplicationController
     weather_status = doc.css('.current div.info .cond')
     @weather_result_status = weather_status.map { |cur| cur.text }
     
-    @weather_degree = WeatherDegree.first(1)
-    @weather_rainy = WeatherRainy.first(1)
+    @weather_degree = WeatherDegree.order(time: :asc).first(1)
+    @weather_rainy = WeatherRainy.order(time: :asc).first(1)
   end
 
   # GET /huntings/1
