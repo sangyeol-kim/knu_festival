@@ -10,6 +10,9 @@ class HuntingsController < ApplicationController
     doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
     weather_status = doc.css('.current div.info .cond')
     @weather_result_status = weather_status.map { |cur| cur.text }
+    
+    @weather_degree = WeatherDegree.first(1)
+    @weather_rainy = WeatherRainy.first(1)
   end
 
   # GET /huntings/1

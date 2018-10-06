@@ -1,0 +1,2 @@
+class WeatherDegree < ApplicationRecord
+end
