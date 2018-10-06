@@ -6,13 +6,6 @@ class HuntingsController < ApplicationController
   def index
     @huntings = Hunting.all
     @all_notices = AllNotice.order("created_at DESC").all
-    
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('.current div.info .cond')
-    @weather_result_status = weather_status.map { |cur| cur.text }
-    
-    @weather_degree = WeatherDegree.order(time: :asc).first(1)
-    @weather_rainy = WeatherRainy.order(time: :asc).first(1)
   end
 
   # GET /huntings/1
