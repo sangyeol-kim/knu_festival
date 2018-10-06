@@ -1,0 +1,20 @@
+<div class="col-12" style="background-color: rgba(0, 0, 0, 0.44); color: white; margin-top: 1px; padding: 10px;" align="center">
+  <small>
+  현재 춘천시 기온은
+  <span style="color: yellow">
+  <% WeatherDegree.order(time: :asc).first(1).each do |x| %>
+    <%= x.degree %>
+  <% end %>
+  ℃ 
+  </span>
+  이며, 강수 확률은
+  <span style="color: yellow">
+  <% WeatherRainy.order(time: :asc).first(1).each do |x| %>
+    <%= x.rainy %>
+  <% end %>
+  %
+  </span>
+  입니다.
+  <div align="right" style="margin-top: 10px; color: #3bff2f">기상 정보 <%= link_to "정부 공공데이터 센터", "http://data.go.kr", style: "color: white; text-decoration: none;", target: "_blank" %></div>
+  </small>
+</div>

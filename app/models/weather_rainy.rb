@@ -1,0 +1,2 @@
+class WeatherRainy < ApplicationRecord
+end

@@ -7,39 +7,22 @@ class FoodsController < ApplicationController
     @foods = Food.all
     # @boxcolor = ["dark","warning"]
     @all_notices = AllNotice.order("created_at DESC").all
-    
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('.current div.info .cond')
-    @weather_result_status = weather_status.map { |cur| cur.text }
   end
   
   def index2
     @foods = Food.all
     @all_notices = AllNotice.order("created_at DESC").all
-    
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('.current div.info .cond')
-    @weather_result_status = weather_status.map { |cur| cur.text }
   end
 
   def index3
     @foods = Food.all
     @all_notices = AllNotice.order("created_at DESC").all
-    
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('.current div.info .cond')
-    @weather_result_status = weather_status.map { |cur| cur.text }
   end
   
   def index4
     @foods = Food.all
     $iconlist4 = (1..20).to_a.reverse
     @all_notices = AllNotice.order("created_at DESC").all
-    
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/ko/kr/chuncheon/223554/weather-forecast/223554"))
-    weather_status = doc.css('.current div.info .cond')
-    @weather_result_status = weather_status.map { |cur| cur.text }
-
   end
 
   # GET /foods/1
