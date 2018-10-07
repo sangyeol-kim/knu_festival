@@ -2,15 +2,19 @@
   <small>
   현재 춘천시 기온은
   <span style="color: yellow">
-  <% WeatherDegree.order(time: :asc).first(1).each do |x| %>
-    <%= x.degree %>
+  <% WeatherDegree.order(time: :asc).each do |x| %>
+    <% if x.time >= (Time.now+9.hours).strftime('%H00') && x.time < (Time.now+12.hours).strftime('%H00') %> <%# 2시 <= 3시(현재) < 5시 %>
+      <%= x.degree %>
+    <% end %>
   <% end %>
   ℃ 
   </span>
   이며, 강수 확률은
   <span style="color: yellow">
-  <% WeatherRainy.order(time: :asc).first(1).each do |x| %>
-    <%= x.rainy %>
+  <% WeatherRainy.order(time: :asc).each do |x| %>
+    <% if x.time >= (Time.now+9.hours).strftime('%H00') && x.time < (Time.now+12.hours).strftime('%H00') %> <%# 2시 <= 3시(현재) < 5시 %>
+      <%= x.rainy %>
+    <% end %>
   <% end %>
   %
   </span>
