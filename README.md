@@ -38,6 +38,6 @@
 
 * Director: 김상열, 서현석, 김철민
 
-#### 배포
+#### 사이트
 
-**https://knu대동제.com**
+http://knu대동제.com
