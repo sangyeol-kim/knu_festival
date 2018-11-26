@@ -37,3 +37,7 @@
 * Designer: 고유미, 이인하
 
 * Director: 김상열, 서현석, 김철민
+
+#### 배포
+
+**https://knu대동제.com**
